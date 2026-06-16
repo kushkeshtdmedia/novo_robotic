@@ -11,7 +11,7 @@ import GallbladderSurgery from './pages/services/GallbladderSurgery';
 import OesophagusSurgery from './pages/services/OesophagusSurgery';
 export default function App() {
   return (
-    <BrowserRouter>
+     <BrowserRouter basename={import.meta.env.BASE_URL}> 
       {/* removed temporary Tailwind test banner */}
       <Routes>
         <Route element={<Layout />}>
