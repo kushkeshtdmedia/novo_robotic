@@ -12,12 +12,7 @@ import OesophagusSurgery from './pages/services/OesophagusSurgery';
 export default function App() {
   return (
     <BrowserRouter>
-      {/* Tailwind test banner — remove after verification */}
-      <div className="fixed top-4 right-4 z-50">
-        <div className="px-4 py-2 rounded-lg bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-lg">
-          Tailwind test: utilities loaded
-        </div>
-      </div>
+      {/* removed temporary Tailwind test banner */}
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
