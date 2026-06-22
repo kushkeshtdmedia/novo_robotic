@@ -17,6 +17,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
+           <Route path="/services/stomach-surgery" element={<StomachSurgery/>} />
           <Route path="/services/hernia-surgery" element={<HerniaSurgery />} />
           <Route path="/services/robotic-sleeve-gastrectomy" element={<RoboticSleeveGastrectomy />} />
           <Route path="/services/appendix-surgery" element={<AppendixSurgery />} />
