@@ -1,6 +1,14 @@
 import { ArrowRight, CheckCircle, Eye, Cpu, Scissors, Shield, Zap, AlertTriangle, Activity, Phone, Star, ChevronRight } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-
+import gallBladderImage from '../../assets/images/GallBladder.jpg';
+import gallBallderDoctorImage from '../../assets/images/gallBallderDoctorImage.jpeg';
+import Diagram from '../../assets/images/DiagramImage.jpeg';
+import GallBladderRealImage from '../../assets/images/GallBladderRealImage.png';
+import SmallIncisions from '../../assets/images/SmallIncisions.jpeg';
+import Anaesthesia from '../../assets/images/Anaesthesia.jpeg';
+import dCamera from '../../assets/images/dCamera.jpeg';
+import SurgeonSurgery from '../../assets/images/SurgeonSurgery.jpeg';
+import novoPatientImage from '../../assets/images/GallbladderPatient.jpeg';
 const symptoms = [
   {
     icon: Zap,
@@ -61,28 +69,28 @@ const steps = [
     icon: Cpu,
     title: 'Anaesthesia',
     desc: 'General anaesthesia is administered to ensure the patient is comfortable and pain-free throughout the procedure.',
-    image: 'https://images.pexels.com/photos/7659564/pexels-photo-7659564.jpeg',
+    image: Anaesthesia,
   },
   {
     num: '02',
     icon: Eye,
     title: 'Small Incisions',
     desc: 'The surgeon makes 3–4 tiny incisions (5–10 mm each) in the abdomen to insert the robotic instruments and 3D camera.',
-    image: 'https://images.pexels.com/photos/7089020/pexels-photo-7089020.jpeg',
+    image: SmallIncisions,
   },
   {
     num: '03',
     icon: Scissors,
     title: '3D Camera',
     desc: 'A high-definition 3D camera is introduced, providing a magnified, crystal-clear view of the gallbladder and surrounding structures.',
-    image: 'https://images.pexels.com/photos/8460168/pexels-photo-8460168.jpeg',
+    image: dCamera,
   },
   {
     num: '04',
     icon: Shield,
     title: 'Surgeon Control',
     desc: 'The surgeon operates from a robotic console, precisely controlling robotic arms to dissect and isolate the gallbladder with unmatched accuracy.',
-    image: 'https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg',
+    image: SurgeonSurgery,
   },
   {
     num: '05',
@@ -172,7 +180,7 @@ export default function GallbladderSurgery() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/4226264/pexels-photo-4226264.jpeg"
+                src={gallBladderImage}
                 alt="Gallbladder anatomy"
                 className="w-full h-[380px] object-cover"
               />
@@ -263,7 +271,7 @@ export default function GallbladderSurgery() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl group">
               <img
-                src="https://images.pexels.com/photos/8376232/pexels-photo-8376232.jpeg"
+                src={gallBallderDoctorImage}
                 alt="Complications of untreated gallstones"
                 className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -315,14 +323,14 @@ export default function GallbladderSurgery() {
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-3xl overflow-hidden shadow-xl h-64 mt-8">
               <img
-                src="https://images.pexels.com/photos/8460168/pexels-photo-8460168.jpeg"
+                src={Diagram}
                 alt="Robotic surgery"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="rounded-3xl overflow-hidden shadow-xl h-64 -mt-8">
               <img
-                src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg"
+                src={GallBladderRealImage}
                 alt="Surgeon at console"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
@@ -421,7 +429,7 @@ export default function GallbladderSurgery() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl group">
               <img
-                src="https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg"
+                src={novoPatientImage}
                 alt="Novo Robotic team"
                 className="w-full h-[440px] object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -465,7 +473,7 @@ export default function GallbladderSurgery() {
       </section>
 
       {/* ─── Gallery strip ─── */}
-      <section className="py-16 bg-slate-50 overflow-hidden">
+      {/* <section className="py-16 bg-slate-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
           <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Our Facility</p>
           <h2 className="text-3xl font-black text-gray-900">Inside Novo Robotic Surgery Centre</h2>
@@ -485,10 +493,10 @@ export default function GallbladderSurgery() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ─── CTA ─── */}
-      <section className="py-12 px-6">
+      {/* <section className="py-12 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-teal-800 rounded-3xl px-8 py-16 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-72 h-72 bg-teal-700/50 rounded-full -translate-x-1/2 -translate-y-1/2" />
@@ -516,7 +524,7 @@ export default function GallbladderSurgery() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

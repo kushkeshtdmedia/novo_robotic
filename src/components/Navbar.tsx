@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
-
+import Logo from '../../src/assets/images/logo.png';
 const serviceMenu = [
   {
     label: 'General Surgery',
@@ -71,12 +71,14 @@ export default function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-white/90 backdrop-blur-sm'}`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <NavLink to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-teal-600 rounded-full flex items-center justify-center">
-            <span className="text-white text-xs font-bold">N</span>
-          </div>
-          <span className="font-bold text-gray-900 text-lg">Novo Robotic Hospital</span>
-        </NavLink>
+    <NavLink to="/" className="flex items-center gap-2">
+  <img
+    src={Logo}
+    alt="Novo Robotic Hospital"
+    className="h-8 w-auto object-contain"
+  />
+  {/* <span className="font-bold text-gray-900 text-lg">Novo Robotic Hospital</span> */}
+</NavLink>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">

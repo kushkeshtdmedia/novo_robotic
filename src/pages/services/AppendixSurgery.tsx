@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle, Eye, Cpu, Scissors, Shield, Zap, AlertTriangle, ThumbsUp, Activity, Clock } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-
+import AppendixSurgery from '../../assets/images/AppendixSurgery.jpeg';
 const symptoms = [
   { icon: Zap, title: 'Sharp Pain', desc: 'Sharp pain starting near the navel and shifting to the lower right abdomen.' },
   { icon: Activity, title: 'Nausea', desc: 'Nausea and vomiting.' },
@@ -79,7 +79,7 @@ const steps = [
   },
 ];
 
-export default function AppendixSurgery() {
+export default function AppendixSurgeryPage() {
   return (
     <div className="pt-20">
       {/* ─── Hero ─── */}
@@ -183,7 +183,7 @@ export default function AppendixSurgery() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/8460168/pexels-photo-8460168.jpeg"
+                src={AppendixSurgery}
                 alt="Robotic surgery console"
                 className="w-full h-[440px] object-cover"
               />

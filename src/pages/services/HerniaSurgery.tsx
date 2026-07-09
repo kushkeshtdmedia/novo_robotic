@@ -1,5 +1,8 @@
 import { ArrowRight, CheckCircle, XCircle, Zap, Eye, Settings, Layers, Scissors, AlertTriangle, Users, Shield, Award } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import herniaRobotic from '../../assets/images/HerniaRobotic.jpeg';
+import Surgeryhernia from '../../assets/images/surgeryherniaImage.jpeg';
+import WhytoChoose from '../../assets/images/Whytochoose.jpeg';
 
 const symptoms = [
   'Visible bulge or swelling',
@@ -83,7 +86,7 @@ export default function HerniaSurgery() {
             <p className="text-gray-500 text-lg leading-relaxed max-w-md mb-8">
               Precision-guided, faster recovery and better outcomes than traditional surgery. Experience the next evolution in surgical excellence.
             </p>
-            <div className="flex items-center gap-4 flex-wrap">
+            {/* <div className="flex items-center gap-4 flex-wrap">
               <NavLink to="/contact">
                 <button className="flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-teal-700/25 group">
                   Book Consultation
@@ -93,13 +96,13 @@ export default function HerniaSurgery() {
               <button className="border-2 border-gray-300 hover:border-teal-500 text-gray-700 hover:text-teal-600 font-semibold px-6 py-3.5 rounded-full transition-all duration-200">
                 View Specialist Team
               </button>
-            </div>
+            </div> */}
           </div>
 
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg"
+                src={ herniaRobotic }
                 alt="Robotic Hernia Surgery"
                 className="w-full h-[440px] object-cover"
               />
@@ -172,7 +175,7 @@ export default function HerniaSurgery() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-xl">
               <img
-                src="https://images.pexels.com/photos/8460168/pexels-photo-8460168.jpeg"
+                src={Surgeryhernia}
                 alt="Robotic surgery precision"
                 className="w-full h-[420px] object-cover"
               />
@@ -361,7 +364,7 @@ export default function HerniaSurgery() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg"
+                src={ WhytoChoose}
                 alt="Expert surgical team"
                 className="w-full h-[480px] object-cover"
               />
@@ -382,16 +385,7 @@ export default function HerniaSurgery() {
               <p className="text-teal-100 max-w-lg mx-auto mb-10 leading-relaxed text-sm">
                 If you are experiencing hernia pain, swelling, or discomfort, don't ignore the symptoms. Consult our specialists for accurate diagnosis and advanced robotic hernia treatment.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <NavLink to="/contact">
-                  <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-yellow-400/30 min-w-48">
-                    Consult Our Experts
-                  </button>
-                </NavLink>
-                <button className="border-2 border-white/40 hover:border-white text-white font-semibold px-8 py-4 rounded-full transition-all min-w-48">
-                  View Virtual Tour
-                </button>
-              </div>
+           
             </div>
           </div>
         </div>
