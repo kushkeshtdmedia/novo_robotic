@@ -7,8 +7,9 @@ import GallBladderRealImage from '../../assets/images/GallBladderRealImage.png';
 import SmallIncisions from '../../assets/images/SmallIncisions.jpeg';
 import Anaesthesia from '../../assets/images/Anaesthesia.jpeg';
 import dCamera from '../../assets/images/dCamera.jpeg';
-import SurgeonSurgery from '../../assets/images/SurgeonSurgery.jpeg';
+import SurgeonSurgery from '../../assets/images/surgeonSurgery.jpeg';
 import novoPatientImage from '../../assets/images/GallbladderPatient.jpeg';
+
 const symptoms = [
   {
     icon: Zap,

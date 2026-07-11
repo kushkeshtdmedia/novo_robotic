@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
-import Logo from '../../src/assets/images/logo.png';
+import Logo from '../../src/assets/images/Logo.png';
 const serviceMenu = [
   {
     label: 'General Surgery',

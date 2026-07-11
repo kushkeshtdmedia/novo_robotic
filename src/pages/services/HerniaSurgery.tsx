@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle, XCircle, Zap, Eye, Settings, Layers, Scissors, AlertTriangle, Users, Shield, Award } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import herniaRobotic from '../../assets/images/HerniaRobotic.jpeg';
-import Surgeryhernia from '../../assets/images/surgeryherniaImage.jpeg';
+import Surgeryhernia from '../../assets/images/surgeryHerniaImage.jpeg';
 import WhytoChoose from '../../assets/images/Whytochoose.jpeg';
 
 const symptoms = [
@@ -338,7 +338,7 @@ export default function HerniaSurgery() {
           <div>
             <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Our Promise</p>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5">
-              Why Choose Novo<br />Robotic?
+              Why Choose Novo<br />Robotic for hernia surgery?
             </h2>
             <p className="text-gray-600 leading-relaxed mb-5">
               Choosing Novo Robotic means getting advanced hernia surgery treatment with a strong focus on precision, safety, and patient recovery.
