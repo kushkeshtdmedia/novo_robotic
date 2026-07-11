@@ -1,6 +1,10 @@
 import { ArrowRight, CheckCircle, Eye, Cpu, Scissors, Shield, Zap, AlertTriangle, ThumbsUp, Activity, Clock } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import AppendixSurgery from '../../assets/images/AppendixSurgery.jpeg';
+import ApendixSmall from '../../assets/images/ApendixSmallInc.png';
+import apendixThreeDimension from '../../assets/images/apendixThreeDimension.png';
+import PrecisionGuide from '../../assets/images/precisionGuidedSurgery.png';
+import  SafeRemoval from '../../assets/images/SafeRemoval.png';
 const symptoms = [
   { icon: Zap, title: 'Sharp Pain', desc: 'Sharp pain starting near the navel and shifting to the lower right abdomen.' },
   { icon: Activity, title: 'Nausea', desc: 'Nausea and vomiting.' },
@@ -54,28 +58,28 @@ const steps = [
     icon: Cpu,
     title: 'Small Entry Points',
     desc: 'Instead of one large incision, the surgeon makes a small cut (usually about 8–10 mm) in the abdomen. These small incisions help reduce pain, scarring, and recovery time.',
-    image: 'https://images.pexels.com/photos/7089020/pexels-photo-7089020.jpeg',
+    image: ApendixSmall,
   },
   {
     num: '02',
     icon: Eye,
     title: 'Advanced 3D Visualisation',
     desc: 'A high-definition 3D camera is inserted through one of the small openings, providing the surgeon with a clear, magnified view of the internal organs and the inflamed appendix.',
-    image: 'https://images.pexels.com/photos/8460168/pexels-photo-8460168.jpeg',
+    image: apendixThreeDimension,
   },
   {
     num: '03',
     icon: Scissors,
     title: 'Precision-Guided Surgery',
     desc: 'From a nearby robotic console, the surgeon carefully controls the robotic arms to detach and remove the infected appendix with enhanced precision and stability while protecting surrounding tissues.',
-    image: 'https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg',
+    image: PrecisionGuide,
   },
   {
     num: '04',
     icon: CheckCircle,
     title: 'Safe Removal and Closure',
     desc: 'Once removed, the appendix is extracted through small incisions. Subsequently, these small incisions are closed using a few stitches or surgical tape, promoting faster healing and minimal scarring.',
-    image: 'https://images.pexels.com/photos/3376790/pexels-photo-3376790.jpeg',
+    image: SafeRemoval,
   },
 ];
 
@@ -322,27 +326,7 @@ export default function AppendixSurgeryPage() {
       </section>
 
       {/* ─── Gallery strip ─── */}
-      <section className="py-16 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
-          <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Our Facility</p>
-          <h2 className="text-3xl font-black text-gray-900">Inside Novo Robotic Surgery Centre</h2>
-        </div>
-        <div className="flex gap-5 px-6 max-w-7xl mx-auto overflow-x-auto pb-4 scrollbar-hide">
-          {[
-            { src: 'https://images.pexels.com/photos/3376799/pexels-photo-3376799.jpeg', caption: 'Robotic OR Suite' },
-            { src: 'https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg', caption: 'Surgical Team' },
-            { src: 'https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg', caption: 'Recovery Ward' },
-            { src: 'https://images.pexels.com/photos/4167541/pexels-photo-4167541.jpeg', caption: 'Patient Consultation' },
-            { src: 'https://images.pexels.com/photos/8376232/pexels-photo-8376232.jpeg', caption: 'Robotic Console' },
-          ].map(({ src, caption }) => (
-            <div key={caption} className="relative flex-shrink-0 w-64 rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300">
-              <img src={src} alt={caption} className="w-64 h-80 object-cover group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent" />
-              <p className="absolute bottom-4 left-4 text-white font-semibold text-sm">{caption}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+    
 
       {/* ─── CTA ─── */}
       <section className="py-12 px-6">
@@ -358,14 +342,7 @@ export default function AppendixSurgeryPage() {
                 Consult our experts today for a precise diagnosis and a comfortable recovery.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <NavLink to="/contact">
-                  <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-yellow-400/30 min-w-48">
-                    Consult Our Experts
-                  </button>
-                </NavLink>
-                <button className="border-2 border-white/40 hover:border-white text-white font-semibold px-8 py-4 rounded-full transition-all min-w-48">
-                  View Specialist Team
-                </button>
+              
               </div>
             </div>
           </div>
