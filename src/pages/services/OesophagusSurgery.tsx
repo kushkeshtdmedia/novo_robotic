@@ -1,6 +1,8 @@
 import { ArrowRight, CheckCircle, Cpu, Eye, Scissors, Activity, HeartPulse, Shield, Zap, AlertTriangle, ChevronRight } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-
+import OesophagusSurgeryPic from '../../assets/images/FoodPipeSurgeryCancer.jpg';
+import FoodPipe from '../../assets/images/FoodPipe.png';
+import VikrantOnco from '../../assets/images/VikrantOnco.jpeg';
 const symptoms = [
   'Difficulty swallowing (Dysphagia)',
   'Persistent heartburn',
@@ -17,7 +19,7 @@ const benefits = [
   { icon: Eye, label: 'Keyhole Access', desc: 'Tiny ports minimise large open incisions for better healing.' },
 ];
 
-const conditions:any = [
+const conditions: any = [
   {
     title: 'Oesophageal Cancer',
     desc: 'Advanced robotic oesophagectomy allows for complete tumour removal with meticulous lymph node dissection, significantly improving survival outcomes and recovery quality.',
@@ -80,48 +82,75 @@ export default function OesophagusSurgery() {
   return (
     <div className="pt-20">
 
-      {/* ─── Hero ─── */}
-      <section className="relative min-h-[520px] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg"
-            alt="Robotic Oesophagus Surgery"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-900/90 via-teal-800/75 to-teal-700/40" />
-        </div>
+      {/* ─── Hero (Split: content left · image right) ─── */}
+      <section className="relative bg-slate-50 overflow-hidden">
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-teal-200/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/3 w-72 h-72 bg-yellow-200/20 rounded-full blur-3xl" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 pt-28 w-full">
-          <nav className="flex items-center gap-2 text-xs text-teal-200 mb-6">
-            <NavLink to="/" className="hover:text-white transition-colors">Home</NavLink>
-            <ChevronRight size={12} />
-            <span className="text-teal-300">General Surgery</span>
-            <ChevronRight size={12} />
-            <span className="text-white font-semibold">Oesophagus Surgery</span>
-          </nav>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-14 md:py-20 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          <p className="text-yellow-400 text-xs font-semibold uppercase tracking-widest mb-3">
-            Robotic Surgical Excellence · Kaushambi, Ghaziabad
-          </p>
-          <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-4 max-w-3xl">
-            Advanced Robotic<br />
-            Oesophagus <span className="text-teal-300">(Food Pipe)</span><br />
-            Surgery
-          </h1>
-          <p className="text-teal-100 text-lg max-w-xl mb-8 leading-relaxed">
-            Experience life-changing precision and minimally invasive care led by renowned specialist Dr. Vikrant Sharma in Kaushambi, Ghaziabad.
-          </p>
+          {/* Left — content */}
+          <div>
+            <nav className="flex items-center gap-2 text-xs text-gray-500 mb-6">
+              <NavLink to="/" className="hover:text-teal-600 transition-colors">Home</NavLink>
+              <ChevronRight size={12} />
+              <span className="text-gray-400">General Surgery</span>
+              <ChevronRight size={12} />
+              <span className="text-teal-700 font-semibold">Oesophagus Surgery</span>
+            </nav>
 
-          <div className="flex flex-wrap gap-4 mb-10">
-            <NavLink to="/contact">
-              <button className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-7 py-3.5 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-yellow-400/30 group">
-                Book Your Consultation
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-3">
+              Robotic Surgical Excellence · Kaushambi, Ghaziabad
+            </p>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1] mb-5">
+              Advanced Robotic<br />
+              Oesophagus <span className="text-teal-600">(Food Pipe)</span><br />
+              Surgery
+            </h1>
+
+            <p className="text-gray-600 text-base md:text-lg max-w-xl mb-8 leading-relaxed">
+              Experience life-changing precision and minimally invasive care led by renowned specialist Dr. Vikrant Sharma in Kaushambi, Ghaziabad.
+            </p>
+
+            <div className="flex flex-wrap gap-4 mb-10">
+              <NavLink to="/contact">
+                <button className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-7 py-3.5 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-teal-600/25 group">
+                  Book Your Consultation
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+              </NavLink>
+              <button className="flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-teal-600 hover:text-teal-700 font-semibold px-7 py-3.5 rounded-full transition-all duration-200">
+                Learn Process
               </button>
-            </NavLink>
-            <button className="flex items-center gap-2 border border-white/40 text-white hover:bg-white/10 font-semibold px-7 py-3.5 rounded-full transition-all duration-200">
-              Learn Process
-            </button>
+            </div>
+
+            {/* Quick trust strip */}
+            <div className="flex flex-wrap items-center gap-6">
+              <div>
+                <p className="text-2xl font-black text-teal-700 leading-none">20+</p>
+                <p className="text-xs text-gray-500 mt-1">Years Experience</p>
+              </div>
+              <div className="w-px h-10 bg-gray-200" />
+              <div>
+                <p className="text-2xl font-black text-teal-700 leading-none">NABH</p>
+                <p className="text-xs text-gray-500 mt-1">Accredited Facility</p>
+              </div>
+              <div className="w-px h-10 bg-gray-200" />
+              <div>
+                <p className="text-2xl font-black text-teal-700 leading-none">3D</p>
+                <p className="text-xs text-gray-500 mt-1">da Vinci Precision</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right — image */}
+          <div className="relative">
+            <img
+              src={OesophagusSurgeryPic}
+              alt="Robotic Oesophagus Surgery"
+              className="w-full h-auto object-contain"
+            />
           </div>
         </div>
       </section>
@@ -155,14 +184,10 @@ export default function OesophagusSurgery() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/8460168/pexels-photo-8460168.jpeg"
+                src={FoodPipe}
                 alt="Robotic surgical system"
                 className="w-full h-[420px] object-cover"
               />
-            </div>
-            <div className="absolute bottom-5 right-5 bg-white/90 backdrop-blur-sm rounded-2xl px-5 py-3 shadow-xl border border-gray-100">
-              <p className="text-xs font-bold text-teal-700">Advanced Robotic Platform</p>
-              <p className="text-xs text-gray-500 mt-0.5">da Vinci Surgical System</p>
             </div>
             <div className="absolute -top-8 -left-8 w-40 h-40 bg-teal-200/25 rounded-full blur-3xl -z-10" />
           </div>
@@ -222,7 +247,7 @@ export default function OesophagusSurgery() {
                   Advanced robotic oesophagectomy allows for complete tumour removal with meticulous lymph node dissection, significantly improving survival outcomes and recovery quality.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {conditions[0].tags.map((tag:any) => (
+                  {conditions[0].tags.map((tag: any) => (
                     <span key={tag} className="bg-white/15 text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/20">
                       {tag}
                     </span>
@@ -324,7 +349,7 @@ export default function OesophagusSurgery() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg"
+                src={VikrantOnco}
                 alt="Dr. Vikrant Sharma"
                 className="w-full h-[480px] object-cover object-top"
               />
@@ -399,11 +424,7 @@ export default function OesophagusSurgery() {
                   </span>
                 ))}
               </div>
-              <NavLink to="/contact" className="flex-shrink-0">
-                <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-yellow-400/30 whitespace-nowrap">
-                  Consult a Doctor
-                </button>
-              </NavLink>
+          
             </div>
           </div>
         </div>

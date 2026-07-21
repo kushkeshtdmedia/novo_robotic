@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ArrowRight, ChevronRight, Utensils, Flame, Scale, Activity } from "lucide-react";
-
+import OncoSurgeryJourney from '../../assets/images/StomachCancerSurgery.png';
+import vikrantPic from '../../assets/images/VikrantOnco.jpeg';
+import StomachSurgeryPic from '../../assets/images/StomachSurgeryPic.png'
 /**
  * StomachSurgery — Novo Robotic Hospital
  * Route: <Route path="/services/stomach-surgery" element={<StomachSurgery />} />
@@ -101,14 +103,14 @@ export default function StomachSurgery() {
           </div>
 
           <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg"
-                alt="Robotic gastrectomy surgical system"
-                className="w-full h-[380px] object-cover"
-              />
+            <div className="rounded-3xl overflow-hidden shadow-2xl bg-slate-50">
+            <img
+  src={StomachSurgeryPic}
+  alt="Robotic gastrectomy at Novo Robotic Hospital"
+  className="w-full h-auto object-contain"
+/>
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl px-5 py-4 shadow-xl border border-gray-100 max-w-[240px]">
+            {/* <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl px-5 py-4 shadow-xl border border-gray-100 max-w-[240px]">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-10 h-10 bg-yellow-100 rounded-xl flex items-center justify-center text-lg">🔬</div>
                 <div>
@@ -119,7 +121,7 @@ export default function StomachSurgery() {
               <p className="text-xs text-gray-500 italic leading-relaxed">
                 Harnessing the da Vinci robotic platform to transform survival outcomes in gastric oncology.
               </p>
-            </div>
+            </div> */}
             <div className="absolute -top-8 -right-8 w-48 h-48 bg-teal-200/30 rounded-full blur-3xl -z-10" />
           </div>
         </div>
@@ -222,11 +224,11 @@ export default function StomachSurgery() {
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-12">The Surgical Journey</h2>
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
+            <div className="rounded-3xl overflow-hidden shadow-2xl bg-slate-50">
               <img
-                src="https://images.pexels.com/photos/8460047/pexels-photo-8460047.jpeg"
+                src={OncoSurgeryJourney}
                 alt="Robotic surgical journey"
-                className="w-full h-[420px] object-cover"
+                className="w-full h-auto object-contain md:h-[420px] md:object-cover"
               />
             </div>
             <ol className="space-y-2">
@@ -324,19 +326,19 @@ export default function StomachSurgery() {
           </div>
 
           <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
+            <div className="rounded-3xl overflow-hidden shadow-2xl bg-slate-50">
               <img
-                src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg"
+                src={vikrantPic}
                 alt="Dr. Vivek, Oncologic Surgery"
-                className="w-full h-[440px] object-cover object-top"
+                className="w-full h-auto object-contain md:h-[440px] md:object-cover md:object-top"
               />
             </div>
             <span className="absolute top-5 right-5 bg-white/90 backdrop-blur-sm text-gray-900 text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-lg">
               Cancer Care Clinic
             </span>
             <div className="absolute bottom-5 left-5 bg-teal-800/85 backdrop-blur-sm text-white rounded-2xl px-5 py-3">
-              <p className="font-black leading-none">Dr. Vivek</p>
-              <p className="text-xs text-teal-200 mt-1">Oncologic Surgery</p>
+              <p className="font-black leading-none">Dr. Vikrant</p>
+              <p className="text-xs text-teal-200 mt-1">Surgeon</p>
             </div>
           </div>
         </div>
@@ -354,12 +356,12 @@ export default function StomachSurgery() {
                 Our specialists are ready to discuss your options. Early intervention with robotic technology offers the best path back to a healthy life.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-yellow-400/30">
+                {/* <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-yellow-400/30">
                   Book a Consultation
                 </button>
                 <button className="border border-white/40 text-white hover:bg-white/10 font-semibold px-8 py-3.5 rounded-full transition-all duration-200">
                   Request a Call Back
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

@@ -5,6 +5,7 @@ import ApendixSmall from '../../assets/images/ApendixSmallInc.png';
 import apendixThreeDimension from '../../assets/images/apendixThreeDimension.png';
 import PrecisionGuide from '../../assets/images/precisionGuidedSurgery.png';
 import  SafeRemoval from '../../assets/images/SafeRemoval.png';
+
 const symptoms = [
   { icon: Zap, title: 'Sharp Pain', desc: 'Sharp pain starting near the navel and shifting to the lower right abdomen.' },
   { icon: Activity, title: 'Nausea', desc: 'Nausea and vomiting.' },
