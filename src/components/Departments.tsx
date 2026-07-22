@@ -1,53 +1,67 @@
-import { ArrowRight, Bot, Heart, Bone, TrendingUp } from 'lucide-react';
+import { ArrowRight, Stethoscope, Scissors, Activity, Scale, HeartPulse } from 'lucide-react';
 
-const departments = [
+const specialities = [
   {
-    icon: Bot,
-    title: 'Robotic Surgery',
-    description: 'Minimally invasive procedures powered by the latest da Vinci systems for complex abdominal and thoracic surgeries.',
-    cta: 'Explore Unit',
+    icon: Stethoscope,
+    title: 'Gastrointestinal & Hepatobiliary Surgery',
+    description: 'From complex abdominal conditions to routine care, our advanced robotic platforms enable precise tissue dissection and unmatched accuracy for treating gastrointestinal disorders.',
+    span: 'lg:col-span-2',
     variant: 'default',
   },
   {
-    icon: Heart,
-    title: 'Cardiology',
-    description: 'Robotic-assisted heart bypass and valve repairs with microscopic accuracy.',
-    cta: 'View Specialists',
+    icon: Scissors,
+    title: 'Robotic Hernia & Gallbladder Repair',
+    description: 'Experience rapid relief and recovery. Minimally invasive gallbladder removal and hernia repairs ensure maximum structural reinforcement with minimal anatomical trauma.',
+    span: 'lg:col-span-2',
     variant: 'featured',
   },
   {
-    icon: Bone,
-    title: 'Orthopedics',
-    description: 'Smart implant technology and robotic knee/hip replacements for life-long durability.',
-    cta: 'Learn More',
+    icon: Activity,
+    title: 'Precision Oncological Resections',
+    description: 'Our surgical oncology team uses high-definition 3D visualization to target and remove tumours with extreme boundary accuracy, preserving as much healthy tissue as possible.',
+    span: 'lg:col-span-2',
     variant: 'accent',
+  },
+  {
+    icon: Scale,
+    title: 'Bariatric & Weight Loss Surgery',
+    description: 'Take control of your health with advanced robotic weight loss surgery. Our precise approach optimizes metabolic outcomes while prioritizing patient safety and long-term well-being.',
+    span: 'lg:col-span-3',
+    variant: 'default',
+  },
+  {
+    icon: HeartPulse,
+    title: 'Advanced Gynaecological Surgeries',
+    description: 'Compassionate, specialized care for complex conditions like fibroids, endometriosis, and hysterectomies, ensuring quick healing and minimal disruption.',
+    span: 'lg:col-span-3',
+    variant: 'default',
   },
 ];
 
 export default function Departments() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white" aria-labelledby="specialities-heading">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
           <div>
             <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Expertise</p>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900">Precision Departments</h2>
+            <h2 id="specialities-heading" className="text-4xl md:text-5xl font-black text-gray-900">Our Surgical Specialities</h2>
           </div>
           <p className="text-gray-500 max-w-sm text-sm leading-relaxed">
-            Leading the frontier of medical science through dedicated robotic centers of excellence.
+            Under the expert leadership of our top robotic surgeons, we provide comprehensive, customized care across multiple disciplines.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {departments.map((dept) => {
-            const Icon = dept.icon;
-            const isFeatured = dept.variant === 'featured';
-            const isAccent = dept.variant === 'accent';
+        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6">
+          {specialities.map((s) => {
+            const Icon = s.icon;
+            const isFeatured = s.variant === 'featured';
+            const isAccent = s.variant === 'accent';
 
             return (
-              <div
-                key={dept.title}
-                className={`relative rounded-3xl p-8 flex flex-col justify-between min-h-[280px] group transition-all duration-300 ${
+              <article
+                key={s.title}
+                className={`relative rounded-3xl p-8 flex flex-col justify-between min-h-[260px] group transition-all duration-300 ${s.span} ${
                   isFeatured
                     ? 'bg-teal-700 text-white shadow-xl shadow-teal-700/25'
                     : isAccent
@@ -62,47 +76,25 @@ export default function Departments() {
                     <Icon size={22} className={isFeatured ? 'text-white' : isAccent ? 'text-gray-800' : 'text-teal-600'} />
                   </div>
                   <h3 className={`text-xl font-bold mb-3 ${isFeatured ? 'text-white' : 'text-gray-900'}`}>
-                    {dept.title}
+                    {s.title}
                   </h3>
                   <p className={`text-sm leading-relaxed ${isFeatured ? 'text-teal-100' : 'text-gray-600'}`}>
-                    {dept.description}
+                    {s.description}
                   </p>
                 </div>
                 <button
                   className={`mt-6 inline-flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3 ${
                     isFeatured
-                      ? 'bg-white text-teal-700 px-4 py-2 rounded-full hover:bg-teal-50'
+                      ? 'bg-white text-teal-700 px-4 py-2 rounded-full hover:bg-teal-50 w-fit'
                       : 'text-gray-700 hover:text-teal-600'
                   }`}
                 >
-                  {dept.cta}
+                  Learn More
                   <ArrowRight size={14} />
                 </button>
-              </div>
+              </article>
             );
           })}
-        </div>
-
-        {/* Impact bar */}
-        <div className="mt-8 bg-gray-50 rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-1">Clinical Impact</p>
-            <p className="text-sm text-gray-600">Average recovery time reduced by 45%</p>
-          </div>
-          <div className="flex items-center gap-12">
-            <div className="text-center">
-              <p className="text-3xl font-black text-gray-900">5k+</p>
-              <p className="text-xs text-gray-500 uppercase tracking-wider">Procedures</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-black text-teal-600">99.8%</p>
-              <p className="text-xs text-gray-500 uppercase tracking-wider">Success</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2 text-teal-600">
-            <TrendingUp size={20} />
-            <span className="text-sm font-semibold">Improving outcomes</span>
-          </div>
         </div>
       </div>
     </section>

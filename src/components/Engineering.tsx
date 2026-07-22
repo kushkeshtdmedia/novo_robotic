@@ -1,20 +1,20 @@
 import { Crosshair, ShieldCheck, HeartHandshake } from 'lucide-react';
-
+import PrecisionMatters from '../assets/images/PrecisionMatters.jpeg';
 const features = [
   {
     icon: Crosshair,
-    title: '0.1mm Precision Accuracy',
-    description: 'Our robotic arms eliminate human tremors, allowing for incisions and sutures that were previously impossible to the human eye.',
+    title: 'Precision That Matters',
+    description: 'Our robotic systems translate every hand movement into highly precise actions, enabling accuracy that traditional open surgery cannot match.',
   },
   {
     icon: ShieldCheck,
-    title: 'Clinical Excellence',
-    description: 'Every procedure is overseen by double-certified surgeons with over 15 years of robotic-specialized training.',
+    title: 'Surgeon-Controlled Technology',
+    description: 'The robot does not replace the surgeon—it enhances them. Every action is fully controlled by the surgeon with enhanced 3D HD visualization.',
   },
   {
     icon: HeartHandshake,
-    title: 'Empathetic Recovery',
-    description: 'Our hospital environment is designed to lower cortisol levels, featuring smart rooms that adapt to patient preferences.',
+    title: 'Compassionate Patient Care',
+    description: 'Less pain, minimal scarring, reduced hospital stays, and faster recovery—so you can return to daily life sooner.',
   },
 ];
 
@@ -25,7 +25,7 @@ export default function Engineering() {
         <div className="relative">
           <div className="rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg"
+              src={PrecisionMatters}
               alt="Doctor with patient"
               className="w-full h-[540px] object-cover"
             />
@@ -35,10 +35,10 @@ export default function Engineering() {
               <div className="w-9 h-9 bg-teal-100 rounded-full flex items-center justify-center">
                 <HeartHandshake size={16} className="text-teal-600" />
               </div>
-              <p className="font-bold text-gray-900 text-sm">Empathetic Design</p>
+              <p className="font-bold text-gray-900 text-sm">People, Not Just Conditions</p>
             </div>
             <p className="text-xs text-gray-500 leading-relaxed">
-              We believe that while machines provide the precision, humans provide the healing.
+              We don't just treat conditions—we care for people at every stage of the journey.
             </p>
           </div>
           <div className="absolute -bottom-6 -right-6 w-36 h-36 bg-teal-200/30 rounded-full blur-3xl -z-10" />
@@ -46,9 +46,9 @@ export default function Engineering() {
 
         <div className="space-y-8">
           <div>
-            <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">The Vanguard Advantage</p>
+            <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Why Choose Novo</p>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
-              Engineering<br />Better Lives
+              Precision<br />Matters
             </h2>
           </div>
 
