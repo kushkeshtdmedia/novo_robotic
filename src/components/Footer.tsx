@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import Logo from '../assets/images/Logo-B6jBI4Mi.png';
+import Logo from  './../assets/images/Logo.png';
 
 const resources = ['Patient Resources', 'Ethics Guidelines', 'Privacy Policy'];
 const contactLinks = ['Contact Support', 'Emergency Line', 'LinkedIn'];
@@ -11,11 +11,8 @@ export default function Footer() {
         {/* Brand */}
         <div className="md:col-span-1">
           <NavLink to="/" className="flex items-center gap-3 mb-4">
-            <img src={Logo} alt="Novo Robotic logo" className="w-16 h-16 object-contain" />
-            <div>
-              <span className="font-bold text-gray-900 text-lg block">Novo Robotic Hospital</span>
-              <p className="text-sm text-gray-500">Precision In Care</p>
-            </div>
+            <img src={Logo} alt="Novo Robotic Hospital — Precision In Care" className="w-16 h-16 object-contain" />
+            <span className="sr-only">Novo Robotic Hospital — Precision In Care</span>
           </NavLink>
 
           <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
