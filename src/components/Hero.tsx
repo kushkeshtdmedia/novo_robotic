@@ -1,6 +1,6 @@
 import { ArrowRight, Play } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-import Video from '../assets/video/video.mp4'
+import Video from '../assets/video/Video.mp4'
 export default function Hero() {
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-cyan-50/20 pt-20 pb-16 overflow-hidden">
