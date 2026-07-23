@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import DoctorsPage from './pages/DoctorsPage';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 import HerniaSurgery from './pages/services/HerniaSurgery';
 import RoboticSleeveGastrectomy from './pages/services/RoboticSleeveGastrectomy';
 import AppendixSurgeryPage from './pages/services/AppendixSurgery';
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/services/oesophagus-surgery" element={<OesophagusSurgery />} />
           <Route path="/doctors" element={<DoctorsPage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
