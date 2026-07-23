@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import Departments from '../components/Departments';
 import Engineering from '../components/Engineering';
 import Doctors from '../components/leaderShip';
+import Testimonials from '../components/Testimonials';
 
 const PAGE_TITLE =
   'Novo Robotic Surgery Centre | Best Robotic Surgeon in Ghaziabad & Delhi NCR';
@@ -88,6 +89,7 @@ export default function HomePage() {
       <Engineering />
       <Departments />
       <Doctors />
+      <Testimonials />
     </main>
   );
 }
