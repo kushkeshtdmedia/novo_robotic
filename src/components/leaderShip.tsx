@@ -3,8 +3,8 @@ import { ArrowRight, Award, GraduationCap, Globe, BookOpen, Building2, Users } f
 import { NavLink } from 'react-router-dom';
 
 // Drop the real photos into src/assets/images/ with these exact filenames
-import ManralPic from '../../src/assets/images/NarendraSirPic.png'
-import VikrantPic from '../../src/assets/images/VikrantSirHome.jpeg';
+import ManralPic from '../../src/assets/images/NarinderSirPic.jpeg'
+import VikrantPic from '../../src/assets/images/VikrantSirHome.jpg';
 
 // Initials avatar shown if a photo is missing or fails to load
 function LeaderImage({ src, name, alt }: { src: string; name: string; alt: string }) {
