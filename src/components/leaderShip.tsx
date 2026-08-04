@@ -36,7 +36,7 @@ function LeaderImage({ src, name, alt }: { src: string; name: string; alt: strin
 
 const leaders = [
   {
-    name: 'Mr. Narendra Singh Manral',
+    name: 'Mr. Narinder Singh Manral',
     role: 'Co-Founder & Director',
     subtitle: 'Chairman, TDM Group',
     image: ManralPic,

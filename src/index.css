@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.theme-shell.custom-theme {
+  --app-bg: rgb(37, 46, 55);
+  --surface-bg: rgb(44, 54, 64);
+  --text-primary: rgb(244, 211, 78);
+  --text-secondary: rgb(232, 238, 242);
+  --text-muted: rgb(188, 201, 214);
+  --border-color: rgba(244, 211, 78, 0.2);
+  background-color: var(--app-bg);
+  color: var(--text-primary);
+}
+
+.theme-shell.custom-theme .bg-white {
+  background-color: var(--surface-bg) !important;
+}
+
+.theme-shell.custom-theme .bg-gray-50 {
+  background-color: rgba(244, 211, 78, 0.08) !important;
+}
+
+.theme-shell.custom-theme .bg-gray-100 {
+  background-color: rgba(244, 211, 78, 0.12) !important;
+}
+
+.theme-shell.custom-theme .text-gray-900,
+.theme-shell.custom-theme .text-gray-800 {
+  color: var(--text-primary) !important;
+}
+
+.theme-shell.custom-theme .text-gray-700,
+.theme-shell.custom-theme .text-gray-600,
+.theme-shell.custom-theme .text-gray-500,
+.theme-shell.custom-theme .text-gray-400,
+.theme-shell.custom-theme p,
+.theme-shell.custom-theme span:not(.text-[rgb\(244\,211\,78\)]),
+.theme-shell.custom-theme li,
+.theme-shell.custom-theme address {
+  color: white !important;
+}
+
+.theme-shell.custom-theme .border-gray-100,
+.theme-shell.custom-theme .border-gray-200,
+.theme-shell.custom-theme .border-gray-300,
+.theme-shell.custom-theme .border-gray-50 {
+  border-color: var(--border-color) !important;
+}
+
+.theme-shell.custom-theme .shadow-gray-300\/40,
+.theme-shell.custom-theme .shadow-gray-300\/30 {
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25) !important;
+}

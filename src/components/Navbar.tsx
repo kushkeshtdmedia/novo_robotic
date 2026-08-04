@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
 import Logo from '../../src/assets/images/Logo.png';
+
 const serviceMenu = [
   {
     label: 'General Surgery',
     sub: [
-      'Gallbladder Surgery',
       'Hernia Surgery',
       'Appendix Surgery',
       'Stomach Surgery',
@@ -23,16 +23,11 @@ const serviceMenu = [
   },
   {
     label: 'Cancer Surgery',
-    sub: [
-      'Colorectal Cancer',
-      'Colorectal Cancer Surgery',
-    ],
+    sub: ['Colorectal Cancer', 'Colorectal Cancer Surgery', 'Gallbladder Cancer Surgery', 'Liver Cancer Surgery', 'Pancreatic Cancer Surgery'],
   },
   {
-    label: 'Benign Uterus & Ovary Disorders',
-    sub: [
-      'Fertility Preserving Surgery',
-    ],
+    label: 'Gynecological Surgery',
+    sub: ['Fertility Preserving Surgery','Benign Uterus & Ovary Disorders'],
   },
 ];
 
@@ -70,17 +65,10 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-white/90 backdrop-blur-sm'}`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-    <NavLink to="/" className="flex items-center gap-2">
-  <img
-    src={Logo}
-    alt="Novo Robotic Hospital"
-    className="h-8 w-auto object-contain"
-  />
-  {/* <span className="font-bold text-gray-900 text-lg">Novo Robotic Hospital</span> */}
-</NavLink>
+        <NavLink to="/" className="flex items-center gap-2">
+          <img src={Logo} alt="Novo Robotic Hospital" className="h-8 w-auto object-contain" />
+        </NavLink>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           <NavLink
             to="/"
@@ -92,28 +80,18 @@ export default function Navbar() {
             Home
           </NavLink>
 
-          {/* Services mega trigger */}
-          <div
-            className="relative"
-            ref={megaRef}
-            onMouseEnter={openMega}
-            onMouseLeave={closeMega}
-          >
-            <button
-              className={`flex items-center gap-1 text-sm font-medium transition-colors ${megaOpen ? 'text-teal-600' : 'text-gray-600 hover:text-teal-600'}`}
-            >
+          <div className="relative" ref={megaRef} onMouseEnter={openMega} onMouseLeave={closeMega}>
+            <button className={`flex items-center gap-1 text-sm font-medium transition-colors ${megaOpen ? 'text-teal-600' : 'text-gray-600 hover:text-teal-600'}`}>
               Services <ChevronDown size={14} className={`transition-transform duration-200 ${megaOpen ? 'rotate-180' : ''}`} />
             </button>
 
-            {/* Mega dropdown */}
             {megaOpen && (
               <div
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[680px] bg-white rounded-2xl shadow-2xl shadow-gray-300/40 border border-gray-100 overflow-hidden flex"
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[680px] rounded-2xl shadow-2xl bg-white shadow-gray-300/40 border border-gray-100 overflow-hidden flex"
                 onMouseEnter={openMega}
                 onMouseLeave={closeMega}
               >
-                {/* Left: category list */}
-                <div className="w-64 bg-gray-50 py-4">
+                <div className="w-64 py-4 bg-gray-50">
                   {serviceMenu.map((cat, i) => (
                     <button
                       key={cat.label}
@@ -126,9 +104,8 @@ export default function Navbar() {
                   ))}
                 </div>
 
-                {/* Right: sub items */}
                 <div className="flex-1 py-6 px-6">
-                  <p className="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-4">
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-4 text-teal-600">
                     {serviceMenu[activeSub].label}
                   </p>
                   <ul className="space-y-1">
@@ -137,7 +114,7 @@ export default function Navbar() {
                         <NavLink
                           to={`/services/${item.toLowerCase().replace(/\s+/g, '-')}`}
                           onClick={() => setMegaOpen(false)}
-                          className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 font-medium transition-colors group"
+                          className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors group text-gray-700 hover:bg-teal-50 hover:text-teal-600"
                         >
                           <span className="w-1.5 h-1.5 bg-teal-400 rounded-full group-hover:bg-teal-600 flex-shrink-0" />
                           {item}
@@ -163,8 +140,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="hidden md:flex">
+        <div className="hidden md:flex items-center gap-3">
           <NavLink to="/contact">
             <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-md">
               Book Appointment
@@ -172,25 +148,19 @@ export default function Navbar() {
           </NavLink>
         </div>
 
-        {/* Mobile toggle */}
         <button className="md:hidden text-gray-700" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-2 max-h-[80vh] overflow-y-auto">
+        <div className="md:hidden border-t px-6 py-4 flex flex-col gap-2 max-h-[80vh] overflow-y-auto bg-white border-gray-100">
           <NavLink to="/" end onClick={() => setMenuOpen(false)} className={({ isActive }) => `py-2 font-medium text-sm ${isActive ? 'text-teal-600' : 'text-gray-700'}`}>
             Home
           </NavLink>
 
-          {/* Mobile services accordion */}
           <div>
-            <button
-              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-              className="w-full flex items-center justify-between py-2 font-medium text-sm text-gray-700"
-            >
+            <button onClick={() => setMobileServicesOpen(!mobileServicesOpen)} className="w-full flex items-center justify-between py-2 font-medium text-sm text-gray-700">
               Services
               <ChevronDown size={14} className={`transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -200,7 +170,7 @@ export default function Navbar() {
                   <div key={cat.label}>
                     <button
                       onClick={() => setMobileSubOpen(mobileSubOpen === i ? null : i)}
-                      className="w-full flex items-center justify-between py-2 text-sm text-gray-600 font-medium hover:text-teal-600"
+                      className="w-full flex items-center justify-between py-2 text-sm font-medium text-gray-600 hover:text-teal-600"
                     >
                       {cat.label}
                       <ChevronDown size={12} className={`transition-transform ${mobileSubOpen === i ? 'rotate-180' : ''}`} />

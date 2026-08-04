@@ -1,67 +1,78 @@
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
+import { Play, X } from 'lucide-react';
 
-const videoTestimonials = [
-  {
-    id: 1,
-    name: 'Rajesh Kumar',
-    role: 'Hernia Surgery Patient',
-    videoCode: 'dQw4w9WgXcQ', // YouTube video ID (replace with actual testimonial videos)
-  },
-  {
-    id: 2,
-    name: 'Priya Sharma',
-    role: 'Gallbladder Surgery Patient',
-    videoCode: 'dQw4w9WgXcQ',
-  },
-  {
-    id: 3,
-    name: 'Amit Patel',
-    role: 'Bariatric Surgery Patient',
-    videoCode: 'dQw4w9WgXcQ',
-  },
-  {
-    id: 4,
-    name: 'Neha Gupta',
-    role: 'Post-Surgery Recovery',
-    videoCode: 'dQw4w9WgXcQ',
-  },
-  {
-    id: 5,
-    name: 'Vikram Singh',
-    role: 'Appendix Surgery Patient',
-    videoCode: 'dQw4w9WgXcQ',
-  },
+type Testimonial = {
+  id: number;
+  name: string;
+  role: string;
+  videoCode: string;
+};
+
+const videoTestimonials: Testimonial[] = [
+  { id: 1, name: 'Rajesh Kumar', role: 'Hernia Surgery Patient', videoCode: 'dQw4w9WgXcQ' },
+  { id: 2, name: 'Priya Sharma', role: 'Gallbladder Surgery Patient', videoCode: 'dQw4w9WgXcQ' },
+  { id: 3, name: 'Amit Patel', role: 'Bariatric Surgery Patient', videoCode: 'dQw4w9WgXcQ' },
+  { id: 4, name: 'Neha Gupta', role: 'Post-Surgery Recovery', videoCode: 'dQw4w9WgXcQ' },
+  { id: 5, name: 'Vikram Singh', role: 'Appendix Surgery Patient', videoCode: 'dQw4w9WgXcQ' },
+  { id: 6, name: 'Sunita Devi', role: 'Hysterectomy Patient', videoCode: 'dQw4w9WgXcQ' },
 ];
 
+/* Marquee speed — higher is slower */
+const DURATION = 42;
+
+const thumb = (code: string) => `https://img.youtube.com/vi/${code}/hqdefault.jpg`;
+
+/* ── Single card ──────────────────────────────────── */
+function Card({ item, onOpen }: { item: Testimonial; onOpen: (t: Testimonial) => void }) {
+  return (
+    <button
+      onClick={() => onOpen(item)}
+      className="group relative shrink-0 w-[260px] sm:w-[300px] aspect-[3/4] rounded-2xl overflow-hidden shadow-lg ring-1 ring-black/5 text-left"
+      aria-label={`Play testimonial from ${item.name}`}
+    >
+      <img
+        src={thumb(item.videoCode)}
+        alt={`${item.name} testimonial`}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+
+      <span className="absolute inset-0 flex items-center justify-center">
+        <span className="w-14 h-14 rounded-full bg-white/25 backdrop-blur-sm flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+          <Play size={22} className="text-white ml-0.5" fill="white" />
+        </span>
+      </span>
+
+      <span className="absolute bottom-0 left-0 right-0 p-4">
+        <span className="block text-white font-bold text-sm">{item.name}</span>
+        <span className="block text-teal-300 text-xs mt-0.5">{item.role}</span>
+      </span>
+    </button>
+  );
+}
+
 export default function VideoTestimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [autoScroll, setAutoScroll] = useState(true);
-
-  useEffect(() => {
-    if (!autoScroll) return;
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % videoTestimonials.length);
-    }, 6000); // Change video every 6 seconds
-    return () => clearInterval(interval);
-  }, [autoScroll]);
-
-  const goToPrevious = () => {
-    setAutoScroll(false);
-    setCurrentIndex((prev) =>
-      prev === 0 ? videoTestimonials.length - 1 : prev - 1
-    );
-  };
-
-  const goToNext = () => {
-    setAutoScroll(false);
-    setCurrentIndex((prev) => (prev + 1) % videoTestimonials.length);
-  };
+  const [active, setActive] = useState<Testimonial | null>(null);
 
   return (
     <section className="py-24 bg-gradient-to-b from-white to-slate-50" aria-labelledby="testimonials-heading">
+      {/* Marquee keyframes — self-contained, no tailwind.config change needed */}
+      <style>{`
+        @keyframes novo-marquee {
+          from { transform: translate3d(0, 0, 0); }
+          to   { transform: translate3d(-33.3333%, 0, 0); }
+        }
+        .marquee-row:hover > div { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) {
+          .marquee-row > div { animation: none !important; }
+          .marquee-row { overflow-x: auto; }
+        }
+      `}</style>
+
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">
             Patient Voices
           </p>
@@ -72,72 +83,58 @@ export default function VideoTestimonials() {
             Watch real patients share their experiences with robotic surgery at Novo Robotic Surgery Centre.
           </p>
         </div>
+      </div>
 
-        {/* Video Carousel */}
-        <div className="relative bg-black rounded-3xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
-          {/* Video Container */}
-          <div className="relative w-full pt-[56.25%]">
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src={`https://www.youtube.com/embed/${videoTestimonials[currentIndex].videoCode}?autoplay=1&controls=1&modestbranding=1`}
-              title={`${videoTestimonials[currentIndex].name} - Testimonial`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-
-          {/* Patient Info Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-            <p className="text-white text-lg font-bold">{videoTestimonials[currentIndex].name}</p>
-            <p className="text-teal-300 text-sm">{videoTestimonials[currentIndex].role}</p>
-          </div>
-
-          {/* Navigation Buttons */}
-          <button
-            onClick={goToPrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 transition-colors rounded-full p-3 backdrop-blur-sm"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft size={24} className="text-white" />
-          </button>
-          <button
-            onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 transition-colors rounded-full p-3 backdrop-blur-sm"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight size={24} className="text-white" />
-          </button>
-        </div>
-
-        {/* Dots Indicator */}
-        <div className="flex justify-center gap-3 mt-10">
-          {videoTestimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                setAutoScroll(false);
-                setCurrentIndex(index);
-              }}
-              className={`h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? 'bg-teal-600 w-8'
-                  : 'bg-gray-300 hover:bg-gray-400 w-3'
-              }`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
+      {/* Full-bleed single marquee */}
+      <div className="marquee-row relative overflow-hidden">
+        <div
+          className="flex gap-6 w-max"
+          style={{ animation: `novo-marquee ${DURATION}s linear infinite` }}
+        >
+          {[...videoTestimonials, ...videoTestimonials, ...videoTestimonials].map((item, i) => (
+            <Card key={`${item.id}-${i}`} item={item} onOpen={setActive} />
           ))}
         </div>
-
-        {/* Auto-scroll indicator */}
-        <div className="text-center mt-8">
-          <button
-            onClick={() => setAutoScroll(!autoScroll)}
-            className="text-sm text-gray-500 hover:text-teal-600 transition-colors underline"
-          >
-            {autoScroll ? '⏸ Pause' : '▶ Play'} auto-scroll
-          </button>
-        </div>
       </div>
+
+      <p className="text-center text-xs text-gray-400 mt-8">
+        Hover to pause · Click any card to watch
+      </p>
+
+      {/* ── Lightbox ─────────────────────────────────── */}
+      {active && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setActive(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="relative w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setActive(null)}
+              className="absolute -top-12 right-0 text-white/80 hover:text-white flex items-center gap-1.5 text-sm"
+              aria-label="Close video"
+            >
+              <X size={20} /> Close
+            </button>
+
+            <div className="relative w-full pt-[56.25%] rounded-2xl overflow-hidden shadow-2xl bg-black">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src={`https://www.youtube.com/embed/${active.videoCode}?autoplay=1&rel=0&modestbranding=1`}
+                title={`${active.name} — Testimonial`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+
+            <div className="mt-4 text-center">
+              <p className="text-white font-bold">{active.name}</p>
+              <p className="text-teal-300 text-sm">{active.role}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
