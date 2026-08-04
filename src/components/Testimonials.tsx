@@ -1,60 +1,45 @@
 import { useState } from 'react';
 import { Play, X } from 'lucide-react';
+import Test1 from '../assets/video/test1.mp4';
+import Test2 from '../assets/video/test2.mp4';
+import Test3 from '../assets/video/test3.mp4';
+import Test4 from '../assets/video/test4.mp4';
+import Test5 from '../assets/video/test5.mp4';
 
-type Testimonial = {
-  id: number;
-  name: string;
-  role: string;
-  videoCode: string;
-};
-
-const videoTestimonials: Testimonial[] = [
-  { id: 1, name: 'Rajesh Kumar', role: 'Hernia Surgery Patient', videoCode: 'dQw4w9WgXcQ' },
-  { id: 2, name: 'Priya Sharma', role: 'Gallbladder Surgery Patient', videoCode: 'dQw4w9WgXcQ' },
-  { id: 3, name: 'Amit Patel', role: 'Bariatric Surgery Patient', videoCode: 'dQw4w9WgXcQ' },
-  { id: 4, name: 'Neha Gupta', role: 'Post-Surgery Recovery', videoCode: 'dQw4w9WgXcQ' },
-  { id: 5, name: 'Vikram Singh', role: 'Appendix Surgery Patient', videoCode: 'dQw4w9WgXcQ' },
-  { id: 6, name: 'Sunita Devi', role: 'Hysterectomy Patient', videoCode: 'dQw4w9WgXcQ' },
-];
+const videoTestimonials: string[] = [Test1, Test2, Test3, Test4, Test5];
 
 /* Marquee speed — higher is slower */
 const DURATION = 42;
 
-const thumb = (code: string) => `https://img.youtube.com/vi/${code}/hqdefault.jpg`;
-
 /* ── Single card ──────────────────────────────────── */
-function Card({ item, onOpen }: { item: Testimonial; onOpen: (t: Testimonial) => void }) {
+function Card({ src, onOpen }: { src: string; onOpen: (src: string) => void }) {
   return (
     <button
-      onClick={() => onOpen(item)}
-      className="group relative shrink-0 w-[260px] sm:w-[300px] aspect-[3/4] rounded-2xl overflow-hidden shadow-lg ring-1 ring-black/5 text-left"
-      aria-label={`Play testimonial from ${item.name}`}
+      onClick={() => onOpen(src)}
+      className="group relative shrink-0 w-[260px] sm:w-[300px] aspect-[3/4] rounded-2xl overflow-hidden shadow-lg ring-1 ring-black/5 text-left bg-slate-900"
+      aria-label="Play patient testimonial"
     >
-      <img
-        src={thumb(item.videoCode)}
-        alt={`${item.name} testimonial`}
-        loading="lazy"
+      <video
+        src={`${src}#t=0.1`}
+        muted
+        playsInline
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
       <span className="absolute inset-0 flex items-center justify-center">
         <span className="w-14 h-14 rounded-full bg-white/25 backdrop-blur-sm flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
           <Play size={22} className="text-white ml-0.5" fill="white" />
         </span>
       </span>
-
-      <span className="absolute bottom-0 left-0 right-0 p-4">
-        <span className="block text-white font-bold text-sm">{item.name}</span>
-        <span className="block text-teal-300 text-xs mt-0.5">{item.role}</span>
-      </span>
     </button>
   );
 }
 
 export default function VideoTestimonials() {
-  const [active, setActive] = useState<Testimonial | null>(null);
+  const [active, setActive] = useState<string | null>(null);
 
   return (
     <section className="py-24 bg-gradient-to-b from-white to-slate-50" aria-labelledby="testimonials-heading">
@@ -91,8 +76,8 @@ export default function VideoTestimonials() {
           className="flex gap-6 w-max"
           style={{ animation: `novo-marquee ${DURATION}s linear infinite` }}
         >
-          {[...videoTestimonials, ...videoTestimonials, ...videoTestimonials].map((item, i) => (
-            <Card key={`${item.id}-${i}`} item={item} onOpen={setActive} />
+          {[...videoTestimonials, ...videoTestimonials, ...videoTestimonials].map((src, i) => (
+            <Card key={i} src={src} onOpen={setActive} />
           ))}
         </div>
       </div>
@@ -109,7 +94,7 @@ export default function VideoTestimonials() {
           role="dialog"
           aria-modal="true"
         >
-          <div className="relative w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-full max-w-md" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setActive(null)}
               className="absolute -top-12 right-0 text-white/80 hover:text-white flex items-center gap-1.5 text-sm"
@@ -118,19 +103,15 @@ export default function VideoTestimonials() {
               <X size={20} /> Close
             </button>
 
-            <div className="relative w-full pt-[56.25%] rounded-2xl overflow-hidden shadow-2xl bg-black">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src={`https://www.youtube.com/embed/${active.videoCode}?autoplay=1&rel=0&modestbranding=1`}
-                title={`${active.name} — Testimonial`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+            <div className="rounded-2xl overflow-hidden shadow-2xl bg-black">
+              <video
+                key={active}
+                src={active}
+                controls
+                autoPlay
+                playsInline
+                className="w-full max-h-[75vh] object-contain"
               />
-            </div>
-
-            <div className="mt-4 text-center">
-              <p className="text-white font-bold">{active.name}</p>
-              <p className="text-teal-300 text-sm">{active.role}</p>
             </div>
           </div>
         </div>

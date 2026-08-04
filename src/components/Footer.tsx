@@ -109,7 +109,7 @@ export default function Footer() {
                       className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#22C8C8] transition-colors"
                     >
                       <span style={{ color: TEAL }}><Phone /></span>
-                      +91 12345 67890
+                      +91 98702 91333
                     </a>
                   </li>
                   <li>
@@ -118,7 +118,7 @@ export default function Footer() {
                       className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#22C8C8] transition-colors"
                     >
                       <span style={{ color: TEAL }}><Mail /></span>
-                      info@novorobotic.com
+                      enquiry@novorobotic.com
                     </a>
                   </li>
                   <li>
