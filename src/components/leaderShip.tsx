@@ -3,7 +3,7 @@ import { ArrowRight, Award, GraduationCap, Globe, BookOpen, Building2, Users } f
 import { NavLink } from 'react-router-dom';
 
 // Drop the real photos into src/assets/images/ with these exact filenames
-import ManralPic from '../../src/assets/images/NarinderSirPic.jpeg'
+import ManralPic from '../../src/assets/images/NarinderSirPic.jpeg';
 import VikrantPic from '../../src/assets/images/VikrantSirHome.jpg';
 
 // Initials avatar shown if a photo is missing or fails to load
@@ -18,8 +18,8 @@ function LeaderImage({ src, name, alt }: { src: string; name: string; alt: strin
 
   if (failed) {
     return (
-      <div className="w-full h-[340px] md:h-[400px] bg-gradient-to-br from-teal-600 to-teal-800 flex items-center justify-center">
-        <span className="text-6xl font-black text-white/90 tracking-wider">{initials}</span>
+      <div className="w-full h-full min-h-[280px] aspect-[4/5] sm:aspect-[3/4] md:aspect-auto bg-gradient-to-br from-teal-600 to-teal-800 flex items-center justify-center">
+        <span className="text-5xl sm:text-6xl font-black text-white/90 tracking-wider">{initials}</span>
       </div>
     );
   }
@@ -29,7 +29,7 @@ function LeaderImage({ src, name, alt }: { src: string; name: string; alt: strin
       src={src}
       alt={alt}
       onError={() => setFailed(true)}
-      className="w-full h-[340px] md:h-[400px] object-cover object-center"
+      className="w-full h-full min-h-[280px] aspect-[4/5] sm:aspect-[3/4] md:aspect-auto object-cover object-top"
     />
   );
 }
@@ -64,62 +64,62 @@ const leaders = [
 
 export default function Leadership() {
   return (
-    <section className="py-24 bg-white" aria-labelledby="leadership-heading">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">
+    <section className="py-14 sm:py-20 md:py-24 bg-white" aria-labelledby="leadership-heading">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-16">
+          <p className="text-teal-600 text-[11px] sm:text-xs font-semibold uppercase tracking-widest mb-2">
             Led by Expert Hands, Driven by Technology
           </p>
-          <h2 id="leadership-heading" className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+          <h2 id="leadership-heading" className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
             Our Leadership
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
             Technology is only as effective as the hands that guide it. Novo Robotic Surgery Centre is built on the vision of two co-founders bridging enterprise and medicine.
           </p>
         </div>
 
-        <div className="space-y-10">
+        <div className="space-y-6 sm:space-y-10">
           {leaders.map((leader, i) => (
             <article
               key={leader.name}
-              className="grid md:grid-cols-5 gap-8 lg:gap-12 items-center bg-slate-50 rounded-3xl p-6 md:p-10 hover:shadow-lg transition-shadow duration-300"
+              className="grid md:grid-cols-5 gap-6 sm:gap-8 lg:gap-12 items-stretch bg-slate-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 hover:shadow-lg transition-shadow duration-300"
             >
               {/* Image */}
               <div className={`md:col-span-2 relative ${i % 2 === 1 ? 'md:order-2' : ''}`}>
-                <div className="rounded-3xl overflow-hidden shadow-xl">
+                <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl h-full">
                   <LeaderImage
                     src={leader.image}
                     name={leader.name}
                     alt={`${leader.name} — ${leader.role}, Novo Robotic Surgery Centre`}
                   />
                 </div>
-                <div className="absolute bottom-5 left-5 bg-teal-700 text-white rounded-2xl px-5 py-3 shadow-xl">
-                  <p className="text-sm font-black leading-none">{leader.role}</p>
-                  <p className="text-xs text-teal-200 mt-1">{leader.subtitle}</p>
+                <div className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5 bg-teal-700 text-white rounded-xl sm:rounded-2xl px-3 py-2 sm:px-5 sm:py-3 shadow-xl">
+                  <p className="text-xs sm:text-sm font-black leading-none">{leader.role}</p>
+                  <p className="text-[10px] sm:text-xs text-teal-200 mt-1">{leader.subtitle}</p>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="md:col-span-3">
-                <span className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1.5 rounded-full tracking-wider uppercase mb-4">
+              <div className="md:col-span-3 flex flex-col justify-center">
+                <span className="inline-flex self-start items-center gap-2 bg-teal-100 text-teal-700 text-[11px] sm:text-xs font-semibold px-3 py-1.5 rounded-full tracking-wider uppercase mb-4">
                   <span className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
                   {leader.role}
                 </span>
 
-                <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-1">{leader.name}</h3>
-                <p className="text-teal-600 font-semibold text-sm mb-5">{leader.subtitle}</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 mb-1">{leader.name}</h3>
+                <p className="text-teal-600 font-semibold text-sm mb-4 sm:mb-5">{leader.subtitle}</p>
 
-                <p className="text-gray-600 leading-relaxed mb-7">{leader.bio}</p>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-6 sm:mb-7">{leader.bio}</p>
 
-                <ul className="space-y-4">
+                <ul className="space-y-3 sm:space-y-4">
                   {leader.highlights.map((h) => {
                     const Icon = h.icon;
                     return (
-                      <li key={h.text} className="flex gap-4 group">
-                        <div className="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-teal-600 transition-colors duration-300">
+                      <li key={h.text} className="flex gap-3 sm:gap-4 group">
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-teal-600 transition-colors duration-300">
                           <Icon size={16} className="text-teal-600 group-hover:text-white transition-colors duration-300" />
                         </div>
-                        <p className="text-sm text-gray-600 leading-relaxed pt-2.5">{h.text}</p>
+                        <p className="text-sm text-gray-600 leading-relaxed pt-2 sm:pt-2.5">{h.text}</p>
                       </li>
                     );
                   })}
@@ -130,19 +130,19 @@ export default function Leadership() {
         </div>
 
         {/* Closing statement + CTA */}
-        <div className="mt-12 bg-teal-800 rounded-3xl px-8 py-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-72 h-72 bg-teal-700/40 rounded-full translate-x-1/3 -translate-y-1/3" />
-          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div className="mt-8 sm:mt-12 bg-teal-800 rounded-2xl sm:rounded-3xl px-5 py-8 sm:px-8 sm:py-12 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-52 h-52 sm:w-72 sm:h-72 bg-teal-700/40 rounded-full translate-x-1/3 -translate-y-1/3" />
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 sm:gap-8">
             <div className="max-w-2xl">
-              <h3 className="text-2xl md:text-3xl font-black text-white mb-3">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-3">
                 We don't just treat conditions — we care for people
               </h3>
               <p className="text-teal-100 text-sm leading-relaxed">
                 Our dedicated multidisciplinary team supports you at every stage of your journey, from your initial consultation and diagnosis to surgery and personalized post-operative recovery.
               </p>
             </div>
-            <NavLink to="/contact" className="flex-shrink-0">
-              <button className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-yellow-400/30 group whitespace-nowrap">
+            <NavLink to="/contact" className="flex-shrink-0 w-full md:w-auto">
+              <button className="w-full md:w-auto flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-6 sm:px-8 py-3 sm:py-3.5 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-yellow-400/30 group whitespace-nowrap">
                 Book a Consultation
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>
