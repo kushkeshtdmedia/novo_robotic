@@ -3,31 +3,44 @@ import { NavLink } from 'react-router-dom';
 import { Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
 import Logo from '../../src/assets/images/Logo.png';
 
-const serviceMenu = [
+type ServiceItem = { label: string; slug: string };
+type ServiceCategory = { label: string; sub: ServiceItem[] };
+
+const serviceMenu: ServiceCategory[] = [
   {
     label: 'General Surgery',
     sub: [
-      'Hernia Surgery',
-      'Appendix Surgery',
-      'Stomach Surgery',
-      'Oesophagus Surgery',
+      { label: 'Gallbladder Surgery', slug: 'gallbladder-surgery' },
+      { label: 'Hernia Surgery', slug: 'hernia-surgery' },
+      { label: 'Appendix Surgery', slug: 'appendix-surgery' },
+      { label: 'Stomach Surgery', slug: 'stomach-surgery' },
+      { label: 'Oesophagus Surgery', slug: 'oesophagus-surgery' },
     ],
   },
-  {
-    label: 'Bariatric & Metabolic Surgery',
-    sub: [
-      'Robotic Sleeve Gastrectomy',
-      'Robotic Roux-en-Y Gastric Bypass',
-      'Robotic Mini Gastric Bypass',
-    ],
-  },
+{
+  label: 'Bariatric & Metabolic Surgery',
+  sub: [
+    { label: 'Robotic Sleeve Gastrectomy', slug: 'robotic-sleeve-gastrectomy' },
+    { label: 'Robotic Roux-en-Y Gastric Bypass', slug: 'roux-en-gastric-bypass' },
+    { label: 'Robotic Mini Gastric Bypass', slug: 'mini-gastric-bypass' },
+  ],
+},
   {
     label: 'Cancer Surgery',
-    sub: ['Colorectal Cancer', 'Colorectal Cancer Surgery', 'Gallbladder Cancer Surgery', 'Liver Cancer Surgery', 'Pancreatic Cancer Surgery'],
+    sub: [
+      { label: 'Colorectal Cancer', slug: 'colorectal-cancer' },
+      { label: 'Colorectal Cancer Surgery', slug: 'colorectal-cancer-surgery' },
+      { label: 'Gallbladder Cancer Surgery', slug: 'gallbladder-cancer-surgery' },
+      { label: 'Liver Cancer Surgery', slug: 'liver-cancer-surgery' },
+      { label: 'Pancreatic Cancer Surgery', slug: 'pancreatic-cancer-surgery' },
+    ],
   },
   {
     label: 'Gynecological Surgery',
-    sub: ['Fertility Preserving Surgery','Benign Uterus & Ovary Disorders'],
+    sub: [
+      { label: 'Fertility Preserving Surgery', slug: 'fertility-preserving-surgery' },
+      { label: 'Benign Uterus & Ovary Disorders', slug: 'benign-uterus-ovary-disorders' },
+    ],
   },
 ];
 
@@ -60,6 +73,13 @@ export default function Navbar() {
 
   const closeMega = () => {
     closeTimer.current = setTimeout(() => setMegaOpen(false), 120);
+  };
+
+  const closeAll = () => {
+    setMegaOpen(false);
+    setMenuOpen(false);
+    setMobileServicesOpen(false);
+    setMobileSubOpen(null);
   };
 
   return (
@@ -110,14 +130,14 @@ export default function Navbar() {
                   </p>
                   <ul className="space-y-1">
                     {serviceMenu[activeSub].sub.map((item) => (
-                      <li key={item}>
+                      <li key={item.slug}>
                         <NavLink
-                          to={`/services/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                          onClick={() => setMegaOpen(false)}
+                          to={`/services/${item.slug}`}
+                          onClick={closeAll}
                           className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors group text-gray-700 hover:bg-teal-50 hover:text-teal-600"
                         >
                           <span className="w-1.5 h-1.5 bg-teal-400 rounded-full group-hover:bg-teal-600 flex-shrink-0" />
-                          {item}
+                          {item.label}
                         </NavLink>
                       </li>
                     ))}
@@ -155,7 +175,7 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="md:hidden border-t px-6 py-4 flex flex-col gap-2 max-h-[80vh] overflow-y-auto bg-white border-gray-100">
-          <NavLink to="/" end onClick={() => setMenuOpen(false)} className={({ isActive }) => `py-2 font-medium text-sm ${isActive ? 'text-teal-600' : 'text-gray-700'}`}>
+          <NavLink to="/" end onClick={closeAll} className={({ isActive }) => `py-2 font-medium text-sm ${isActive ? 'text-teal-600' : 'text-gray-700'}`}>
             Home
           </NavLink>
 
@@ -179,12 +199,12 @@ export default function Navbar() {
                       <div className="pl-3 border-l border-teal-100 space-y-1 mb-1">
                         {cat.sub.map((item) => (
                           <NavLink
-                            key={item}
-                            to={`/services/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                            onClick={() => setMenuOpen(false)}
+                            key={item.slug}
+                            to={`/services/${item.slug}`}
+                            onClick={closeAll}
                             className="block py-1.5 text-xs text-gray-500 hover:text-teal-600"
                           >
-                            {item}
+                            {item.label}
                           </NavLink>
                         ))}
                       </div>
@@ -196,12 +216,12 @@ export default function Navbar() {
           </div>
 
           {navLinks.slice(1).map(({ label, to }) => (
-            <NavLink key={label} to={to} onClick={() => setMenuOpen(false)} className={({ isActive }) => `py-2 font-medium text-sm ${isActive ? 'text-teal-600' : 'text-gray-700'}`}>
+            <NavLink key={label} to={to} onClick={closeAll} className={({ isActive }) => `py-2 font-medium text-sm ${isActive ? 'text-teal-600' : 'text-gray-700'}`}>
               {label}
             </NavLink>
           ))}
 
-          <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
+          <NavLink to="/contact" onClick={closeAll}>
             <button className="mt-2 bg-yellow-400 text-gray-900 font-semibold px-5 py-2.5 rounded-full w-fit text-sm">
               Book Appointment
             </button>
