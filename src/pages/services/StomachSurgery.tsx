@@ -87,6 +87,9 @@ export default function StomachSurgery() {
               Advanced Robotic<br />
               <span className="text-teal-700">Gastrectomy</span>
             </h1>
+                                                   <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-600 leading-snug mb-5 max-w-2xl">
+  Best Robotic Stomach Surgerys in Kaushambi, Ghaziabad
+</p>
             <p className="text-gray-600 text-lg max-w-xl mb-8 leading-relaxed">
               Minimally invasive stomach cancer surgery with superior accuracy and faster recovery. Our cutting-edge robotic technology provides surgeons with 10× magnification and tremor-free dexterity.
             </p>

@@ -39,7 +39,7 @@ const serviceMenu: ServiceCategory[] = [
     label: 'Gynecological Surgery',
     sub: [
       { label: 'Fertility Preserving Surgery', slug: 'fertility-preserving-surgery' },
-      { label: 'Benign Uterus & Ovary Disorders', slug: 'benign-uterus-ovary-disorders' },
+      { label: 'Benign Uterus & Ovary Disorders', slug: 'benign-uterine-ovarian-disorders' },
     ],
   },
 ];

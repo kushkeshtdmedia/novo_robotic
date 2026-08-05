@@ -131,6 +131,10 @@ export default function GallBladderCancerSurgery() {
             <br />
             Radical Cholecystectomy
           </h1>
+          <br></br>
+                                                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-300 leading-snug mb-5 max-w-2xl">
+  Best Robotic Gall Bladder Cancer Surgery (Robotic Radical Cholecystectomy) in Kaushambi, Ghaziabad
+</p>
           <p className="text-white/75 text-sm leading-[1.6] max-w-md mb-8">
             Employing the world&apos;s most trusted robotic platform for unmatched precision in
             treating complex gallbladder and hepatobiliary cancers.

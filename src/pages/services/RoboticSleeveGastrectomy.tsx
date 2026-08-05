@@ -127,7 +127,9 @@ export default function RoboticSleeveGastrectomy() {
           <p className="text-teal-100 text-lg max-w-lg mb-6 leading-relaxed">
             Advanced precision for life-changing weight management.
           </p>
-
+                                       <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-300 leading-snug mb-5 max-w-2xl">
+  Best Robotic Bariatric Surgerys in Kaushambi, Ghaziabad
+</p>
           {/* Understanding box */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 max-w-xl border border-white/20">
             <p className="font-bold text-white mb-2">Understanding Sleeve Gastrectomy</p>

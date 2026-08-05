@@ -111,6 +111,9 @@ export default function AppendixSurgeryPage() {
           <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-5 max-w-2xl">
             Robotic Appendix<br />Surgery
           </h1>
+      <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-300 leading-snug mb-5 max-w-2xl">
+  Best Robotic Appendix Surgery (Appendectomy) in Kaushambi, Ghaziabad
+</p>
           <p className="text-slate-200 text-lg max-w-lg mb-8 leading-relaxed">
             Precision-guided removal for rapid recovery and peace of mind. Experience the future of emergency care with our master robotic surgeons.
           </p>

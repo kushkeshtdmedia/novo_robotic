@@ -111,8 +111,10 @@ export default function RouxEnYGastricBypass() {
 
             <h1 className="mt-6 text-4xl lg:text-6xl font-extrabold leading-[1.1] tracking-[-0.02em] text-white">
               Precision Roux-en-Y Gastric Bypass (RYGB)
-            </h1>
-
+            </h1> <br></br>
+                                        <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-300 leading-snug mb-5 max-w-2xl">
+  Best Robotic Roux-en-Y Gastric Bypass  Surgerys in Kaushambi, Ghaziabad
+</p>
             <p className="mt-6 text-base lg:text-lg text-white/80 leading-relaxed max-w-xl">
               A gold-standard robotic procedure designed for sustainable weight loss and
               transformative metabolic improvement. Experience the pinnacle of surgical precision at

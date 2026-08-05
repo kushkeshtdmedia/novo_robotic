@@ -98,6 +98,7 @@ export default function BariatricSurgery() {
               Precision Bariatric Surgery:{' '}
               <em className="not-italic text-[#81d3e1]">Advanced Robotic</em> Weight Loss Solutions
             </h1>
+
             <p className="mt-6 text-base lg:text-lg text-white/80 leading-relaxed max-w-xl">
               Experience the next frontier in weight loss therapy. Our robotic-assisted approach
               is engineered for microscopic precision, faster physical recovery and a path to

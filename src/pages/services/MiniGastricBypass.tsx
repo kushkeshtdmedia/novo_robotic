@@ -140,9 +140,12 @@ export default function MiniGastricBypass() {
 
             <h1 className="mt-6 text-4xl lg:text-6xl font-extrabold leading-[1.1] tracking-[-0.02em] text-white">
               Advanced Robotic Mini Gastric Bypass{' '}
-              <span className="text-[#81d3e1]">(MGB/SAGB)</span>
+              <span className="text-[#81d3e1]">(MGB/SAGB)</span> 
             </h1>
-
+            <br></br>
+                                                                               <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-300 leading-snug mb-5 max-w-2xl">
+  Best Robotic Mini Gastric Bypass  Surgerys in Kaushambi, Ghaziabad
+</p>
             <p className="mt-6 text-base lg:text-lg text-white/80 leading-relaxed max-w-xl">
               A life-changing, single-anastomosis procedure performed with robotic precision. Fewer
               connections, shorter operating time and a proven path to sustained metabolic health.
@@ -186,6 +189,7 @@ export default function MiniGastricBypass() {
               <span className="font-[IBM_Plex_Sans] text-[11px] font-bold uppercase tracking-[0.1em] text-[#005a65]">
                 Robotic Mini Gastric Bypass
               </span>
+
             </div>
             <img
               src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1200"

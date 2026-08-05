@@ -83,6 +83,9 @@ export default function HerniaSurgery() {
             <h1 className="text-5xl md:text-6xl font-black text-gray-900 leading-tight mb-5">
               Robotic <span className="text-teal-600 italic">Hernia</span><br />Surgery
             </h1>
+                                                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-600 leading-snug mb-5 max-w-2xl">
+  Best Robotic Hernia Surgerys in Kaushambi, Ghaziabad
+</p>
             <p className="text-gray-500 text-lg leading-relaxed max-w-md mb-8">
               Precision-guided, faster recovery and better outcomes than traditional surgery. Experience the next evolution in surgical excellence.
             </p>

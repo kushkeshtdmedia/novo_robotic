@@ -18,6 +18,8 @@ import MiniGastricBypass from './pages/services/MiniGastricBypass.tsx';
 import RouxEnGastricBypass from './pages/services/RouxEnYGastricBypass.tsx';
 import DrVikrantSharma from './pages/DrVikrant.tsx';
 import FertilityPreservingSurgery from './pages/services/FertilityPreservingSurgery';
+import BenignUterineOvarianDisorders from './pages/services/BenignUterineOvarianDisorders.tsx';
+
 export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
@@ -41,6 +43,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/doctors/dr-vikrant-sharma" element={<DrVikrantSharma />} />
+          <Route path="/services/benign-uterine-ovarian-disorders" element={<BenignUterineOvarianDisorders />} />
         </Route>
       </Routes>
     </BrowserRouter>
