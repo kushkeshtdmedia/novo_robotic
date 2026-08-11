@@ -1,13 +1,13 @@
-import { ArrowRight, CheckCircle, Eye, Cpu, Scissors, Shield, Zap, AlertTriangle, Activity, Phone, Star, ChevronRight } from 'lucide-react';
+import { ArrowRight, CheckCircle, Eye, Cpu, Scissors, Shield, Zap, AlertTriangle, Activity, Phone, Star, ChevronRight, ChevronDown } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import gallBladderImage from '../../assets/images/GallBladder.jpg';
 import gallBallderDoctorImage from '../../assets/images/gallBallderDoctorImage.jpeg';
 import Diagram from '../../assets/images/DiagramImage.jpeg';
 import GallBladderRealImage from '../../assets/images/GallBladderRealImage.png';
-import SmallIncisions from '../../assets/images/SmallIncisions.jpeg';
+import SmallIncisions from '../../assets/images/SmallIncisions.png';
 import Anaesthesia from '../../assets/images/Anaesthesia.jpeg';
 import dCamera from '../../assets/images/dCamera.jpeg';
-import SurgeonSurgery from '../../assets/images/surgeonSurgery.jpeg';
+import SurgeonSurgery from '../../assets/images/surgeonSurgery1.jpeg';
 import novoPatientImage from '../../assets/images/GallbladderPatient.jpeg';
 
 const symptoms = [
@@ -49,7 +49,7 @@ const complications = [
   },
   {
     title: 'Pancreatitis',
-    desc: 'Inflammation of the pancreas caused by a stone.',
+    desc: 'Inflammation of the pancreas from a blocked duct',
   },
   {
     title: 'Cholangitis',
@@ -97,7 +97,7 @@ const steps = [
     num: '05',
     icon: CheckCircle,
     title: 'Removal',
-    desc: 'The gallbladder is carefully separated, placed in a retrieval bag, and extracted through one of the small incisions.',
+    desc: 'The gallbladder is carefully separated, placed in a retrieval bag, and extracted through one of the  incisions.',
     image: 'https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg',
   },
   {
@@ -112,18 +112,18 @@ const steps = [
 const whyChoose = [
   {
     icon: Star,
-    title: 'Advanced Care',
-    desc: 'State-of-the-art robotic integration with zero-compromise care.',
+    title: 'Modern Robotic Precision',
+    desc: 'Novo Robotic Surgery Centre utilizes modern robotic technology with enhanced 3D visualization and superior surgical control to ensure maximum accuracy during gallbladder surgery',
   },
   {
     icon: CheckCircle,
-    title: 'Experienced Surgeons',
-    desc: 'Our team has performed thousands of procedures with exceptional accuracy.',
+    title: 'Minimally Invasive Benefits',
+    desc: 'At Novo Robotic, our minimally invasive gallbladder stone treatment reduces pain, minimises scarring, lowers complication risks, and supports a much faster recovery.',
   },
   {
     icon: Shield,
-    title: 'Patient Safety',
-    desc: 'Stringent protocols for general and safety and patient safety at every step.',
+    title: 'Patient-Focused Comfort & Safety',
+    desc: 'Novo Robotic Surgery Centre prioritizes personalized care, safety, and comfort at every stage, helping patients seamlessly return to their daily routine.',
   },
 ];
 
@@ -158,19 +158,9 @@ export default function GallbladderSurgery() {
           <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-5 max-w-2xl">
             Best Robotic Gallbladder Stone Surgery (Cholecystectomy) in Kaushambi, Ghaziabad
           </h1>
-          <p className="text-slate-300 text-base max-w-xl mb-8 leading-relaxed">
-            Experience precision healthcare with our advanced robotic-assisted surgical systems, offering faster recovery and minimally invasive excellence.
-          </p>
+           
           <div className="flex items-center gap-4 flex-wrap">
-            <NavLink to="/contact">
-              <button className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-7 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-yellow-400/30 group">
-                Book Appointment
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-            </NavLink>
-            <button className="border-2 border-white/40 hover:border-white text-white font-semibold px-7 py-3.5 rounded-full transition-all">
-              Learn More
-            </button>
+           
           </div>
         </div>
       </section>
@@ -199,10 +189,13 @@ export default function GallbladderSurgery() {
               Understanding Gallbladder &amp; Gallstones
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              The gallbladder is a small organ located just below your liver. Its primary function is to store bile, a fluid produced by the liver that helps digest fats.
+              The gallbladder is a small organ that stores bile, a digestive fluid produced by the liver. Bile helps your body digest fat from the food you eat, and when you eat fatty foods, the gallbladder releases bile into the small intestine to aid digestion.
+              Gallstones are small, hard pieces that form inside the gallbladder. They are made from substances in bile, such as cholesterol and other digestive materials.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Gallstones are hardened deposits of digestive fluid that can form in your gallbladder. They range in size from as small as a grain of sand to as large as a golf ball.
+              . Gallstones can be as small as a grain of sand or sometimes as large as a golf ball.
+Some people with gallstones don't experience any symptoms. These are called "silent gallstones" and usually don't require any treatment. Symptoms appear when the stone blocks a duct.
+
             </p>
           </div>
         </div>
@@ -296,12 +289,16 @@ export default function GallbladderSurgery() {
               What is Robotic Gallbladder Stone Surgery?
             </h2>
             <p className="text-teal-100 leading-relaxed mb-4">
-              This is a modern, minimally invasive procedure using an advanced robot-assisted system. Unlike traditional surgery, the surgeon operates through a console using high-definition 3D visualisation and micro-surgical instruments that offer greater range of motion than the human hand.
+             Robotic gallbladder stone surgery is a modern, minimally invasive procedure used to remove the gallbladder when gallstones cause pain or other complications. It is also known as robot-assisted cholecystectomy.
+In this procedure, the surgeon controls advanced robotic instruments from a console instead of operating directly by hand. The robotic system provides a high-definition 3D view and allows highly precise movements during surgery.
+The surgery is performed through small cuts in the abdomen, where robotic instruments and a tiny camera are inserted to safely remove the gallbladder along with the gallstones.
+This procedure is commonly recommended for patients with gallstone disease who experience pain, infection, inflammation, or other gallbladder-related symptoms.
+
             </p>
 
             <div className="bg-white/10 border border-white/20 rounded-2xl p-5 mb-6">
               <p className="text-white font-bold text-sm mb-3 flex items-center gap-2">
-                <Star size={14} className="text-yellow-400" /> The Robotic Advantage
+                <Star size={14} className="text-yellow-400" /> Benefits of Robotic Gallbladder Surgery 
               </p>
               <ul className="space-y-2">
                 {roboticAdvantages.map((adv) => (
@@ -442,7 +439,7 @@ export default function GallbladderSurgery() {
                 <Star size={18} className="text-teal-600" />
               </div>
               <div>
-                <p className="font-black text-gray-900 text-lg leading-none">500+</p>
+                {/* <p className="font-black text-gray-900 text-lg leading-none">500+</p> */}
                 <p className="text-gray-500 text-xs">Successful Procedures</p>
               </div>
             </div>
@@ -497,35 +494,127 @@ export default function GallbladderSurgery() {
       </section> */}
 
       {/* ─── CTA ─── */}
-      {/* <section className="py-12 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-teal-800 rounded-3xl px-8 py-16 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-72 h-72 bg-teal-700/50 rounded-full -translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-900/50 rounded-full translate-x-1/3 translate-y-1/3" />
-            <div className="relative z-10 text-center">
-              <h2 className="text-3xl md:text-4xl font-black text-white mb-4 max-w-2xl mx-auto leading-tight">
-                If you are experiencing gallbladder stone symptoms... Consult our experts today.
-              </h2>
-              <p className="text-teal-200 max-w-lg mx-auto mb-10 text-sm leading-relaxed">
-                Early diagnosis and treatment can significantly reduce complications. Get evaluated at the most advanced robotic surgery centre in the region.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <NavLink to="/contact">
-                  <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-yellow-400/30 min-w-52">
-                    Book Your Consultation
-                  </button>
-                </NavLink>
-                <a href="tel:+919999999999">
-                  <button className="flex items-center gap-2 border-2 border-white/40 hover:border-white text-white font-semibold px-8 py-4 rounded-full transition-all min-w-52">
-                    <Phone size={16} />
-                    Call +91 (800) NOVO ROBOT
-                  </button>
-                </a>
+     <section className="py-12 px-6">
+  <div className="max-w-7xl mx-auto">
+    <div className="bg-teal-800 rounded-3xl px-8 py-16 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-72 h-72 bg-teal-700/50 rounded-full -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-900/50 rounded-full translate-x-1/3 translate-y-1/3" />
+      <div className="relative z-10 text-center">
+        <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
+          Don&rsquo;t Ignore <span className="text-yellow-400">the Signs</span>
+        </h2>
+
+        <p className="text-teal-100 max-w-3xl mx-auto mb-6 text-base md:text-lg leading-relaxed">
+          If you are experiencing gallbladder stone symptoms such as abdominal pain, nausea, bloating, or discomfort after meals, don&rsquo;t ignore the signs. Consult our experts today for accurate diagnosis and advanced Robotic Gallbladder Stone Surgery (Cholecystectomy) for a safer procedure, less pain, and faster recovery.
+        </p>
+
+        <p className="text-teal-200 max-w-lg mx-auto mb-10 text-sm leading-relaxed">
+          Early diagnosis and treatment can significantly reduce complications. Get evaluated at the most advanced robotic surgery centre in the region.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ {/* ─── FAQs ─── */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Have Questions?</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-500 text-sm max-w-md mx-auto">
+              Everything you need to know about gallstones and robotic gallbladder surgery at Novo Robotic Surgery Centre.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              {
+                q: 'What is the best treatment for gallbladder stones?',
+                a: 'Laparoscopic or robotic gallbladder removal (cholecystectomy) is considered the most effective and permanent treatment for symptomatic gallstones.',
+              },
+              {
+                q: 'How can I reduce the risk of gallstones?',
+                a: 'Maintaining a healthy weight, eating a balanced diet, exercising regularly, and avoiding rapid weight loss may help reduce the risk.',
+              },
+              {
+                q: 'Can gallstones increase in size over time?',
+                a: 'Yes. Some gallstones can become larger or increase in number if left untreated.',
+              },
+              {
+                q: 'Can I travel after gallbladder surgery?',
+                a: 'Most patients can travel within a few days after recovery, but long-distance travel should be discussed with your surgeon.',
+              },
+              {
+                q: 'Can gallstones increase the risk of pancreatitis?',
+                a: 'Yes. A gallstone blocking the pancreatic duct can trigger acute pancreatitis, which requires urgent medical treatment.',
+              },
+              {
+                q: 'Can children develop gallstones?',
+                a: 'Yes. Although less common, gallstones can occur in children due to certain medical conditions, obesity, or genetic factors.',
+              },
+              {
+                q: 'Which foods should I avoid after surgery?',
+                a: 'Limit fried foods, oily meals, spicy foods, processed snacks, and high-fat dairy products during the early recovery period.',
+              },
+              {
+                q: 'What foods should I eat after gallbladder surgery?',
+                a: 'Initially, eat light, low-fat meals. Gradually return to a balanced diet as advised by your surgeon.',
+              },
+              {
+                q: 'Will my digestion be normal after gallbladder removal?',
+                a: 'Yes. Most people digest food normally after surgery. Some patients may experience temporary digestive changes that usually improve within a few weeks.',
+              },
+            ].map(({ q, a }, i) => (
+              <details
+                key={q}
+                className="group bg-white rounded-3xl border border-gray-100 shadow-sm open:border-teal-200 open:shadow-lg transition-all duration-300"
+              >
+                <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <div className="flex items-start gap-4">
+                    <span className="text-xs font-black text-teal-400 group-open:text-teal-600 mt-1 transition-colors">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <p className="font-bold text-gray-900 text-sm md:text-base group-hover:text-teal-700 group-open:text-teal-800 transition-colors">
+                      {q}
+                    </p>
+                  </div>
+                  <div className="w-9 h-9 rounded-xl bg-teal-50 group-hover:bg-teal-100 group-open:bg-teal-600 group-open:rotate-180 flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                    <ChevronDown size={16} className="text-teal-600 group-open:text-white transition-colors" />
+                  </div>
+                </summary>
+                <p className="px-6 pb-6 pl-16 text-gray-600 text-sm leading-relaxed">{a}</p>
+              </details>
+            ))}
+          </div>
+
+          {/* Still have questions */}
+          <div className="max-w-3xl mx-auto mt-10 bg-white border border-teal-100 rounded-3xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+            <div className="flex items-center gap-4">
+              <div className="w-11 h-11 bg-teal-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <Phone size={18} className="text-teal-600" />
+              </div>
+              <div>
+                <p className="font-bold text-gray-900 text-sm">Still have questions?</p>
+                <p className="text-gray-500 text-xs">Our specialists are here to guide you.</p>
               </div>
             </div>
+            <NavLink to="/contact">
+              <button className="flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-bold text-sm px-6 py-3 rounded-full transition-all group whitespace-nowrap">
+                Talk to a Specialist
+                <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </NavLink>
           </div>
         </div>
-      </section> */}
+      </section>
     </div>
+   
+
   );
 }

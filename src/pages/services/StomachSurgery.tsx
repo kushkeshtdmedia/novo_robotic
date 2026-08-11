@@ -179,8 +179,8 @@ export default function StomachSurgery() {
               <p className="text-xs font-semibold uppercase tracking-widest text-teal-200 mt-2">Visual Magnification</p>
             </div>
             <div>
-              <p className="text-4xl font-black text-yellow-400 leading-none">540°</p>
-              <p className="text-xs font-semibold uppercase tracking-widest text-teal-200 mt-2">Instrument Rotation</p>
+              <p className="text-4xl font-black text-yellow-400 leading-none">540°</p>Instrument Rotation
+              <p className="text-xs font-semibold uppercase tracking-widest text-teal-200 mt-2"></p>
             </div>
             <div>
               <p className="text-4xl font-black text-yellow-400 leading-none">0%</p>
