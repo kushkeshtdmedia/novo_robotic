@@ -28,10 +28,8 @@ const serviceMenu: ServiceCategory[] = [
   {
     label: 'Cancer Surgery',
     sub: [
-      { label: 'Colorectal Cancer', slug: 'colorectal-cancer' },
       { label: 'Colorectal Cancer Surgery', slug: 'colorectal-cancer-surgery' },
       { label: 'Gallbladder Cancer Surgery', slug: 'gallbladder-cancer-surgery' },
-      { label: 'Liver Cancer Surgery', slug: 'liver-cancer-surgery' },
       { label: 'Pancreatic Cancer Surgery', slug: 'pancreatic-cancer-surgery' },
     ],
   },
@@ -46,7 +44,7 @@ const serviceMenu: ServiceCategory[] = [
 
 const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'Doctors', to: '/doctors' },
+  { label: 'Doctors', to: '/doctors/dr-vikrant-sharma' },
   { label: 'Contact', to: '/contact' },
 ];
 

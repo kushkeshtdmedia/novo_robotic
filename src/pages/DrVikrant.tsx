@@ -14,6 +14,7 @@ import {
   Phone,
   Mail,
 } from 'lucide-react';
+import VikrantPic from '../../src/assets/images/VikrantSirHome.jpg';
 
 const trust = [
   {
@@ -89,7 +90,7 @@ export default function DrVikrantSharma() {
 
           <div className="relative">
             <img
-              src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              src={VikrantPic}
               alt="Dr. Vikrant Sharma, Chief Robotic Surgeon"
               className="w-full h-80 lg:h-[460px] rounded-xl object-cover object-top"
             />
@@ -198,9 +199,9 @@ export default function DrVikrantSharma() {
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative">
             <img
-              src="https://images.pexels.com/photos/3844581/pexels-photo-3844581.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              src={VikrantPic}
               alt="Dr. Sharma mentoring surgeons at the robotic console"
-              className="w-full h-72 lg:h-[380px] rounded-xl object-cover"
+              className="w-full h-72 lg:h-[380px] rounded-xl object-cover object-top"
             />
             <div className="absolute bottom-5 right-5 rounded-lg bg-white/85 backdrop-blur-[20px] px-5 py-4 max-w-[220px]">
               <p className="font-[IBM_Plex_Sans] text-[10px] font-bold uppercase tracking-[0.1em] text-[#0d7481]">
@@ -272,9 +273,9 @@ export default function DrVikrantSharma() {
 
           <div className="relative rounded-xl overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/3376799/pexels-photo-3376799.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Robotic surgical arms in the operating theatre"
-              className="w-full h-80 lg:h-[420px] object-cover"
+              src={VikrantPic}
+              alt="Dr. Vikrant Sharma in the robotic operating theatre"
+              className="w-full h-80 lg:h-[420px] object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#003b43]/95 via-[#005a65]/50 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -345,12 +346,8 @@ export default function DrVikrantSharma() {
                   <p className="font-[IBM_Plex_Sans] text-[10px] font-bold uppercase tracking-[0.1em] text-[#6e797b]">
                     General Enquiries
                   </p>
-                  <a
-                    href="mailto:drsharma@novorobotic.com"
-                    className="text-lg font-bold hover:text-[#0d7481] transition-colors"
-                  >
-                    drsharma@novorobotic.com
-                  </a>
+                
+                 
                 </div>
               </div>
             </div>

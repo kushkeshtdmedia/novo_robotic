@@ -84,7 +84,7 @@ export default function HerniaSurgery() {
               Robotic <span className="text-teal-600 italic">Hernia</span><br />Surgery
             </h1>
                                                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-600 leading-snug mb-5 max-w-2xl">
-  Best Robotic Hernia Surgerys in Kaushambi, Ghaziabad
+  Best Robotic Hernia Surgery in Kaushambi, Ghaziabad
 </p>
             <p className="text-gray-500 text-lg leading-relaxed max-w-md mb-8">
               Precision-guided, faster recovery and better outcomes than traditional surgery. Experience the next evolution in surgical excellence.
@@ -126,51 +126,48 @@ export default function HerniaSurgery() {
       </section>
 
       {/* ─── Understanding Hernia ─── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
-          <div>
-            <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Overview</p>
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5">Understanding Hernia</h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              A hernia happens when an organ pushes through an opening in the muscle or tissue that holds it in place. It can often appear as a noticeable bulge through a weak spot in the abdominal muscles. Usually painless at first, hernias can become dangerous if left untreated.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              It often appears as a covering of bulge from the tissue into the intestine throughout the muscles, causing pressure or discomfort over time. Early diagnosis and prompt treatment can prevent potentially life-threatening complications.
-            </p>
-            <blockquote className="border-l-4 border-teal-500 pl-5 py-3 bg-teal-50 rounded-r-xl text-sm text-gray-700 italic leading-relaxed">
-              "A hernia typically occurs on its own and may gradually become larger over time. Early diagnosis and proper treatment can help prevent complications."
-            </blockquote>
-          </div>
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+    <div>
+      <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Overview</p>
+      <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5">Understanding Hernia</h2>
+      <p className="text-gray-600 leading-relaxed mb-4">
+        A hernia (herniorrhaphy/hernioplasty) is a condition in which a part of the intestine or fatty tissue pushes through a weak area in the muscles, usually in the abdomen or groin. It often appears as a swelling or bulge that may become more visible while coughing, bending, lifting heavy objects, or standing for a long time. Some people may also experience pain, discomfort, heaviness, or a burning sensation in the affected area.
+      </p>
+      <blockquote className="border-l-4 border-teal-500 pl-5 py-3 bg-teal-50 rounded-r-xl text-sm text-gray-700 italic leading-relaxed">
+        A hernia typically does not heal on its own and may gradually become larger over time. Early diagnosis and proper treatment can help prevent complications and improve the recovery process.
+      </blockquote>
+    </div>
 
-          <div className="bg-gray-50 rounded-3xl p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-orange-100 rounded-2xl flex items-center justify-center">
-                <AlertTriangle size={18} className="text-orange-500" />
-              </div>
-              <div>
-                <p className="font-bold text-gray-900">Common Symptoms</p>
-                <p className="text-xs text-gray-500">Don't hesitate, early intervention is key</p>
-              </div>
-            </div>
-            <ul className="space-y-4 mb-8">
-              {symptoms.map((s) => (
-                <li key={s} className="flex items-center gap-3">
-                  <CheckCircle size={16} className="text-teal-500 flex-shrink-0" />
-                  <span className="text-gray-700 text-sm font-medium">{s}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="bg-teal-700 rounded-2xl p-5 text-white">
-              <p className="font-bold mb-1 flex items-center gap-2">
-                <Shield size={16} /> Expert Diagnosis
-              </p>
-              <p className="text-teal-100 text-sm leading-relaxed">
-                Our doctors use high-resolution imaging to detect and localise the hernia accurately.
-              </p>
-            </div>
-          </div>
+    <div className="bg-gray-50 rounded-3xl p-8">
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-10 h-10 bg-orange-100 rounded-2xl flex items-center justify-center">
+          <AlertTriangle size={18} className="text-orange-500" />
         </div>
-      </section>
+        <div>
+          <p className="font-bold text-gray-900">Common Symptoms</p>
+          <p className="text-xs text-gray-500">Don't hesitate, early intervention is key</p>
+        </div>
+      </div>
+      <ul className="space-y-4 mb-8">
+        {symptoms.map((s) => (
+          <li key={s} className="flex items-center gap-3">
+            <CheckCircle size={16} className="text-teal-500 flex-shrink-0" />
+            <span className="text-gray-700 text-sm font-medium">{s}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="bg-teal-700 rounded-2xl p-5 text-white">
+        <p className="font-bold mb-1 flex items-center gap-2">
+          <Shield size={16} /> Expert Diagnosis
+        </p>
+        <p className="text-teal-100 text-sm leading-relaxed">
+          Our doctors use high-resolution imaging to detect and localise the hernia accurately.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ─── What is Robotic Hernia Surgery ─── */}
       <section className="py-20 bg-slate-50">
