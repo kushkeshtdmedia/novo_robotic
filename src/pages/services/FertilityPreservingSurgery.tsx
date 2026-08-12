@@ -13,7 +13,9 @@ import {
   Phone,
   MapPin,
 } from 'lucide-react';
-
+import FertilityImage from '../../assets/images/FertilityPreservingSurgery1.jpeg';
+import FertilityImage2 from '../../assets/images/FertilityPreservingSurgery2.jpeg';
+import FertilityImage3 from '../../assets/images/FertilityPreservingSurgery3.jpeg';
 const advantages = [
   {
     icon: Eye,
@@ -106,7 +108,7 @@ export default function FertilityPreservingSurgery() {
 
           <div className="relative">
             <img
-              src="https://images.pexels.com/photos/3376799/pexels-photo-3376799.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              src={FertilityImage}
               alt="Robotic gynaecological surgery in progress"
               className="w-full h-72 lg:h-[420px] rounded-xl object-cover"
             />
@@ -128,7 +130,7 @@ export default function FertilityPreservingSurgery() {
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <img
-            src="https://images.pexels.com/photos/7659564/pexels-photo-7659564.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            src={FertilityImage2}
             alt="Gynaecologist counselling a patient"
             className="w-full h-72 lg:h-[400px] rounded-xl object-contain lg:object-cover"
           />
@@ -228,7 +230,7 @@ export default function FertilityPreservingSurgery() {
             </p>
 
             <img
-              src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src={FertilityImage3}
               alt="Illustration of the female reproductive anatomy"
               className="mt-8 w-full h-56 rounded-xl object-contain lg:object-cover bg-[#e8f6f8]"
             />
