@@ -58,7 +58,8 @@ export default function ContactPage() {
           <div>
             <h2 className="text-3xl font-bold text-teal-900 mb-8">Contact Information</h2>
             <div className="space-y-4">
-              <InfoCard icon={<Phone size={20} />} iconBg="bg-teal-50 text-teal-700" label="PHONE" value="+91 98702 91333" />
+              <InfoCard icon={<Phone size={20} />} iconBg="bg-teal-50 text-teal-700" label="PHONE" value="8882844375, 
+8527516622" />
               <InfoCard icon={<Mail size={20} />} iconBg="bg-gray-100 text-gray-700" label="EMAIL" value="enquiry@novorobotic.com" />
               <InfoCard icon={<Clock size={20} />} iconBg="bg-yellow-100 text-yellow-700" label="HOURS" value="Mon – Sun: 09:00 AM to 06:00 PM" />
             </div>

@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Play, X } from 'lucide-react';
 import Test1 from '../assets/video/test1.mp4';
-import Test2 from '../assets/video/test2.mp4';
+// import Test2 from '../assets/video/test2.mp4';
 import Test3 from '../assets/video/test3.mp4';
 import Test4 from '../assets/video/test4.mp4';
 import Test5 from '../assets/video/test5.mp4';
+import Test6 from '../assets/video/test6.mp4';
 
-const videoTestimonials: string[] = [Test1, Test2, Test3, Test4, Test5];
+const videoTestimonials: string[] = [Test1, Test3, Test4, Test5, Test6];
 
 /* Marquee speed — higher is slower */
 const DURATION = 42;
