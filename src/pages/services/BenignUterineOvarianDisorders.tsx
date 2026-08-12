@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { ArrowRight, Check, ShieldCheck, Accessibility, Circle, Droplet, Sparkles, Layers } from 'lucide-react';
-
+import Bengin from '../../assets/images/Bengin.png'
 const conditions = [
   {
     icon: Circle,
@@ -155,7 +155,7 @@ export default function BenignUterineOvarianDisorders() {
           <div className="mt-14 grid lg:grid-cols-12 gap-6">
             <div className="lg:col-span-4 relative rounded-xl overflow-hidden bg-[#e8f6f8] min-h-[260px]">
               <img
-                src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={Bengin}
                 alt="Anatomical illustration of the uterus and ovaries"
                 className="w-full h-full object-cover"
               />

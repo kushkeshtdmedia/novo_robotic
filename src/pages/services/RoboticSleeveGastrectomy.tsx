@@ -1,5 +1,8 @@
 import { ArrowRight, CheckCircle, Eye, Cpu, Scissors, Layers, Activity, Utensils, Users, Monitor, TrendingDown, HeartPulse, Shield, Zap, Scale } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import GastrectomyImage from '../../assets/images/Gastrectomy1.jpeg';
+import VikrantPic from '../../assets/images/VikrantOnco.jpeg';
+import GastrectomyImage2 from '../../assets/images/Gastrectomy2.jpeg';
 
 const candidateCriteria = [
   {
@@ -160,7 +163,7 @@ export default function RoboticSleeveGastrectomy() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/8460168/pexels-photo-8460168.jpeg"
+                src={GastrectomyImage}
                 alt="Robotic surgical console"
                 className="w-full h-[380px] object-cover"
               />
@@ -262,7 +265,7 @@ export default function RoboticSleeveGastrectomy() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg"
+                src={VikrantPic}
                 alt="Surgical team"
                 className="w-full h-[420px] object-cover"
               />
@@ -302,7 +305,7 @@ export default function RoboticSleeveGastrectomy() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg"
+                src={GastrectomyImage2}
                 alt="Hospital facility"
                 className="w-full h-[440px] object-cover"
               />

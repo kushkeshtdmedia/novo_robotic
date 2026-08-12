@@ -22,7 +22,8 @@ import {
 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-
+import GallBladderImageCancer from '../../assets/images/RoboticGallBladderCancer.png';
+import GallBladderImage2 from '../../assets/images/RoboticGallBladderCancerNovo.png'
 /* ── design tokens ──────────────────────────────────────────────
    primary #0D7481 · secondary #FFD552 · tertiary #EBF2F3
    neutral #1A1C1E · variant #44474E
@@ -310,7 +311,7 @@ export default function GallBladderCancerSurgery() {
                   Robotic-Assisted
                 </p>
                 <img
-                  src="https://images.pexels.com/photos/3376799/pexels-photo-3376799.jpeg"
+                  src={GallBladderImageCancer}
                   alt="Radical cholecystectomy, robotic-assisted"
                   className="w-full h-[280px] object-cover rounded-lg"
                 />
@@ -420,7 +421,7 @@ export default function GallBladderCancerSurgery() {
 
           <div className="rounded-xl overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/7088462/pexels-photo-7088462.jpeg"
+              src={GallBladderImage2}
               alt="Novo Robotic surgical team at the console"
               className="w-full h-[400px] object-cover"
             />

@@ -18,7 +18,7 @@ import {
   Phone,
   MapPin,
 } from 'lucide-react';
-
+ import MiniGastricBypass1 from '../../assets/images/MiniGastricBypass.png';
 const candidates = [
   {
     icon: Scale,
@@ -184,19 +184,18 @@ export default function MiniGastricBypass() {
       {/* ============ UNDERSTANDING ============ */}
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="rounded-xl overflow-hidden bg-[#e8f6f8] shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
-            <div className="p-5">
-              <span className="font-[IBM_Plex_Sans] text-[11px] font-bold uppercase tracking-[0.1em] text-[#005a65]">
-                Robotic Mini Gastric Bypass
-              </span>
-
-            </div>
-            <img
-              src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Illustration of the mini gastric bypass anatomy"
-              className="w-full h-64 lg:h-80 object-contain lg:object-cover"
-            />
-          </div>
+         <div className="rounded-xl overflow-hidden bg-[#e8f6f8] shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
+  <div className="p-5">
+    <span className="font-[IBM_Plex_Sans] text-[11px] font-bold uppercase tracking-[0.1em] text-[#005a65]">
+      Robotic Mini Gastric Bypass
+    </span>
+  </div>
+  <img
+    src={MiniGastricBypass1}
+    alt="Illustration of the mini gastric bypass anatomy"
+    className="w-full h-64 sm:h-80 lg:h-[26rem] object-contain object-center bg-[#e8f6f8] p-4"
+  />
+</div>
 
           <div>
             <h2 className="text-3xl lg:text-[32px] font-bold leading-tight">

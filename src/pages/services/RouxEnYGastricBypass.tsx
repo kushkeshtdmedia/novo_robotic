@@ -10,6 +10,7 @@ import {
   Timer,
   Crosshair,
 } from 'lucide-react';
+import RouxEnYImage from '../../assets/images/RouxEnYGastricBypass.png';
 
 const criteria = [
   {
@@ -111,10 +112,12 @@ export default function RouxEnYGastricBypass() {
 
             <h1 className="mt-6 text-4xl lg:text-6xl font-extrabold leading-[1.1] tracking-[-0.02em] text-white">
               Precision Roux-en-Y Gastric Bypass (RYGB)
-            </h1> <br></br>
-                                        <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-300 leading-snug mb-5 max-w-2xl">
-  Best Robotic Roux-en-Y Gastric Bypass  Surgerys in Kaushambi, Ghaziabad
-</p>
+            </h1>
+
+            <p className="mt-5 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-300 leading-snug max-w-2xl">
+              Best Robotic Roux-en-Y Gastric Bypass Surgery in Kaushambi, Ghaziabad
+            </p>
+
             <p className="mt-6 text-base lg:text-lg text-white/80 leading-relaxed max-w-xl">
               A gold-standard robotic procedure designed for sustainable weight loss and
               transformative metabolic improvement. Experience the pinnacle of surgical precision at
@@ -168,9 +171,9 @@ export default function RouxEnYGastricBypass() {
 
           <div className="relative rounded-xl overflow-hidden bg-[#e8f6f8] shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
             <img
-              src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              src={RouxEnYImage}
               alt="Anatomical illustration of the Roux-en-Y gastric bypass"
-              className="w-full h-72 lg:h-[420px] object-contain lg:object-cover"
+              className="w-full h-auto max-h-[420px] object-contain mx-auto"
             />
 
             <div className="absolute bottom-5 right-5 flex items-center gap-3 rounded-lg bg-white/80 backdrop-blur-[20px] px-5 py-3">
@@ -254,7 +257,7 @@ export default function RouxEnYGastricBypass() {
       {/* ============ RECOVERY + WHY NOVO ============ */}
       <section className="py-20 lg:py-28 bg-[#eeeef0]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-12 gap-0 lg:gap-0 rounded-xl overflow-hidden shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
+          <div className="grid lg:grid-cols-12 rounded-xl overflow-hidden shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
             {/* Recovery path */}
             <div className="lg:col-span-4 bg-[#005a65] p-8 lg:p-10">
               <h3 className="text-xl font-semibold text-white">Recovery Path</h3>

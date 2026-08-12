@@ -19,7 +19,7 @@ import {
   Mail,
   MapPin,
 } from 'lucide-react';
-
+import  ColorectalImage from '../../assets/images/ColorectalCancerSurgery1.png';
 const conditions = [
   {
     icon: Activity,
@@ -209,7 +209,7 @@ export default function ColorectalCancerSurgery() {
           </div>
 
           <img
-            src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            src={ColorectalImage}
             alt="Anatomical illustration of the colon and rectum"
             className="w-full h-72 lg:h-[440px] rounded-xl object-contain lg:object-cover bg-[#e8f6f8]"
           />
