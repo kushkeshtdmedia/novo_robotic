@@ -24,18 +24,10 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <NavLink to="/contact" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto flex items-center justify-center gap-2 font-semibold px-6 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg group bg-teal-700 hover:bg-teal-800 text-white hover:shadow-teal-700/25">
-                Book a Consultation
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+           
             </NavLink>
             <NavLink to="/services" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto flex items-center justify-center gap-2 font-semibold transition-colors px-6 py-3.5 rounded-full border text-gray-700 hover:text-teal-600 border-gray-200 hover:border-teal-500">
-                <div className="w-10 h-10 rounded-full border-2 flex items-center justify-center transition-colors border-gray-300 hover:border-teal-500">
-                  <Play size={14} className="ml-0.5" />
-                </div>
-                Explore Services
-              </button>
+           
             </NavLink>
           </div>
 
