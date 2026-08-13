@@ -45,7 +45,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/doctors/dr-vikrant-sharma" element={<DrVikrantSharma />} />
           <Route path="/services/benign-uterine-ovarian-disorders" element={<BenignUterineOvarianDisorders />} />
-          <Route path="/services/gynecologic-cancer-surgery" element={<GynecologicCancerSurgery />} />
+          <Route path="/services/gynecologic-cancer-surgery" element={<GynecologicCancerSurgery  />} />
         </Route>
       </Routes>
     </BrowserRouter>
