@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 
 
-import HeroImage from '../../assets/images/GyaneHeroImage.png';
+import Hero from '../../assets/images/GyaneHeroImage.png';
 import AnatomyImage from '../../assets/images/GynecologicCancersDiagram.png';
 import UterineImage from '../../assets/images/UterineCancer.png';
 import ConsultImage from '../../assets/images/ConsultImage.png';
@@ -112,7 +112,7 @@ export default function GynecologicCancerSurgery() {
       {/* ============================= HERO ============================= */}
       <section className="relative isolate overflow-hidden">
         <img
-          src={HeroImage}
+          src={Hero}
           alt="Robotic surgical team performing a gynecologic oncology procedure"
           className="absolute inset-0 -z-20 h-full w-full object-cover"
         />
