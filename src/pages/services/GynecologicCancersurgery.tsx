@@ -14,10 +14,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 
-/* --------------------------------------------------------------------------
-   Images — replace these paths with your actual assets.
-   Keeping the same convention used across the other speciality pages.
--------------------------------------------------------------------------- */
+
 import HeroImage from '../../assets/images/GyaneHeroImage.png';
 import AnatomyImage from '../../assets/images/GynecologicCancersDiagram.png';
 import UterineImage from '../../assets/images/UterineCancer.png';
