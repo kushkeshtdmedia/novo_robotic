@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, Award, GraduationCap, Globe, BookOpen, Building2, Users } from 'lucide-react';
+import { ArrowRight, Award, GraduationCap, Globe, BookOpen, Building2, Users, Stethoscope } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 // Drop the real photos into src/assets/images/ with these exact filenames
@@ -35,6 +35,21 @@ function LeaderImage({ src, name, alt }: { src: string; name: string; alt: strin
 }
 
 const leaders = [
+{
+  name: 'Dr. Vikrant Sharma',
+  role: 'Co-Founder & Director',
+  subtitle: 'Lead Robotic & Bariatric Surgeon',
+  image: VikrantPic,
+  bio: 'A distinguished Bariatric, Metabolic, and Laparoscopic Gynecological Oncology surgeon, renowned in Kaushambi (GZB) and Delhi NCR. He earned his Master of Surgery from PGI, Rohtak, and completed superspecialist training in Minimal Access Surgery under the esteemed Oncosurgeon Dr. Shailesh Puntambekar in Pune. He went on to complete a Fellowship in Robotic Surgery at Queen Alexandra Hospital, Portsmouth, UK, and trained further in Robotic Bariatric Surgery in Belgium and the USA.',
+  highlights: [
+    { icon: GraduationCap, text: 'MS (Surgery) — PGI, Rohtak' },
+    { icon: Stethoscope, text: 'Superspecialisation in Minimal Access Surgery — Pune' },
+    { icon: Award, text: 'Fellowship in Robotic Surgery — Queen Alexandra Hospital, Portsmouth, UK' },
+    { icon: Globe, text: 'Trained in Robotic Bariatric Surgery in Belgium & the USA' },
+    { icon: BookOpen, text: '20+ papers published nationally & internationally' },
+    { icon: Users, text: 'Heads a Robotic Surgery Training Academy for young surgeons' },
+  ],
+},
   {
     name: 'Mr. Narinder Singh Manral',
     role: 'Co-Founder & Director',
@@ -47,19 +62,7 @@ const leaders = [
       { icon: Award, text: 'Proven brand establishment & entrepreneurial leadership' },
     ],
   },
-  {
-    name: 'Dr. Vikrant Sharma',
-    role: 'Co-Founder & Director',
-    subtitle: 'Lead Robotic & Bariatric Surgeon',
-    image: VikrantPic,
-    bio: 'A distinguished Bariatric, Metabolic, and Laparoscopic Gynecological Oncology surgeon, renowned in Kaushambi (GZB) and Delhi NCR. He earned his Master of Surgery from PGI, Rohtak, and pursued Superspecialist training in Minimal Access Surgery under the esteemed Oncosurgeon Dr. Shailesh Puntambekar in Pune. He further trained at prestigious institutions in the United Kingdom, Belgium and the USA, specializing in Bariatric and Robotic Surgery.',
-    highlights: [
-      { icon: GraduationCap, text: 'MS — PGI, Rohtak · Minimal Access Surgery superspecialisation' },
-      { icon: Globe, text: 'Trained in the UK, Belgium & USA in Bariatric and Robotic Surgery' },
-      { icon: BookOpen, text: '20+ papers published nationally & internationally' },
-      { icon: Award, text: 'Heads a Robotic Surgery Training Academy for young surgeons' },
-    ],
-  },
+
 ];
 
 export default function Leadership() {

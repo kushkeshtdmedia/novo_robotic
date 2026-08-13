@@ -30,7 +30,9 @@ const serviceMenu: ServiceCategory[] = [
     sub: [
       { label: 'Colorectal Cancer Surgery', slug: 'colorectal-cancer-surgery' },
       { label: 'Gallbladder Cancer Surgery', slug: 'gallbladder-cancer-surgery' },
-      { label: 'Pancreatic Cancer Surgery', slug: 'pancreatic-cancer-surgery' },
+      {label: 'Gynecologic Cancer Surgery', slug: 'gynecologic-cancer-surgery'},
+      { label: 'Stomach Cancer Surgery', slug: 'stomach-surgery' }
+      // { label: 'Pancreatic Cancer Surgery', slug: 'pancreatic-cancer-surgery' },
     ],
   },
   {
