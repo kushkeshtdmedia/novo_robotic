@@ -1,11 +1,53 @@
-import { ArrowRight, CheckCircle, Eye, Cpu, Scissors, Shield, Zap, AlertTriangle, ThumbsUp, Activity, Clock } from 'lucide-react';
+import { ArrowRight, CheckCircle, Eye, Cpu, Scissors, Shield, Zap, AlertTriangle, ThumbsUp, Activity, Clock ,  ChevronDown} from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import AppendixSurgery from '../../assets/images/AppendixSurgery.jpeg';
 import ApendixSmall from '../../assets/images/ApendixSmallInc.png';
 import apendixThreeDimension from '../../assets/images/apendixThreeDimension.png';
-import PrecisionGuide from '../../assets/images/precisionGuidedSurgery.png';
+import PrecisionGuide from '../../assets/images/precisionGuidedSurgery1.png';
 import  SafeRemoval from '../../assets/images/SafeRemoval.png';
 
+const faqs = [
+  {
+    q: 'Is appendix surgery safe?',
+    a: 'Yes. Appendix surgery is a routine and safe procedure when performed by an experienced surgeon.',
+  },
+  {
+    q: 'Can appendicitis come back after surgery?',
+    a: 'No. Once the appendix is removed, appendicitis cannot recur.',
+  },
+  {
+    q: 'When can I eat after appendix surgery?',
+    a: 'Most patients can start with liquids a few hours after surgery and gradually return to a normal diet as advised by their surgeon.',
+  },
+  {
+    q: 'Which doctor should I consult for appendix surgery?',
+    a: 'A general surgeon or GI surgeon experienced in laparoscopic and robotic surgery is the right specialist for appendix treatment.',
+  },
+  {
+    q: 'Is robotic appendix surgery better than open surgery?',
+    a: 'Robotic surgery offers smaller cuts, less pain, faster recovery, and lower infection risk for many patients compared to traditional open surgery.',
+  },
+  {
+    q: 'Will I have stitches after appendix surgery?',
+    a: 'Yes. Small incisions are closed with stitches or surgical glue, and the scars are usually minimal.',
+  },
+  {
+    q: 'How many days do I need to stay in the hospital?',
+    a: 'Most patients are discharged within 24 to 48 hours, depending on their recovery and whether the appendix had ruptured.',
+  },
+  {
+    q: 'Can children undergo robotic appendix surgery?',
+    a: "Yes. Depending on the child's age and condition, robotic or laparoscopic surgery may be recommended by the surgeon.",
+  },
+  {
+    q: 'What foods should I eat after appendix surgery?',
+    a: "Start with light, easy-to-digest foods and gradually return to your normal diet. Drink plenty of water and follow your surgeon's dietary advice.",
+  },
+  {
+    q: 'How soon can I walk after appendix surgery?',
+    a: 'Most patients are encouraged to start walking within a few hours after surgery to promote healing and reduce the risk of blood clots.',
+  },
+];
 const symptoms = [
   { icon: Zap, title: 'Sharp Pain', desc: 'Sharp pain starting near the navel and shifting to the lower right abdomen.' },
   { icon: Activity, title: 'Nausea', desc: 'Nausea and vomiting.' },
@@ -124,9 +166,7 @@ export default function AppendixSurgeryPage() {
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </NavLink>
-            <button className="border-2 border-white/40 hover:border-white text-white font-semibold px-7 py-3.5 rounded-full transition-all">
-              View Success Rates
-            </button>
+           
           </div>
         </div>
 
@@ -349,6 +389,46 @@ export default function AppendixSurgeryPage() {
               
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* ─── FAQs ─── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Need Clarity</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-500 max-w-lg mx-auto text-sm">
+              Answers to the questions patients ask us most about robotic appendix surgery.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <details
+                key={faq.q}
+                className="group bg-gray-50 rounded-3xl border border-gray-200 open:bg-white open:shadow-[0px_10px_40px_rgba(0,0,0,0.04)] open:border-teal-200 transition-all duration-300"
+              >
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-7 py-5">
+                  <span className="font-bold text-gray-900 text-sm md:text-base group-open:text-teal-700 transition-colors">
+                    {faq.q}
+                  </span>
+                  <span className="w-8 h-8 rounded-full bg-teal-100 group-open:bg-teal-700 flex items-center justify-center flex-shrink-0 transition-colors">
+                    <ChevronDown
+                      size={16}
+                      className="text-teal-600 group-open:text-white group-open:rotate-180 transition-transform duration-300"
+                    />
+                  </span>
+                </summary>
+                <div className="px-7 pb-6 -mt-1">
+                  <div className="border-l-4 border-teal-500 pl-5">
+                    <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>

@@ -1,9 +1,43 @@
-import { ArrowRight, CheckCircle, XCircle, Zap, Eye, Settings, Layers, Scissors, AlertTriangle, Users, Shield, Award } from 'lucide-react';
+import { ArrowRight, CheckCircle, XCircle, Zap, Eye, Settings, Layers, Scissors, AlertTriangle, Users, Shield, Award, ChevronDown } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import herniaRobotic from '../../assets/images/HerniaRobotic.jpeg';
 import Surgeryhernia from '../../assets/images/surgeryHerniaImage.jpeg';
 import WhytoChoose from '../../assets/images/Whytochoose.jpeg';
 
+const faqs = [
+  {
+    q: 'Does every hernia require surgery?',
+    a: 'Most hernias do not heal on their own. Surgery is usually recommended to prevent complications such as strangulation or bowel obstruction.',
+  },
+  {
+    q: 'How long does hernia surgery take?',
+    a: 'The procedure usually takes 30 minutes to 2 hours, depending on the type and complexity of the hernia.',
+  },
+  {
+    q: 'Is hernia surgery painful?',
+    a: 'Modern robotic and laparoscopic techniques significantly reduce pain. Mild discomfort is common for a few days and is managed with medication.',
+  },
+  {
+    q: 'Can a hernia come back after surgery?',
+    a: 'Although recurrence is uncommon, it can happen. Choosing an experienced surgeon, following post-operative instructions, and maintaining a healthy weight can reduce the risk.',
+  },
+  {
+    q: 'What happens if a hernia is left untreated?',
+    a: 'An untreated hernia may enlarge over time and can lead to serious complications, including incarceration or strangulation, which may require emergency surgery.',
+  },
+  {
+    q: 'How much does hernia surgery cost?',
+    a: 'The cost depends on the type of hernia, surgical technique, hospital stay, insurance coverage, and individual medical needs. A consultation provides an accurate estimate.',
+  },
+  {
+    q: 'Which doctor should I consult for hernia treatment?',
+    a: 'A general surgeon or gastrointestinal (GI) surgeon experienced in minimally invasive and robotic hernia surgery is the right specialist.',
+  },
+  {
+    q: 'Can I walk after hernia surgery?',
+    a: 'Yes. Walking is encouraged soon after surgery to improve circulation and support recovery.',
+  },
+];
 const symptoms = [
   'Visible bulge or swelling',
   'Pain or discomfort when bending',
@@ -39,22 +73,22 @@ const herniaTypes = [
   {
     title: 'Robotic Inguinal Hernia',
     color: 'teal',
-    desc: 'The most common type — a protrusion of intestine through a weak spot in the lower abdominal muscles, near the groin. Robotic approach offers superior outcomes.',
+    desc: 'An inguinal hernia happens when a part of the intestine or fatty tissue pushes through a weak area in the lower abdominal muscles near the groin (where the abdomen meets the thigh). This can cause a bulge, pain, or discomfort, especially while coughing, lifting heavy objects, or standing for a long time.',
   },
   {
     title: 'Robotic Ventral Hernia',
     color: 'featured',
-    desc: 'Occurs through the abdominal wall muscles. Can include umbilical and epigastric hernias. Robotic repair ensures a tension-free, reinforced closure.',
+    desc: 'A ventral hernia happens when tissue or part of the intestine pushes through a weak area in the abdominal muscles. It usually appears as a bulge or swelling on the front of the abdomen (stomach area) and may cause discomfort during daily activities. ',
   },
   {
     title: 'Robotic Incisional Hernia',
     color: 'teal',
-    desc: 'Develops at the site of a prior surgical incision. Robotic surgery provides complex repair with minimal complications.',
+    desc: 'An incisional hernia develops near a previous surgery scar when the muscles do not heal completely after an operation. This can cause swelling or lump around the operated area. Robotic repair is highly effective for this type of hernia.',
   },
   {
     title: 'Robotic Hiatus Hernia',
     color: 'accent',
-    desc: 'Part of the stomach pushes into the chest through the diaphragm. Robotic anti-reflux repair restores normal anatomy effectively.',
+    desc: 'A hiatus hernia happens when a part of the stomach moves upward into the chest through the diaphragm. It commonly causes acidity, heartburn, bloating, or a burning sensation after meals.',
   },
 ];
 
@@ -105,7 +139,7 @@ export default function HerniaSurgery() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src={ herniaRobotic }
+                src={herniaRobotic}
                 alt="Robotic Hernia Surgery"
                 className="w-full h-[440px] object-cover"
               />
@@ -247,7 +281,7 @@ export default function HerniaSurgery() {
                 <div className="w-10 h-10 bg-white/20 rounded-2xl flex items-center justify-center">
                   <Zap size={18} className="text-white" />
                 </div>
-                <p className="font-bold text-white text-lg">Novo Robotic Surgery</p>
+                <p className="font-bold text-white text-lg"> Robotic Surgery</p>
               </div>
               <ul className="space-y-4">
                 {roboticPros.map((item) => (
@@ -387,6 +421,46 @@ export default function HerniaSurgery() {
               </p>
            
             </div>
+          </div>
+        </div>
+      </section>
+      {/* ─── FAQs ─── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Need Clarity</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-500 max-w-lg mx-auto text-sm">
+              Answers to the questions patients ask us most about robotic hernia surgery.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <details
+                key={faq.q}
+                className="group bg-gray-50 rounded-3xl border border-gray-200 open:bg-white open:shadow-[0px_10px_40px_rgba(0,0,0,0.04)] open:border-teal-200 transition-all duration-300"
+              >
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-7 py-5">
+                  <span className="font-bold text-gray-900 text-sm md:text-base group-open:text-teal-700 transition-colors">
+                    {faq.q}
+                  </span>
+                  <span className="w-8 h-8 rounded-full bg-teal-100 group-open:bg-teal-700 flex items-center justify-center flex-shrink-0 transition-colors">
+                    <ChevronDown
+                      size={16}
+                      className="text-teal-600 group-open:text-white group-open:rotate-180 transition-transform duration-300"
+                    />
+                  </span>
+                </summary>
+                <div className="px-7 pb-6 -mt-1">
+                  <div className="border-l-4 border-teal-500 pl-5">
+                    <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>

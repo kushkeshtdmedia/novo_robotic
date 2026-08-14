@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, ChevronRight, Utensils, Flame, Scale, Activity } from "lucide-react";
+import { ArrowRight, ChevronRight, Utensils, Flame, Scale, Activity, ChevronDown } from "lucide-react";
 import OncoSurgeryJourney from '../../assets/images/StomachCancerSurgery.png';
 import vikrantPic from '../../assets/images/VikrantOnco.jpeg';
 import StomachSurgeryPic from '../../assets/images/StomachSurgeryPic.png'
@@ -10,6 +10,32 @@ import StomachSurgeryPic from '../../assets/images/StomachSurgeryPic.png'
  * used on the Oesophagus Surgery page (teal-800/teal-600 brand, yellow-400
  * accent, rounded-3xl cards, font-black/font-bold/font-semibold scale).
  */
+const faqs = [
+  {
+    q: 'Can stomach ulcers turn into cancer?',
+    a: 'Most stomach ulcers do not become cancer, but persistent ulcers should always be properly evaluated.',
+  },
+  {
+    q: 'Is stomach cancer curable?',
+    a: 'Yes. Early-stage stomach cancer has a much higher chance of successful treatment.',
+  },
+  {
+    q: 'What treatments are available for stomach cancer?',
+    a: 'Treatment may include surgery, robotic surgery, chemotherapy, immunotherapy, targeted therapy, and radiation therapy.',
+  },
+  {
+    q: 'Is robotic stomach cancer surgery safe?',
+    a: 'Yes. It is considered safe when performed by an experienced robotic GI cancer surgeon.',
+  },
+  {
+    q: 'Can stomach cancer spread to other organs?',
+    a: 'Yes. It can spread to the liver, lymph nodes, lungs, peritoneum, and other organs if not treated.',
+  },
+  {
+    q: 'Does smoking increase the risk of stomach cancer?',
+    a: 'Yes. Smoking significantly increases the risk of stomach cancer.',
+  },
+];
 
 const warningSigns = [
   { Icon: Utensils, title: "Feeling Full Quickly", body: "Satiety after eating only a small amount of food." },
@@ -367,6 +393,46 @@ export default function StomachSurgery() {
                 </button> */}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* ─── FAQs ─── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Need Clarity</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-500 max-w-lg mx-auto text-sm">
+              Answers to the questions patients ask us most about robotic stomach cancer surgery.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <details
+                key={faq.q}
+                className="group bg-gray-50 rounded-3xl border border-gray-200 open:bg-white open:shadow-[0px_10px_40px_rgba(0,0,0,0.04)] open:border-teal-200 transition-all duration-300"
+              >
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-7 py-5">
+                  <span className="font-bold text-gray-900 text-sm md:text-base group-open:text-teal-700 transition-colors">
+                    {faq.q}
+                  </span>
+                  <span className="w-8 h-8 rounded-full bg-teal-100 group-open:bg-teal-700 flex items-center justify-center flex-shrink-0 transition-colors">
+                    <ChevronDown
+                      size={16}
+                      className="text-teal-600 group-open:text-white group-open:rotate-180 transition-transform duration-300"
+                    />
+                  </span>
+                </summary>
+                <div className="px-7 pb-6 -mt-1">
+                  <div className="border-l-4 border-teal-500 pl-5">
+                    <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
