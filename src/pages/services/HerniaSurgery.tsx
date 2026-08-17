@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle, XCircle, Zap, Eye, Settings, Layers, Scissors, AlertTriangle, Users, Shield, Award, ChevronDown } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import herniaRobotic from '../../assets/images/HerniaRobotic.jpeg';
-import Surgeryhernia from '../../assets/images/HerniaRobotic.jpeg';
+import Surgeryhernia from '../../assets/images/surgeryHerniaImage.jpeg';
 import WhytoChoose from '../../assets/images/Whytochoose.jpeg';
 
 const faqs = [
