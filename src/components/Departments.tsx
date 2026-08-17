@@ -82,16 +82,6 @@ export default function Departments() {
                     {s.description}
                   </p>
                 </div>
-                <button
-                  className={`mt-6 inline-flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3 ${
-                    isFeatured
-                      ? 'bg-white text-teal-700 px-4 py-2 rounded-full hover:bg-teal-50 w-fit'
-                      : 'text-gray-700 hover:text-teal-600'
-                  }`}
-                >
-                  Learn More
-                  <ArrowRight size={14} />
-                </button>
               </article>
             );
           })}
