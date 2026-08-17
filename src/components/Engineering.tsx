@@ -71,9 +71,7 @@ export default function Engineering() {
             })}
           </div>
 
-          <button className="bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-teal-700/25">
-            Learn About Our Technology
-          </button>
+          
         </div>
       </div>
     </section>
