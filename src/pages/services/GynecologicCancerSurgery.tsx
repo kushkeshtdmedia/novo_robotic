@@ -267,7 +267,7 @@ export default function GynecologicCancerSurgery() {
       </section>
 
       {/* ======================== UNDERSTANDING ========================= */}
-      <section
+<section
         id="understanding"
         className="scroll-mt-24 bg-[#f9f9fc] py-16 md:py-[120px]"
       >
@@ -305,11 +305,14 @@ export default function GynecologicCancerSurgery() {
                   Gynecologic cancers
                 </p>
               </div>
-              <img
-                src={AnatomyImage}
-                alt="Illustration of the female reproductive system marking uterine, ovarian and cervical cancer sites"
-                className="h-[320px] w-full object-cover md:h-[420px]"
-              />
+
+              <div className="flex items-center justify-center bg-white p-4 md:p-6">
+                <img
+                  src={AnatomyImage}
+                  alt="Illustration of the female reproductive system marking uterine, ovarian and cervical cancer sites"
+                  className="mx-auto h-auto w-full max-h-[280px] object-contain sm:max-h-[360px] md:max-h-[440px]"
+                />
+              </div>
             </div>
 
             <div className="absolute -bottom-5 right-5 flex items-center gap-3 rounded-lg bg-white/80 px-4 py-3 shadow-[0px_10px_40px_rgba(0,0,0,0.08)] backdrop-blur-[20px]">

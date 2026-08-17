@@ -224,7 +224,7 @@ export default function MiniGastricBypass() {
   <img
     src={MiniGastricBypass1}
     alt="Illustration of the mini gastric bypass anatomy"
-    className="w-full h-64 sm:h-80 lg:h-[26rem] object-contain object-center bg-[#e8f6f8] p-4"
+    className="w-full h-64 sm:h-80 lg:h-[26rem] object-contain object-Centre bg-[#e8f6f8] p-4"
   />
 </div>
 

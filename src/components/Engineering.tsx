@@ -47,7 +47,7 @@ export default function Engineering() {
         <div className="space-y-8">
      <div>
   <p className="text-teal-600 text-xl md:text-2xl font-semibold uppercase tracking-wide mb-2">
-    Why Choose Novo Robotic Surgery Center
+    Why Choose Novo Robotic Surgery Centre
   </p>
   <h2 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight">
     Precision<br />Matters

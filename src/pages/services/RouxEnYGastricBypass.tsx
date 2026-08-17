@@ -405,7 +405,7 @@ export default function RouxEnYGastricBypass() {
         <p>
           Our experienced bariatric surgeons use advanced robotic technology to perform
           gastric bypass surgery with enhanced precision, control, and safety. At Novo
-          Robotic Surgery Centre, we provide comprehensive, patient-centered care, from
+          Robotic Surgery Centre, we provide comprehensive, patient-Centreed care, from
           detailed pre-operative evaluations and personalized treatment plans to
           nutritional guidance, post-operative care, and long-term weight management
           support.

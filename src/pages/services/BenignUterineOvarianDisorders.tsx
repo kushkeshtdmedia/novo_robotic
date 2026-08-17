@@ -371,7 +371,7 @@ export default function BenignUterineOvarianDisorders() {
             <p className="mt-6 text-white/80 leading-relaxed">
               At Novo Robotic Surgery Centre, we combine advanced robotic
               technology with experienced surgical expertise to deliver safe,
-              precise, and patient-centered care.
+              precise, and patient-Centreed care.
             </p>
             <p className="mt-4 text-white/80 leading-relaxed">
               Our team is dedicated to providing personalized treatment plans for

@@ -2,7 +2,7 @@ import { ArrowRight, CheckCircle, Eye, Cpu, Scissors, Layers, Activity, Utensils
 import { NavLink } from 'react-router-dom';
 import GastrectomyImage from '../../assets/images/Gastrectomy1.jpeg';
 import VikrantPic from '../../assets/images/VikrantOnco.jpeg';
-import GastrectomyImage2 from '../../assets/images/Gastrectomy2.jpeg';
+import GastrectomyImage2 from '../../assets/images/GastrectomyImage2.jpeg';
 
 const faqs = [
   {
@@ -359,7 +359,7 @@ export default function RoboticSleeveGastrectomy() {
               Why Choose Novo<br />Robotic?
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              At Novo Robotic Hospital, we define the future of bariatric surgery. Our center of excellence is dedicated to providing the safest, most effective outcomes for patients seeking lasting weight transformation.
+              At Novo Robotic Surgery Centre, we define the future of bariatric surgery. Our Centre of excellence is dedicated to providing the safest, most effective outcomes for patients seeking lasting weight transformation.
             </p>
             <ul className="space-y-4 mb-8">
               {whyUs.map((item) => (

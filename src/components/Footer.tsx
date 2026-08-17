@@ -18,7 +18,7 @@ const PHONES = [
 /* ── Link data (mirrors the router) ─────────────────── */
 const servicesCol1 = [
   { label: 'Appendix Surgery', to: '/services/appendix-surgery' },
-  { label: 'Bariatric / Weight Loss Surgery', to: '/services/bariatric-weight-loss-surgery' },
+  // { label: 'Bariatric / Weight Loss Surgery', to: '/services/bariatric-weight-loss-surgery' },
   { label: 'Benign Uterine & Ovarian Disorders', to: '/services/benign-uterine-ovarian-disorders' },
   { label: 'Colorectal Cancer Surgery', to: '/services/colorectal-cancer-surgery' },
   { label: 'Fertility Preserving Surgery', to: '/services/fertility-preserving-surgery' },
@@ -28,7 +28,7 @@ const servicesCol1 = [
 const servicesCol2 = [
   { label: 'Hernia Surgery', to: '/services/hernia-surgery' },
   { label: 'Mini Gastric Bypass', to: '/services/mini-gastric-bypass' },
-  { label: 'Oesophagus Cancer Surgery', to: '/services/oesophagus-surgery' },
+  // { label: 'Oesophagus Cancer Surgery', to: '/services/oesophagus-surgery' },
   { label: 'Robotic Sleeve Gastrectomy', to: '/services/robotic-sleeve-gastrectomy' },
   { label: 'Roux-en-Y Gastric Bypass', to: '/services/roux-en-gastric-bypass' },
   { label: 'Stomach Cancer Surgery', to: '/services/stomach-cancer-surgery' },

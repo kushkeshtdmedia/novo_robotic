@@ -17,7 +17,7 @@ export default function ContactPage() {
       <section className="px-6 md:px-12 py-16 grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
         <div>
           <span className="inline-block bg-teal-50 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
-            PATIENT SUPPORT CENTER
+            PATIENT SUPPORT Centre
           </span>
           <h1 className="text-5xl font-bold mb-5">
             <span className="text-teal-900">Get in </span>
@@ -105,7 +105,7 @@ export default function ContactPage() {
         <div className="flex items-start justify-between mb-6 flex-wrap gap-2">
           <p className="flex items-start gap-2 text-gray-500 text-sm max-w-xl">
             <MapPin size={18} className="text-teal-700 shrink-0 mt-0.5" />
-            NOVO Robotic Surgery Center B-12/13, Opposite Dabur India Corporation
+            NOVO Robotic Surgery Centre B-12/13, Opposite Dabur India Corporation
             Limited, Anand Vihar, Kaushambi, Ghaziabad, Uttar Pradesh, India - 201010.
           </p>
           <a href="#" className="flex items-center gap-1 text-teal-700 text-sm font-semibold whitespace-nowrap">

@@ -87,7 +87,7 @@ const recovery = [
 const whyNovo = [
   {
     icon: Award,
-    body: 'When facing complex gynecological conditions, choosing Novo Robotic Surgery Centre in Kaushambi, Ghaziabad means receiving advanced, patient-centered care from an experienced team of robotic surgeons. We specialize in minimally invasive, fertility-preserving surgical techniques whenever clinically appropriate, helping women receive effective treatment while preserving their reproductive health whenever possible.',
+    body: 'When facing complex gynecological conditions, choosing Novo Robotic Surgery Centre in Kaushambi, Ghaziabad means receiving advanced, patient-Centreed care from an experienced team of robotic surgeons. We specialize in minimally invasive, fertility-preserving surgical techniques whenever clinically appropriate, helping women receive effective treatment while preserving their reproductive health whenever possible.',
   },
   {
     icon: Cpu,
@@ -378,109 +378,7 @@ export default function FertilityPreservingSurgery() {
       </section>
 
       {/* ============ CTA ============ */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-12 rounded-xl overflow-hidden shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
-            <div className="lg:col-span-5 bg-[#005a65] p-8 lg:p-12">
-              <h2 className="text-3xl font-extrabold leading-[1.15] tracking-[-0.02em] text-white">
-                Request a consultation
-              </h2>
-              <p className="mt-5 text-sm text-white/70 leading-relaxed">
-                Every patient receives a personalized treatment plan tailored to
-                her diagnosis, symptoms, overall health, and future family
-                goals.
-              </p>
-
-              <div className="mt-10 space-y-4 text-sm">
-                <a
-                  href="tel:+918081888777"
-                  className="flex items-center gap-3 font-bold text-white hover:text-[#fdd350] transition-colors"
-                >
-                  <Phone className="w-4 h-4" strokeWidth={2} /> +91 8081 888 777
-                </a>
-                <p className="flex items-center gap-3 text-white/80">
-                  <MapPin className="w-4 h-4" strokeWidth={2} /> Novo Robotic
-                  Surgery Centre, Kaushambi, Ghaziabad
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 bg-white p-8 lg:p-12">
-              <div className="space-y-5">
-                <div>
-                  <label
-                    htmlFor="fp-name"
-                    className="font-[IBM_Plex_Sans] text-[10px] font-bold uppercase tracking-[0.1em] text-[#3e484a]"
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    id="fp-name"
-                    type="text"
-                    placeholder="Your name"
-                    className="mt-2 w-full rounded-lg bg-[#f3f3f6] border border-transparent px-4 py-3 text-sm outline-none focus:border-2 focus:border-[#0d7481] focus:bg-white transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="fp-phone"
-                    className="font-[IBM_Plex_Sans] text-[10px] font-bold uppercase tracking-[0.1em] text-[#3e484a]"
-                  >
-                    Phone Number
-                  </label>
-                  <input
-                    id="fp-phone"
-                    type="tel"
-                    placeholder="+91 00000 00000"
-                    className="mt-2 w-full rounded-lg bg-[#f3f3f6] border border-transparent px-4 py-3 text-sm outline-none focus:border-2 focus:border-[#0d7481] focus:bg-white transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="fp-interest"
-                    className="font-[IBM_Plex_Sans] text-[10px] font-bold uppercase tracking-[0.1em] text-[#3e484a]"
-                  >
-                    Area of Interest
-                  </label>
-                  <select
-                    id="fp-interest"
-                    defaultValue="general"
-                    className="mt-2 w-full rounded-lg bg-[#f3f3f6] border border-transparent px-4 py-3 text-sm outline-none focus:border-2 focus:border-[#0d7481] focus:bg-white transition-colors"
-                  >
-                    <option value="general">General consultation</option>
-                    <option value="myomectomy">Robotic Myomectomy</option>
-                    <option value="endometriosis">
-                      Robotic Resection of Deep Endometriosis
-                    </option>
-                    <option value="cystectomy">
-                      Robotic Ovarian Cystectomy
-                    </option>
-                    <option value="onco">
-                      Fertility-Sparing Robotic Surgery for Early-Stage
-                      Gynecologic Cancers
-                    </option>
-                  </select>
-                </div>
-
-                <button
-                  type="button"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#fdd350] px-6 py-4 text-sm font-bold text-[#241a00] hover:bg-[#ebc241] transition-colors"
-                >
-                  <CalendarCheck className="w-4 h-4" strokeWidth={2} /> Book
-                  initial consultation
-                </button>
-
-                <p className="text-center font-[IBM_Plex_Sans] text-[10px] text-[#6e797b]">
-                  By submitting, you agree to be contacted by our clinical
-                  coordination team.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    
     </div>
   );
 }

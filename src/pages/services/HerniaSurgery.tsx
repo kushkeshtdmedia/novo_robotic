@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle, XCircle, Zap, Eye, Settings, Layers, Scissors, AlertTriangle, Users, Shield, Award, ChevronDown } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import herniaRobotic from '../../assets/images/HerniaRobotic.jpeg';
-import Surgeryhernia from '../../assets/images/surgeryHerniaImage.jpeg';
+import Surgeryhernia from '../../assets/images/HerniaRobotic.jpeg';
 import WhytoChoose from '../../assets/images/Whytochoose.jpeg';
 
 const faqs = [
@@ -136,25 +136,26 @@ export default function HerniaSurgery() {
             </div> */}
           </div>
 
-          <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
+         <div className="relative">
+            <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
               <img
                 src={herniaRobotic}
-                alt="Robotic Hernia Surgery"
-                className="w-full h-[440px] object-cover"
+                alt="Robotic hernia surgery being performed at Novo Robotic Surgery Centre"
+                loading="lazy"
+                decoding="async"
+                className="h-auto max-h-[340px] w-full object-contain sm:max-h-[400px] lg:max-h-[460px]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-teal-900/30 to-transparent rounded-3xl" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-teal-900/30 to-transparent" />
             </div>
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl px-5 py-3.5 flex items-center gap-3 min-w-max">
-              <div className="w-9 h-9 bg-teal-100 rounded-full flex items-center justify-center">
-                <Award size={16} className="text-teal-600" />
-              </div>
+
+            {/* <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-3 rounded-2xl bg-white/95 px-4 py-3 shadow-xl backdrop-blur-sm sm:bottom-6 sm:px-5 sm:py-3.5">
+            
               <div>
-                <p className="text-xs text-gray-400">Accuracy Rating</p>
-                <p className="font-black text-gray-900">0.1mm Accuracy</p>
+             
               </div>
-            </div>
-            <div className="absolute -top-8 -right-8 w-40 h-40 bg-teal-200/40 rounded-full blur-3xl -z-10" />
+            </div> */}
+
+            <div className="absolute -right-8 -top-8 -z-10 h-40 w-40 rounded-full bg-teal-200/40 blur-3xl" />
           </div>
         </div>
       </section>

@@ -113,7 +113,7 @@ export default function BariatricTransformations() {
             id="bariatric-transformations-heading"
             className="mt-3 font-[Manrope] text-3xl font-extrabold leading-tight text-[#00343a] md:text-4xl"
           >
-            Before &amp; after our bariatric patients
+            Before &amp; After our bariatric patients
           </h2>
           <span
             className="mx-auto mt-4 block h-1 w-16 rounded-full bg-[#fdd350]"
