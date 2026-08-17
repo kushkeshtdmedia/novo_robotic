@@ -376,7 +376,7 @@ export default function StomachSurgery() {
         </div>
         <div className="w-px h-11 bg-gray-200" />
         <div>
-          <p className="text-3xl font-black text-gray-900 leading-none">25 Yrs</p>
+          <p className="text-3xl font-black text-gray-900 leading-none">25  Yrs</p>
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mt-1">Of Surgical Experience</p>
         </div>
       </div>
