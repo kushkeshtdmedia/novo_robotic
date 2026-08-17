@@ -296,11 +296,11 @@ const PrivacyPolicyModal = ({ onClose }: { onClose: () => void }) => {
                 {PHONES[0].display}
               </a>
               <a
-                href="mailto:enquiry@novorobotic.com"
+                href="mailto:inquiry@novorobotic.com"
                 className="inline-flex items-center gap-2 font-medium text-gray-800 hover:text-[#22C8C8] transition-colors"
               >
                 <span style={{ color: TEAL }}><Mail /></span>
-                enquiry@novorobotic.com
+                inquiry@novorobotic.com
               </a>
             </div>
           </section>
