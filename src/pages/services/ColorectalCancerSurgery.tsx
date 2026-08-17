@@ -215,13 +215,7 @@ const ColorectalCancerSurgery: React.FC = () => {
                 Book Appointment
                 <ArrowRight className="h-4 w-4" strokeWidth={2} />
               </a>
-              <a
-                href="tel:+919999999999"
-                className="inline-flex items-center gap-2 rounded-full border border-[#bec8cb] px-7 py-3.5 text-[15px] font-bold text-[#005a65] transition-colors duration-300 hover:border-[#005a65] hover:bg-white"
-              >
-                <Phone className="h-4 w-4" strokeWidth={2} />
-                Call Now
-              </a>
+          
             </div>
           </div>
 
