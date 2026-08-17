@@ -66,7 +66,7 @@ export default function DrVikrantSharma() {
             </p>
 
             <p className="mt-6 text-[#3e484a] leading-relaxed max-w-xl">
-              With over 12 years of specialised experience and a track record of 10,000+ successful
+              With over 20 years of specialised experience and a track record of 10,000+ successful
               procedures, Dr. Sharma stands at the pinnacle of surgical innovation, combining
               technological mastery with compassionate patient care.
             </p>
@@ -80,7 +80,7 @@ export default function DrVikrantSharma() {
               </NavLink>
 
               <div className="rounded-lg bg-white px-6 py-3 shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
-                <p className="text-lg font-bold text-[#005a65] leading-none">12+</p>
+                <p className="text-lg font-bold text-[#005a65] leading-none">20+</p>
                 <p className="font-[IBM_Plex_Sans] text-[10px] font-bold uppercase tracking-[0.1em] text-[#3e484a] mt-1">
                   Years of Expertise
                 </p>

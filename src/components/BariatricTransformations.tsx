@@ -13,11 +13,12 @@ import { memo, useState } from 'react';
 import image1 from '../assets/images/Image1Bariactic.jpeg';
 import image2 from '../assets/images/Image2Bariactic.jpeg';
 import image3 from '../assets/images/Image3Bariactic.jpeg';
-import image4 from '../assets/images/Image4Bariactic.jpeg';
+// import image4 from '../assets/images/Image4Bariactic.jpeg';
 import image5 from '../assets/images/Image5Bariactic.jpeg';
 import image6 from '../assets/images/Image6Bariactic.jpeg';
+import image7 from '../assets/images/Image7Briactic.jpeg';
 
-const IMAGES: readonly string[] = [image1, image2, image3, image4, image5, image6];
+const IMAGES: readonly string[] = [image1, image2, image3,  image5, image6, image7];
 
 /* ---------------- thumbnail rail ---------------- */
 
