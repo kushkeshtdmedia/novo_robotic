@@ -14,7 +14,7 @@ const serviceMenu: ServiceCategory[] = [
       { label: 'Hernia Surgery', slug: 'hernia-surgery' },
       { label: 'Appendix Surgery', slug: 'appendix-surgery' },
       { label: 'Stomach Surgery', slug: 'stomach-surgery' },
-      { label: 'Oesophagus Surgery', slug: 'oesophagus-surgery' },
+    { label: 'Oesophagus Surgery', slug: 'oesophagus-general-surgery' },
     ],
   },
 {
@@ -31,7 +31,8 @@ const serviceMenu: ServiceCategory[] = [
       { label: 'Colorectal Cancer Surgery', slug: 'colorectal-cancer-surgery' },
       { label: 'Gallbladder Cancer Surgery', slug: 'gallbladder-cancer-surgery' },
       {label: 'Gynecologic Cancer Surgery', slug: 'gynecologic-cancer-surgery'},
-      { label: 'Stomach Cancer Surgery', slug: 'stomach-surgery' }
+      { label: 'Stomach Cancer Surgery', slug: 'stomach-surgery' },
+      { label: 'Oesophagus Cancer Surgery', slug: 'oesophagus-surgery' },
       // { label: 'Pancreatic Cancer Surgery', slug: 'pancreatic-cancer-surgery' },
     ],
   },

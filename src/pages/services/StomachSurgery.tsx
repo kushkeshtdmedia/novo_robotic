@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { ArrowRight, ChevronRight, Utensils, Flame, Scale, Activity, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronRight, Utensils, Flame, Scale, Activity, ChevronDown,
+  Droplet,        // ← add
+  AlertTriangle } from "lucide-react";
 import OncoSurgeryJourney from '../../assets/images/StomachCancerSurgery.png';
 import vikrantPic from '../../assets/images/VikrantOnco.jpeg';
 import StomachSurgeryPic from '../../assets/images/StomachSurgeryPic.png'
@@ -38,36 +40,56 @@ const faqs = [
 ];
 
 const warningSigns = [
-  { Icon: Utensils, title: "Feeling Full Quickly", body: "Satiety after eating only a small amount of food." },
-  { Icon: Flame, title: "Persistent Indigestion", body: "Chronic discomfort or a burning sensation in the upper abdomen." },
-  { Icon: Scale, title: "Unexplained Weight Loss", body: "Dropping weight without any changes to diet or exercise." },
-  { Icon: Activity, title: "Abdominal Pain", body: "Vague, aching discomfort in the stomach area that persists." },
+  { Icon: Utensils, title: "Early Satiety", body: "Feeling full after eating only a small amount (early satiety)" },
+  { Icon: Flame, title: "Persistent Indigestion", body: "Persistent indigestion or heartburn that does not improve with medication" },
+  { Icon: Activity, title: "Upper Abdominal Pain", body: "A dull, ongoing pain or discomfort in the upper abdomen" },
+  { Icon: Scale, title: "Unexplained Weight Loss", body: "Unexplained weight loss and loss of appetite" },
+  { Icon: Droplet, title: "Nausea or Vomiting", body: "Nausea or occasional vomiting, sometimes with blood" },
+  { Icon: AlertTriangle, title: "Dark or Tarry Stools", body: "Dark or black, tarry stools, which may indicate internal bleeding" },
 ];
 
 const procedures = [
   {
-    title: "Robotic Total Gastrectomy",
-    body: "Complete removal of the stomach for tumors located in the middle or upper sections, followed by esophagojejunal anastomosis.",
-    tags: ["Radical lymphadenectomy", "Complex reconstruction"],
+    title: 'Robotic Total Gastrectomy',
+    body: 'Complete robotic removal of the stomach for advanced stomach cancer, followed by reconstruction of the digestive system using advanced robotic surgery technology for better precision and recovery.',
+    tags: ['Advanced Stomach Cancer', 'Digestive Reconstruction'],
   },
   {
-    title: "Partial Gastrectomy",
-    body: "Removal of the lower part of the stomach (Distal Gastrectomy) while preserving the upper portion for better digestive function.",
-    tags: ["Preserves function", "Faster recovery"],
+    title: 'Robotic Partial (Subtotal) Gastrectomy',
+    body: 'Removal of the cancer-affected part of the stomach while preserving the healthy portion whenever possible. This robotic stomach cancer surgery helps maintain better digestion and faster recovery.',
+    tags: ['Stomach Preserving', 'Better Digestion'],
   },
   {
-    title: "Wedge Gastric Resection",
-    body: "Ideal for GISTs and benign tumors, removing only a small wedge-shaped section of the stomach wall.",
-    tags: ["Minimal resection", "Rapid healing"],
+    title: 'Robotic Wedge Gastric Resection',
+    body: 'A minimally invasive robotic procedure used to remove small or early-stage stomach tumours with precision while preserving most of the stomach tissue.',
+    tags: ['Early-Stage Tumours', 'Tissue Preserving'],
+  },
+  {
+    title: 'Advanced Robotic Lymph Node Dissection',
+    body: 'Careful robotic removal of nearby lymph nodes to check and prevent the spread of stomach cancer, helping improve accurate cancer staging and treatment outcomes.',
+    tags: ['Accurate Staging', 'Spread Prevention'],
   },
 ];
 
 const journey = [
-  { title: "Detailed Pre-Surgical Evaluation", body: "Comprehensive staging with CT, PET, and endoscopic ultrasound to map the tumor's precise location." },
-  { title: "Anesthesia & Port Placement", body: "General anesthesia is administered and 4–5 tiny incisions (8mm) are made for the robotic arms." },
-  { title: "Robot Docking", body: "The Da Vinci robot is positioned over the patient and instruments are inserted under 3D HD visualization." },
-  { title: "Tumor Mobilization", body: "The surgeon uses micro-instruments to separate the stomach from surrounding organs with precision." },
-  { title: "Completion of Surgery", body: "The affected tissue is removed through a small incision and the digestive tract is reconstructed." },
+  { title: "Detailed Pre-Surgical Evaluation", body: "Before surgery, the patient undergoes a complete medical assessment including blood tests, endoscopy, CT/PET scans, and cancer staging. The surgical team carefully evaluates the size, location, and spread of the stomach tumor to create a personalized treatment plan." },
+  { title: "Anesthesia and Patient Preparation", body: "On the day of surgery, the patient is given general anesthesia to ensure a painless and comfortable procedure. The abdomen is cleaned and prepared for minimally invasive robotic surgery." },
+  { title: "Small Keyhole Incisions", body: "Instead of one large cut, the surgeon creates a few tiny keyhole incisions in the abdomen. Through these small openings, robotic instruments and a high-definition 3D camera are inserted." },
+  { title: "Robotic System Docking", body: "The robotic system is connected to the surgical ports. The advanced robotic arms hold specialized surgical instruments that can move with exceptional precision and flexibility inside the body." },
+  { title: "Surgeon-Controlled Robotic Surgery", body: "The surgeon sits at a nearby robotic console and controls every movement of the robotic instruments in real time. The robot never works independently. The high-definition magnified 3D view helps the surgeon precisely remove the stomach cancer while protecting nearby nerves, blood vessels, and healthy tissues." },
+  { title: "Removal of Cancerous Tissue", body: "Depending on the stage and location of the cancer, part of the stomach or the entire stomach may be removed. Nearby lymph nodes may also be removed to help prevent cancer spread and improve treatment outcomes." },
+  { title: "Reconstruction of the Digestive Tract", body: "After removing the affected portion, the digestive system is carefully reconstructed so the patient can continue eating and digesting food normally." },
+  { title: "Completion of Surgery", body: "Once the procedure is completed, the robotic instruments are removed and the tiny incisions are closed with minimal stitches, resulting in smaller scars and reduced pain." },
+];
+
+const benefits = [
+  "Superior 3D magnified vision",
+  "Tremor-free surgical precision",
+  "More thorough lymph node clearance",
+  "Significantly less blood loss",
+  "Minimal incisions with maximum surgical access",
+  "Lower risk of wound complications",
+  "Less pain, shorter hospital stay, and minimal scarring",
 ];
 
 const advantages = [
@@ -114,7 +136,7 @@ export default function StomachSurgery() {
               <span className="text-teal-700">Gastrectomy</span>
             </h1>
                                                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-600 leading-snug mb-5 max-w-2xl">
-  Best Robotic Stomach Surgerys in Kaushambi, Ghaziabad
+  Advanced Robotic Stomach Cancer Surgery (Robotic Gastrectomy) in Kaushambi, Ghaziabad
 </p>
             <p className="text-gray-600 text-lg max-w-xl mb-8 leading-relaxed">
               Minimally invasive stomach cancer surgery with superior accuracy and faster recovery. Our cutting-edge robotic technology provides surgeons with 10× magnification and tremor-free dexterity.
@@ -165,7 +187,7 @@ export default function StomachSurgery() {
               Understanding<br />Stomach Cancer
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Gastric cancer requires a multidisciplinary approach combining surgical precision with oncological expertise. At Novo, we specialize in identifying cellular anomalies early and intervening with minimal tissue disruption.
+              Stomach cancer, also known as gastric cancer, occurs when the cells lining the inside of the stomach begin to grow and multiply uncontrollably. Over time, these abnormal cells can form a tumour that may damage the stomach wall and, if left untreated, spread to nearby organs or other parts of the body. 
             </p>
             <p className="text-gray-600 leading-relaxed mb-6">
               Our robotic platform allows for extensive lymph node dissection — a critical factor in cancer staging and long-term survival — that was previously challenging with traditional laparoscopic methods.
@@ -175,117 +197,125 @@ export default function StomachSurgery() {
             </button>
           </div>
 
-          <div>
-            <p className="text-sm font-bold text-gray-800 mb-4 flex items-center gap-2">
-              ⚠ Early Warning Signs
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              {warningSigns.map(({ Icon, title, body }) => (
-                <div key={title} className="bg-slate-50 border-l-4 border-yellow-400 rounded-2xl p-5">
-                  <Icon size={18} className="text-teal-600 mb-3" />
-                  <h4 className="font-bold text-gray-900 text-sm mb-1.5">{title}</h4>
-                  <p className="text-xs text-gray-500 leading-relaxed">{body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div>
+  <p className="text-sm font-bold text-gray-800 mb-4 flex items-center gap-2">
+    ⚠ Early Warning Signs
+  </p>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {warningSigns.map(({ Icon, title, body }) => (
+      <div key={title} className="bg-slate-50 border-l-4 border-yellow-400 rounded-2xl p-5">
+        <Icon size={18} className="text-teal-600 mb-3" />
+        <h4 className="font-bold text-gray-900 text-sm mb-1.5">{title}</h4>
+        <p className="text-xs text-gray-500 leading-relaxed">{body}</p>
+      </div>
+    ))}
+  </div>
+</div>
         </div>
       </section>
 
       {/* ─── The Robotic Solution ─── */}
-      <section className="py-20 bg-teal-700 text-center">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">The Robotic Solution</h2>
-          <p className="text-teal-100 leading-relaxed mb-12">
-            Robotic Gastrectomy is a leap forward from traditional open or laparoscopic surgery. Using the Da Vinci surgical system, our surgeons operate with wrist-like instruments that provide a range of motion far exceeding the human hand.
-          </p>
-          <div className="flex justify-center gap-16 flex-wrap">
-            <div>
-              <p className="text-4xl font-black text-yellow-400 leading-none">10×</p>
-              <p className="text-xs font-semibold uppercase tracking-widest text-teal-200 mt-2">Visual Magnification</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black text-yellow-400 leading-none">540°</p>Instrument Rotation
-              <p className="text-xs font-semibold uppercase tracking-widest text-teal-200 mt-2"></p>
-            </div>
-            <div>
-              <p className="text-4xl font-black text-yellow-400 leading-none">0%</p>
-              <p className="text-xs font-semibold uppercase tracking-widest text-teal-200 mt-2">Tremor Transfer</p>
-            </div>
-          </div>
-        </div>
-      </section>
+     <section className="py-20 bg-teal-700 text-center">
+  <div className="max-w-4xl mx-auto px-6">
+    <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+      What is Robotic Stomach Cancer Surgery?
+    </h2>
+    <p className="text-teal-100 leading-relaxed mb-4">
+      Robotic stomach cancer surgery, also called robotic gastrectomy, is an advanced minimally invasive treatment for stomach (gastric) cancer. Instead of one large cut, the surgeon makes a few tiny keyhole incisions to remove part or all of the cancer-affected stomach using a robotic surgical system.
+    </p>
+    <p className="text-teal-100 leading-relaxed mb-12">
+      The robotic system is completely controlled by the surgeon, providing enhanced 3D vision and highly precise movements. Compared to traditional open surgery, it offers less pain, minimal blood loss, smaller scars, faster recovery, and a shorter hospital stay.
+    </p>
+    <div className="flex justify-center gap-16 flex-wrap">
+      <div>
+        <p className="text-4xl font-black text-yellow-400 leading-none">3D</p>
+        <p className="text-xs font-semibold uppercase tracking-widest text-teal-200 mt-2">Enhanced Vision</p>
+      </div>
+      <div>
+        <p className="text-4xl font-black text-yellow-400 leading-none">100%</p>
+        <p className="text-xs font-semibold uppercase tracking-widest text-teal-200 mt-2">Surgeon Controlled</p>
+      </div>
+      <div>
+        <p className="text-4xl font-black text-yellow-400 leading-none">Keyhole</p>
+        <p className="text-xs font-semibold uppercase tracking-widest text-teal-200 mt-2">Tiny Incisions</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ─── Procedure Spectrum ─── */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Specialisations</p>
-              <h2 className="text-3xl md:text-4xl font-black text-gray-900">Procedure Spectrum</h2>
-              <p className="text-gray-500 text-sm mt-2">Tailoring the surgical approach based on tumor location and stage.</p>
-            </div>
-            <div className="hidden md:block w-12 h-1.5 bg-yellow-400 rounded-full" />
-          </div>
+   <section className="py-20 bg-slate-50">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="flex items-end justify-between mb-12">
+      <div>
+        <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Specialisations</p>
+        <h2 className="text-3xl md:text-4xl font-black text-gray-900">
+          Types of Robotic Stomach Cancer Procedures at Novo Robotic Surgery Centre
+        </h2>
+      </div>
+      <div className="hidden md:block w-12 h-1.5 bg-yellow-400 rounded-full shrink-0 ml-6 mb-3" />
+    </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {procedures.map((p) => (
-              <article key={p.title} className="bg-white rounded-3xl p-7 border border-gray-100 hover:shadow-lg transition-shadow">
-                <div className="w-11 h-11 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600 text-lg mb-5">⚕</div>
-                <h3 className="font-black text-gray-900 mb-2">{p.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{p.body}</p>
-                <div className="flex flex-col gap-2">
-                  {p.tags.map((t) => (
-                    <span key={t} className="text-xs font-bold uppercase tracking-wide text-teal-600 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </article>
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {procedures.map((p) => (
+        <article key={p.title} className="bg-white rounded-3xl p-7 border border-gray-100 hover:shadow-lg transition-shadow">
+          <div className="w-11 h-11 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600 text-lg mb-5">⚕</div>
+          <h3 className="font-black text-gray-900 mb-2">{p.title}</h3>
+          <p className="text-gray-500 text-sm leading-relaxed mb-4">{p.body}</p>
+          <div className="flex flex-col gap-2">
+            {p.tags.map((t) => (
+              <span key={t} className="text-xs font-bold uppercase tracking-wide text-teal-600 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
+                {t}
+              </span>
             ))}
           </div>
-        </div>
-      </section>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ─── Surgical Journey ─── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-12">The Surgical Journey</h2>
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="rounded-3xl overflow-hidden shadow-2xl bg-slate-50">
-              <img
-                src={OncoSurgeryJourney}
-                alt="Robotic surgical journey"
-                className="w-full h-auto object-contain md:h-[420px] md:object-cover"
-              />
+    <section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6">
+    <h2 className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-12">
+      How Robotic Stomach Cancer Surgery is Performed at Novo Robotic Surgery Centre
+    </h2>
+    <div className="grid md:grid-cols-2 gap-16 items-start">
+      <div className="rounded-3xl overflow-hidden shadow-2xl bg-slate-50 md:sticky md:top-24">
+        <img
+          src={OncoSurgeryJourney}
+          alt="Robotic surgical journey"
+          className="w-full h-auto object-contain md:h-[420px] md:object-cover"
+        />
+      </div>
+      <ol className="space-y-2">
+        {journey.map((s, i) => (
+          <li
+            key={s.title}
+            onMouseEnter={() => setActive(i)}
+            className={`flex gap-4 rounded-2xl p-4 transition-colors cursor-default ${
+              i === active ? "bg-teal-50" : ""
+            }`}
+          >
+            <div
+              className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-black text-sm mt-0.5 transition-colors ${
+                i === active ? "bg-teal-600 text-white" : "bg-slate-100 text-gray-500"
+              }`}
+            >
+              {i + 1}
             </div>
-            <ol className="space-y-2">
-              {journey.map((s, i) => (
-                <li
-                  key={s.title}
-                  onMouseEnter={() => setActive(i)}
-                  className={`flex gap-4 rounded-2xl p-4 transition-colors cursor-default ${
-                    i === active ? "bg-teal-50" : ""
-                  }`}
-                >
-                  <div
-                    className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-black text-sm mt-0.5 transition-colors ${
-                      i === active ? "bg-teal-600 text-white" : "bg-slate-100 text-gray-500"
-                    }`}
-                  >
-                    {i + 1}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900 mb-1">{s.title}</h4>
-                    <p className="text-sm text-gray-500 leading-relaxed">{s.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
+            <div>
+              <h4 className="font-bold text-gray-900 mb-1">{s.title}</h4>
+              <p className="text-sm text-gray-500 leading-relaxed">{s.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
 
       {/* ─── Clinical Advantages ─── */}
       <section className="py-20 bg-slate-50">
@@ -325,53 +355,58 @@ export default function StomachSurgery() {
       </section>
 
       {/* ─── Trust & Expertise ─── */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Why Choose Us</p>
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5">Trust &amp; Expertise</h2>
-            <p className="text-gray-600 leading-relaxed mb-8">
-              At Novo Robotic Hospital, we don't just treat cancer — we treat patients. Our multidisciplinary approach ensures every case is reviewed by a team of oncologists, radiologists, and robotic surgeons.
-            </p>
+ <section className="py-20 bg-slate-50">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Why Choose Us</p>
+      <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5">
+        Why Choose Novo Robotic Surgery Centre for Robotic Stomach Cancer Surgery?
+      </h2>
+      <p className="text-gray-600 leading-relaxed mb-4">
+        Choosing Novo Robotic Surgery Centre for robotic stomach cancer surgery means receiving advanced, patient-focused care from experienced surgical oncologist Dr Vikrant and his expert team. With more than 10,000 successful minimally invasive surgeries performed over the last decade, NOVO is committed to delivering safe, precise, and effective cancer treatment.
+      </p>
+      <p className="text-gray-600 leading-relaxed mb-8">
+        Using advanced robotic technology with high-definition 3D vision, the surgical team can perform stomach cancer surgery with greater accuracy while protecting nearby healthy tissues. This minimally invasive approach helps patients experience smaller cuts, less pain, minimal blood loss, reduced scarring, shorter hospital stays, and faster recovery compared to traditional open surgery.
+      </p>
 
-            <div className="flex items-center gap-8 mb-8">
-              <div>
-                <p className="text-3xl font-black text-gray-900 leading-none">10,000+</p>
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mt-1">Successful Surgeries</p>
-              </div>
-              <div className="w-px h-11 bg-gray-200" />
-              <div>
-                <p className="text-3xl font-black text-gray-900 leading-none">98%</p>
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mt-1">Patient Satisfaction</p>
-              </div>
-            </div>
-
-            <div className="bg-white border border-gray-100 rounded-2xl p-6">
-              <h4 className="font-black text-gray-900 mb-2">Multidisciplinary Team Approach</h4>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Your treatment plan is optimized through collaborative expertise across oncology, nutrition, and robotic surgery.
-              </p>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl bg-slate-50">
-              <img
-                src={vikrantPic}
-                alt="Dr. Vivek, Oncologic Surgery"
-                className="w-full h-auto object-contain md:h-[440px] md:object-cover md:object-top"
-              />
-            </div>
-            <span className="absolute top-5 right-5 bg-white/90 backdrop-blur-sm text-gray-900 text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-lg">
-              Cancer Care Clinic
-            </span>
-            <div className="absolute bottom-5 left-5 bg-teal-800/85 backdrop-blur-sm text-white rounded-2xl px-5 py-3">
-              <p className="font-black leading-none">Dr. Vikrant</p>
-              <p className="text-xs text-teal-200 mt-1">Surgeon</p>
-            </div>
-          </div>
+      <div className="flex items-center gap-8 mb-8">
+        <div>
+          <p className="text-3xl font-black text-gray-900 leading-none">10,000+</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mt-1">Minimally Invasive Surgeries</p>
         </div>
-      </section>
+        <div className="w-px h-11 bg-gray-200" />
+        <div>
+          <p className="text-3xl font-black text-gray-900 leading-none">25 Yrs</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mt-1">Of Surgical Experience</p>
+        </div>
+      </div>
+
+      <div className="bg-white border border-gray-100 rounded-2xl p-6">
+        <h4 className="font-black text-gray-900 mb-2">Complete Care at Every Stage</h4>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          At Novo Robotic Surgery Centre, patients receive complete care at every stage from detailed diagnosis and personalized treatment planning to post-surgery recovery and nutritional support. Our multidisciplinary team works closely together to ensure the best possible outcomes and help patients return to their normal lives as quickly and comfortably as possible.
+        </p>
+      </div>
+    </div>
+
+    <div className="relative">
+      <div className="rounded-3xl overflow-hidden shadow-2xl bg-slate-50">
+        <img
+          src={vikrantPic}
+          alt="Dr. Vikrant Sharma, Surgical Oncologist"
+          className="w-full h-auto object-contain md:h-[440px] md:object-cover md:object-top"
+        />
+      </div>
+      <span className="absolute top-5 right-5 bg-white/90 backdrop-blur-sm text-gray-900 text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-lg">
+        Cancer Care Clinic
+      </span>
+      <div className="absolute bottom-5 left-5 bg-teal-800/85 backdrop-blur-sm text-white rounded-2xl px-5 py-3">
+        <p className="font-black leading-none">Dr. Vikrant</p>
+        <p className="text-xs text-teal-200 mt-1">Surgical Oncologist</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ─── CTA ─── */}
       <section className="py-14 px-6">

@@ -9,9 +9,34 @@ import {
   Sparkles,
   Timer,
   Crosshair,
+  ChevronDown,
+  Link
 } from 'lucide-react';
+import {  Check } from 'lucide-react';
 import RouxEnYImage from '../../assets/images/RouxEnYGastricBypass.png';
 
+const faqs = [
+  {
+    q: 'How much weight can I lose after the Roux-en-Y gastric bypass?',
+    a: 'Many patients lose 60–80% of their excess body weight within 12 to 18 months when they follow the recommended diet, exercise, and follow-up plan.',
+  },
+  {
+    q: 'What foods can I eat after gastric bypass surgery?',
+    a: 'Your diet progresses gradually from clear liquids to protein-rich liquids, soft foods, and then healthy solid foods. Our bariatric team will provide a detailed meal plan.',
+  },
+  {
+    q: 'Are there any foods I should avoid after gastric bypass?',
+    a: 'Yes. Sugary foods, carbonated drinks, fried foods, and high-fat meals should be limited, as they may cause discomfort, slow weight loss, or lead to dumping syndrome.',
+  },
+  {
+    q: 'Is Roux-en-Y gastric bypass reversible?',
+    a: 'Although reversal is possible in rare situations, Roux-en-Y gastric bypass is considered a permanent procedure and should be viewed as a long-term treatment for obesity.',
+  },
+  {
+    q: 'Can I regain weight after gastric bypass surgery?',
+    a: 'Weight regain can happen if healthy eating habits and regular physical activity are not maintained. Ongoing follow-up with your bariatric team helps support long-term success.',
+  },
+];
 const criteria = [
   {
     icon: Scale,
@@ -29,32 +54,41 @@ const criteria = [
     body: 'Readiness to embrace lifelong nutritional guidelines and regular physical activity.',
   },
 ];
+const candidacy = [
+  'Your BMI is 40 or above, or 35 and above with obesity-related conditions such as type 2 diabetes, high blood pressure, or sleep apnea',
+  'You have tried to lose weight through diet, exercise, and lifestyle changes without long-term success',
+  'You are between 18 and 65 years of age (patients outside this age group are evaluated individually)',
+  'You are willing to commit to lifelong dietary changes, regular follow-ups, and a healthier lifestyle',
+  'You are mentally and emotionally prepared for weight loss surgery',
+  'You do not have untreated eating disorders or severe depression',
+  'You are a non-smoker or willing to stop smoking at least 6 weeks before surgery',
+];
 
 const journey = [
   {
     step: '01',
-    title: 'Small Incisions',
-    body: 'Keyhole ports are created for the robotic arms, ensuring minimal blood loss.',
+    title: 'Small Incisions for Minimally Invasive Surgery',
+    body: 'The surgeon makes 4–5 small keyhole incisions in the abdomen. Through these tiny openings, robotic instruments and a high-definition 3D camera are inserted, providing enhanced visibility and highly precise surgical movements.',
   },
   {
     step: '02',
-    title: 'Stomach Pouch',
-    body: 'A walnut-sized pouch is created at the top of the stomach with robotic precision.',
+    title: 'Creating a Small Stomach Pouch',
+    body: 'The upper portion of the stomach is divided using surgical staplers to create a small stomach pouch that can hold only a limited amount of food. The remaining part of the stomach stays in place and continues producing digestive juices.',
   },
   {
     step: '03',
-    title: 'Intestine Rerouting',
-    body: 'The small intestine is divided and the lower part is lifted to the new pouch.',
+    title: 'Rerouting the Small Intestine',
+    body: 'A portion of the small intestine is connected directly to the newly created stomach pouch. This allows food to bypass a part of the stomach and upper small intestine, helping reduce calorie absorption and support weight loss.',
   },
   {
     step: '04',
-    title: '“Y” Connection',
-    body: 'The bypassed segment is reconnected to allow digestive juices to mix with food.',
+    title: 'Forming the "Y" Connection',
+    body: 'The bypassed section of the intestine is reconnected further down the digestive tract, creating the characteristic "Y" shape of the Roux-en-Y procedure. This allows digestive enzymes to mix with food for proper digestion and nutrient absorption.',
   },
   {
     step: '05',
-    title: 'Closure',
-    body: 'Internal checks are performed using 3D HD visualisation before final closure.',
+    title: 'Closure and Recovery',
+    body: 'Once the procedure is completed, the small incisions are closed using sutures or surgical glue. Most patients are encouraged to start walking within a few hours after surgery, which helps improve blood circulation and supports faster recovery.',
   },
 ];
 
@@ -66,9 +100,30 @@ const stats = [
 ];
 
 const recoveryPath = [
-  '1–2 day hospital stay',
-  'Gradual diet progression',
-  'Lifetime nutrition support',
+  {
+    title: "Hospital Stay",
+    body: "Most patients stay in the hospital for 1 to 2 days after surgery.",
+  },
+  {
+    title: "Diet Progression",
+    body: "Your diet will gradually progress from clear liquids to pureed foods, then soft foods, and eventually healthy regular meals as guided by your bariatric team.",
+  },
+  {
+    title: "Hydration Matters",
+    body: "Drinking enough water throughout the day is important to help prevent dehydration during recovery.",
+  },
+  {
+    title: "Activity & Return to Work",
+    body: "Most patients can return to light desk work within 1 to 2 weeks. Heavy lifting and strenuous physical activities are usually restricted for about 4 to 6 weeks.",
+  },
+  {
+    title: "Long-Term Nutrition Support",
+    body: "Daily vitamins and nutritional supplements are important to help your body absorb essential nutrients after gastric bypass surgery.",
+  },
+  {
+    title: "Follow-Up Visits",
+    body: "Regular follow-up appointments help monitor weight loss progress, nutrition, and overall recovery after surgery.",
+  },
 ];
 
 const whyNovo = [
@@ -135,109 +190,153 @@ export default function RouxEnYGastricBypass() {
       </section>
 
       {/* ============ UNDERSTANDING ============ */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div>
-            <h2 className="text-3xl lg:text-[32px] font-bold leading-tight text-[#005a65]">
-              Understanding RYGB
-            </h2>
+    <section className="py-20 lg:py-28">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div>
+        <h2 className="text-3xl lg:text-[32px] font-bold leading-tight text-[#005a65]">
+          Understanding RYGB
+        </h2>
 
-            <p className="mt-5 text-[#3e484a] leading-relaxed">
-              The Roux-en-Y Gastric Bypass is a dual-mechanism procedure that creates a tiny stomach
-              pouch and reroutes the small intestine. This results in both restriction of food
-              intake and reduced absorption of calories.
-            </p>
-            <p className="mt-4 text-[#3e484a] leading-relaxed">
-              Our robotic-assisted approach utilises the 0.1mm precision of the da Vinci system,
-              allowing for cleaner incisions, more robust suturing and significantly reduced
-              internal trauma.
-            </p>
+        <p className="mt-5 text-[#3e484a] leading-relaxed">
+          Roux-en-Y Gastric Bypass, commonly known as gastric bypass surgery, is one of the most effective bariatric procedures for long-term weight loss in people struggling with severe obesity and obesity-related health conditions. In this procedure, the stomach is made smaller and a portion of the small intestine is bypassed. This helps patients feel full after eating smaller meals while reducing calorie absorption.
+        </p>
+        <p className="mt-4 text-[#3e484a] leading-relaxed">
+          Robotic Roux-en-Y Gastric Bypass not only supports significant weight loss but may also help improve obesity-related conditions such as type 2 diabetes, high blood pressure, sleep apnea, fatty liver disease, acid reflux, and joint pain. Gastric bypass surgery is often recommended for patients who have not achieved long-term weight loss through diet, exercise, or medications alone.
+        </p>
 
-            <ul className="mt-10 space-y-4">
-              {[
-                { k: 'Restrictive', v: 'Smaller pouch limits capacity' },
-                { k: 'Malabsorptive', v: 'Bypassing intestine reduces calorie uptake' },
-                { k: 'Metabolic', v: 'Positive changes in hunger hormones' },
-              ].map((b) => (
-                <li key={b.k} className="flex items-start gap-3 text-sm text-[#3e484a]">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0d7481]" />
-                  <span>
-                    <strong className="font-bold text-[#1a1c1e]">{b.k}:</strong> {b.v}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="relative rounded-xl overflow-hidden bg-[#e8f6f8] shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
-            <img
-              src={RouxEnYImage}
-              alt="Anatomical illustration of the Roux-en-Y gastric bypass"
-              className="w-full h-auto max-h-[420px] object-contain mx-auto"
-            />
-
-            <div className="absolute bottom-5 right-5 flex items-center gap-3 rounded-lg bg-white/80 backdrop-blur-[20px] px-5 py-3">
-              <span className="h-8 w-8 rounded-full bg-[#0d7481] flex items-center justify-center">
-                <Crosshair className="w-4 h-4 text-white" strokeWidth={2} />
+        <ul className="mt-10 space-y-4">
+          {[
+            { k: 'Restrictive', v: 'Smaller pouch limits capacity' },
+            { k: 'Malabsorptive', v: 'Bypassing intestine reduces calorie uptake' },
+            { k: 'Metabolic', v: 'Positive changes in hunger hormones' },
+          ].map((b) => (
+            <li key={b.k} className="flex items-start gap-3 text-sm text-[#3e484a]">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0d7481]" />
+              <span>
+                <strong className="font-bold text-[#1a1c1e]">{b.k}:</strong> {b.v}
               </span>
-              <div>
-                <p className="font-[IBM_Plex_Sans] text-[10px] font-bold uppercase tracking-[0.1em] text-[#3e484a]">
-                  Instrument Scale
-                </p>
-                <p className="text-lg font-bold text-[#005a65] leading-none mt-0.5">0.1mm</p>
-              </div>
-            </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="relative rounded-xl overflow-hidden bg-[#e8f6f8] shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
+        <img
+          src={RouxEnYImage}
+          alt="Anatomical illustration of the Roux-en-Y gastric bypass"
+          className="w-full h-auto max-h-[420px] object-contain mx-auto"
+        />
+
+        <div className="absolute bottom-5 right-5 flex items-center gap-3 rounded-lg bg-white/80 backdrop-blur-[20px] px-5 py-3">
+          <span className="h-8 w-8 rounded-full bg-[#0d7481] flex items-center justify-center">
+            <Crosshair className="w-4 h-4 text-white" strokeWidth={2} />
+          </span>
+          <div>
+            <p className="font-[IBM_Plex_Sans] text-[10px] font-bold uppercase tracking-[0.1em] text-[#3e484a]">
+              Instrument Scale
+            </p>
+            <p className="text-lg font-bold text-[#005a65] leading-none mt-0.5">0.1mm</p>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+
+    {/* Robotic RYGB explainer */}
+    <div className="mt-14 lg:mt-20 rounded-[1.5rem] bg-[#f3f3f6] p-8 lg:p-12">
+      <h3 className="text-2xl lg:text-[28px] font-bold leading-tight text-[#005a65]">
+        What is the Robotic Roux-en-Y Gastric Bypass?
+      </h3>
+
+      <div className="mt-6 grid lg:grid-cols-2 gap-6 lg:gap-10">
+        <p className="text-[#3e484a] leading-relaxed">
+          Robotic Roux-en-Y Gastric Bypass is an advanced form of bariatric surgery performed using robotic-assisted technology. During the procedure, the surgeon controls robotic instruments through a high-definition 3D console, allowing highly precise movements and improved surgical accuracy.
+        </p>
+        <p className="text-[#3e484a] leading-relaxed">
+          Robotic technology provides better vision, greater control, and enhanced precision, especially during complex weight loss procedures. Because it is a minimally invasive technique, patients usually experience smaller incisions, less pain, less blood loss, shorter hospital stay, and faster recovery compared to traditional open surgery.
+        </p>
+      </div>
+
+      <div className="mt-8 rounded-xl border-l-4 border-[#fdd350] bg-white p-6 shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
+        <p className="text-[#1a1c1e] leading-relaxed">
+          At Novo Robotic Surgery Centre, advanced robotic technology is used to improve patient safety, surgical precision, and overall surgical outcomes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ============ CANDIDACY ============ */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl lg:text-[32px] font-bold text-[#005a65]">
-              Is RYGB Right for You?
-            </h2>
-            <p className="mt-4 text-[#3e484a]">
-              We assess every patient based on clinical guidelines and long-term health potential.
-            </p>
-          </div>
+    <section className="py-20 lg:py-28">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="text-center max-w-2xl mx-auto">
+      <h2 className="text-3xl lg:text-[32px] font-bold text-[#005a65]">
+        Is RYGB Right for You?
+      </h2>
+      <p className="mt-4 text-[#3e484a]">
+        We assess every patient based on clinical guidelines and long-term health potential.
+      </p>
+    </div>
 
-          <div className="mt-14 grid md:grid-cols-3 gap-6">
-            {criteria.map((c) => (
-              <div
-                key={c.title}
-                className="rounded-xl bg-white p-8 text-center shadow-[0px_10px_40px_rgba(0,0,0,0.04)]"
-              >
-                <span className="mx-auto h-12 w-12 rounded-full bg-[#e8f6f8] flex items-center justify-center">
-                  <c.icon className="w-5 h-5 text-[#0d7481]" strokeWidth={2} />
-                </span>
-                <h3 className="mt-5 font-bold">{c.title}</h3>
-                <p className="mt-2 text-sm text-[#3e484a] leading-relaxed">{c.body}</p>
-              </div>
-            ))}
-          </div>
+    <div className="mt-14 grid md:grid-cols-3 gap-6">
+      {criteria.map((c) => (
+        <div
+          key={c.title}
+          className="rounded-xl bg-white p-8 text-center shadow-[0px_10px_40px_rgba(0,0,0,0.04)]"
+        >
+          <span className="mx-auto h-12 w-12 rounded-full bg-[#e8f6f8] flex items-center justify-center">
+            <c.icon className="w-5 h-5 text-[#0d7481]" strokeWidth={2} />
+          </span>
+          <h3 className="mt-5 font-bold">{c.title}</h3>
+          <p className="mt-2 text-sm text-[#3e484a] leading-relaxed">{c.body}</p>
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* Full candidacy criteria */}
+    <div className="mt-14 lg:mt-20 rounded-[1.5rem] bg-[#f3f3f6] p-8 lg:p-12">
+      <h3 className="text-2xl lg:text-[28px] font-bold leading-tight text-[#005a65]">
+        Who is an Ideal Candidate for Robotic Roux-en-Y Gastric Bypass Surgery?
+      </h3>
+      <p className="mt-4 text-[#3e484a] leading-relaxed">
+        Before undergoing gastric bypass surgery, every patient receives a detailed evaluation by our bariatric team. You may be an ideal candidate for Roux-en-Y Gastric Bypass if:
+      </p>
+
+      <ul className="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-4">
+        {candidacy.map((item) => (
+          <li key={item} className="flex items-start gap-3">
+            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0d7481]">
+              <Check className="h-3 w-3 text-white" strokeWidth={3} />
+            </span>
+            <span className="text-sm text-[#3e484a] leading-relaxed">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
 
       {/* ============ PROCEDURAL JOURNEY ============ */}
-      <section className="py-20 lg:py-28 bg-[#0d7481]">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl lg:text-[32px] font-bold text-center text-white">
-            The Robotic Procedural Journey
-          </h2>
+   <section className="py-20 lg:py-28 bg-[#0d7481]">
+  <div className="max-w-7xl mx-auto px-6">
+    <h2 className="text-3xl lg:text-[32px] font-bold text-center text-white">
+      The Robotic Procedural Journey
+    </h2>
+    <p className="mt-5 max-w-3xl mx-auto text-center text-white/80 leading-relaxed">
+      Robotic Roux-en-Y Gastric Bypass surgery is performed under general anesthesia and usually takes around 90 to 120 minutes. The procedure uses advanced robotic-assisted technology that allows surgeons to perform complex bariatric surgery with greater precision, control, and enhanced visualization.
+    </p>
 
-          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
-            {journey.map((j) => (
-              <div key={j.step}>
-                <p className="text-4xl font-extrabold text-white/25 leading-none">{j.step}</p>
-                <h3 className="mt-4 font-bold text-white">{j.title}</h3>
-                <p className="mt-2 text-sm text-white/70 leading-relaxed">{j.body}</p>
-              </div>
-            ))}
-          </div>
+    <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
+      {journey.map((j) => (
+        <div key={j.step}>
+          <p className="text-4xl font-extrabold text-white/25 leading-none">{j.step}</p>
+          <h3 className="mt-4 font-bold text-white leading-snug">{j.title}</h3>
+          <p className="mt-2 text-sm text-white/70 leading-relaxed">{j.body}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ============ OUTCOME STATS ============ */}
       <section className="py-16 lg:py-20 bg-[#f9f9fc]">
@@ -255,117 +354,128 @@ export default function RouxEnYGastricBypass() {
       </section>
 
       {/* ============ RECOVERY + WHY NOVO ============ */}
-      <section className="py-20 lg:py-28 bg-[#eeeef0]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-12 rounded-xl overflow-hidden shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
-            {/* Recovery path */}
-            <div className="lg:col-span-4 bg-[#005a65] p-8 lg:p-10">
-              <h3 className="text-xl font-semibold text-white">Recovery Path</h3>
-              <p className="mt-3 text-sm text-white/70 leading-relaxed">
-                Our comprehensive support ensures you are never alone on your transformation
-                journey.
-              </p>
+{/* ---------------- RECOVERY ---------------- */}
+<section className="py-20 lg:py-28 bg-[#eeeef0]">
+  <div className="max-w-7xl mx-auto px-6">
+    <h2 className="text-2xl lg:text-3xl font-semibold text-[#005a65]">
+      Recovery After Robotic Roux-en-Y Gastric Bypass Surgery
+    </h2>
+    <p className="mt-4 max-w-3xl text-sm lg:text-base text-[#3e484a] leading-relaxed">
+      One of the most common questions patients ask is, “How long will recovery take?”
+      The good news is that robotic surgery usually allows faster recovery compared to
+      traditional open surgery.
+    </p>
 
-              <ul className="mt-8 space-y-4">
-                {recoveryPath.map((r, i) => (
-                  <li key={r} className="flex items-center gap-4 text-sm text-white/90">
-                    <span className="h-7 w-7 shrink-0 rounded-full border border-white/30 flex items-center justify-center font-[IBM_Plex_Sans] text-[11px] font-bold">
-                      {i + 1}
-                    </span>
-                    {r}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Why Novo */}
-            <div className="lg:col-span-8 bg-white p-8 lg:p-10">
-              <h3 className="text-xl font-semibold">Why Choose Novo?</h3>
-
-              <div className="mt-8 grid sm:grid-cols-2 gap-8">
-                {whyNovo.map((w) => (
-                  <div key={w.title}>
-                    <h4 className="font-bold text-sm text-[#005a65]">{w.title}</h4>
-                    <p className="mt-2 text-sm text-[#3e484a] leading-relaxed">{w.body}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+    <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {recoveryPath.map((r, i) => (
+        <div
+          key={r.title}
+          className="group bg-white rounded-xl p-7 shadow-[0px_10px_40px_rgba(0,0,0,0.04)] border-t-4 border-[#fdd350] hover:-translate-y-1 transition-transform duration-300"
+        >
+          <span className="h-9 w-9 rounded-full bg-[#005a65] text-white flex items-center justify-center font-[IBM_Plex_Sans] text-[12px] font-bold">
+            {i + 1}
+          </span>
+          <h3 className="mt-5 text-base font-bold text-[#005a65]">{r.title}</h3>
+          <p className="mt-2 text-sm text-[#3e484a] leading-relaxed">{r.body}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
-      {/* ============ CTA FORM ============ */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-2xl mx-auto px-6">
-          <div className="text-center">
-            <h2 className="text-3xl lg:text-[32px] font-bold text-[#005a65]">Take the First Step</h2>
-            <p className="mt-4 text-sm text-[#3e484a]">
-              Begin your journey toward a healthier, more vibrant life with a confidential
-              consultation.
+{/* ---------------- WHY NOVO ---------------- */}
+<section className="py-20 lg:py-28 bg-white">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      <div className="lg:col-span-5">
+        <h2 className="text-2xl lg:text-3xl font-semibold text-[#005a65] leading-snug">
+          Why Choose Novo Robotic Surgery Centre for Robotic Roux-en-Y Gastric Bypass Surgery?
+        </h2>
+        <div className="mt-6 h-1 w-20 bg-[#fdd350] rounded-full" />
+      </div>
+
+      <div className="lg:col-span-7 space-y-5 text-sm lg:text-base text-[#3e484a] leading-relaxed">
+        <p>
+          Choosing where to undergo weight loss surgery is a significant decision, and at
+          Novo Robotic Surgery Centre, we understand the immense trust our patients place
+          in us. Unlike general hospitals where bariatric procedures may only be performed
+          occasionally, robotic surgery is our primary focus, and Roux-en-Y Gastric Bypass
+          is one of the most commonly performed weight loss surgeries at our centre.
+        </p>
+        <p>
+          Our experienced bariatric surgeons use advanced robotic technology to perform
+          gastric bypass surgery with enhanced precision, control, and safety. At Novo
+          Robotic Surgery Centre, we provide comprehensive, patient-centered care, from
+          detailed pre-operative evaluations and personalized treatment plans to
+          nutritional guidance, post-operative care, and long-term weight management
+          support.
+        </p>
+        <p>
+          We are committed to helping our patients achieve safe surgical outcomes, faster
+          recovery, and sustainable weight loss results while providing compassionate care
+          at every step of their journey.
+        </p>
+
+        <div className="mt-8 rounded-xl bg-[#005a65] p-7 lg:p-8">
+          <p className="text-sm lg:text-base text-white/90 leading-relaxed">
+            Excess weight affecting your health and confidence? Our specialists at Novo
+            Robotic Surgery Centre offer advanced Robotic Gastric Bypass Surgery to help
+            you achieve effective, long-term weight loss with safer surgery and faster
+            recovery.
+          </p>
+       <Link
+  to="/contact-us"
+  className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#fdd350] px-7 py-3 text-sm font-bold text-[#005a65] hover:bg-white transition-colors"
+>
+  Book a Consultation
+</Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{/* ─── FAQs ─── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Need Clarity</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-500 max-w-lg mx-auto text-sm">
+              Answers to the questions patients ask us most about Roux-en-Y gastric bypass.
             </p>
           </div>
 
-          <div className="mt-12 space-y-5">
-            <div className="grid sm:grid-cols-2 gap-5">
-              <div>
-                <label
-                  htmlFor="rygb-name"
-                  className="font-[IBM_Plex_Sans] text-[11px] font-bold uppercase tracking-[0.1em] text-[#3e484a]"
-                >
-                  Full Name
-                </label>
-                <input
-                  id="rygb-name"
-                  type="text"
-                  placeholder="Your name"
-                  className="mt-2 w-full rounded-lg bg-white border border-[#e2e2e5] px-4 py-3 text-sm outline-none focus:border-2 focus:border-[#0d7481] transition-colors"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="rygb-phone"
-                  className="font-[IBM_Plex_Sans] text-[11px] font-bold uppercase tracking-[0.1em] text-[#3e484a]"
-                >
-                  Phone Number
-                </label>
-                <input
-                  id="rygb-phone"
-                  type="tel"
-                  placeholder="+91 (000) 000-0000"
-                  className="mt-2 w-full rounded-lg bg-white border border-[#e2e2e5] px-4 py-3 text-sm outline-none focus:border-2 focus:border-[#0d7481] transition-colors"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="rygb-type"
-                className="font-[IBM_Plex_Sans] text-[11px] font-bold uppercase tracking-[0.1em] text-[#3e484a]"
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <details
+                key={faq.q}
+                className="group bg-gray-50 rounded-3xl border border-gray-200 open:bg-white open:shadow-[0px_10px_40px_rgba(0,0,0,0.04)] open:border-teal-200 transition-all duration-300"
               >
-                Inquiry Type
-              </label>
-              <select
-                id="rygb-type"
-                defaultValue="bariatric"
-                className="mt-2 w-full rounded-lg bg-white border border-[#e2e2e5] px-4 py-3 text-sm outline-none focus:border-2 focus:border-[#0d7481] transition-colors"
-              >
-                <option value="bariatric">Bariatric consultation</option>
-                <option value="rygb">Roux-en-Y Gastric Bypass</option>
-                <option value="eligibility">BMI &amp; eligibility check</option>
-                <option value="revision">Revision surgery</option>
-              </select>
-            </div>
-
-            <button
-              type="button"
-              className="w-full rounded-lg bg-[#8a6d00] px-6 py-4 font-[IBM_Plex_Sans] text-[11px] font-bold uppercase tracking-[0.1em] text-white hover:bg-[#725a00] transition-colors"
-            >
-              Request confidential call
-            </button>
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-7 py-5">
+                  <span className="font-bold text-gray-900 text-sm md:text-base group-open:text-teal-700 transition-colors">
+                    {faq.q}
+                  </span>
+                  <span className="w-8 h-8 rounded-full bg-teal-100 group-open:bg-teal-700 flex items-center justify-center flex-shrink-0 transition-colors">
+                    <ChevronDown
+                      size={16}
+                      className="text-teal-600 group-open:text-white group-open:rotate-180 transition-transform duration-300"
+                    />
+                  </span>
+                </summary>
+                <div className="px-7 pb-6 -mt-1">
+                  <div className="border-l-4 border-teal-500 pl-5">
+                    <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
+     
+     
     </div>
   );
 }

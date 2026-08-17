@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import {
   ArrowRight,
-  Check,
   Crosshair,
   Eye,
   Hand,
@@ -15,66 +14,88 @@ import {
 } from 'lucide-react';
 import FertilityImage from '../../assets/images/FertilityPreservingSurgery1.jpeg';
 import FertilityImage2 from '../../assets/images/FertilityPreservingSurgery2.jpeg';
-import FertilityImage3 from '../../assets/images/FertilityPreservingSurgery3.jpeg';
+import FertilityImage3 from '../../assets/images/FertilityImage3.png';;
+
 const advantages = [
   {
     icon: Eye,
-    title: '3D High-Definition Visualisation',
-    body: 'Magnified 10x views allow surgeons to distinguish between healthy tissue and diseased tissue with microscopic precision.',
+    title: '3D High-Definition Visualization',
+    body: 'The surgeon sees the pelvic cavity magnified up to 10x in high-definition 3D, making it easier to distinguish between abnormal tissue (like a tumor or endometriosis) and healthy reproductive tissue.',
   },
   {
     icon: Hand,
-    title: 'Wristed Instruments',
-    body: 'Extreme dexterity that mimics the human wrist but without tremor, perfect for complex suturing in the reproductive area.',
+    title: 'Wristed Instruments with Extreme Dexterity',
+    body: 'Tiny instruments mimic the human wrist but can rotate with a range of motion far greater than human hands. This makes working in tight spaces—like deep in the pelvic bowl—much safer.',
   },
   {
     icon: ShieldCheck,
-    title: 'Fewer Post-Surgical Adhesions',
-    body: 'Minimally invasive technique results in less internal scarring, significantly improving future conception rates.',
+    title: 'Fewer Post-Surgical Adhesions (Scar Tissue)',
+    body: 'Traditional open surgery exposes pelvic tissues to dry air and handling, causing internal scar tissue that can block fallopian tubes. Robotic surgery uses microscopic incisions and minimizes tissue trauma, drastically reducing the risk of fertility-blocking scars.',
   },
 ];
 
 const procedures = [
   {
     title: 'Robotic Myomectomy',
-    body: 'Removal of fibroids with multi-layer uterine reconstruction for strength during future pregnancies.',
+    involves: 'Removal of uterine fibroids (benign growths).',
+    helps:
+      'The robotic system enables precise removal of fibroids and meticulous multi-layer reconstruction of the uterine wall, helping preserve uterine strength for future pregnancies when clinically appropriate.',
   },
   {
-    title: 'Resection of Deep Endometriosis',
-    body: 'Meticulous excision of endometriosis from pelvic organs while protecting nerves and blood supply.',
+    title: 'Robotic Resection of Deep Endometriosis',
+    involves:
+      'Removal of deep endometriosis affecting pelvic organs and surrounding tissues.',
+    helps:
+      'Enhanced precision helps surgeons remove diseased tissue while minimizing injury to the ovaries, fallopian tubes, urinary tract, and other healthy pelvic structures that play a role in fertility.',
   },
   {
     title: 'Robotic Ovarian Cystectomy',
-    body: 'Removal of ovarian cysts with maximum preservation of the healthy egg-producing ovarian cortex.',
+    involves:
+      'Removal of complex ovarian cysts, such as endometriomas or dermoid cysts.',
+    helps:
+      'Precise dissection helps remove the cyst while preserving as much healthy ovarian tissue as possible, supporting ovarian function and future fertility.',
   },
   {
-    title: 'Early-Stage Gynae Oncology',
-    body: 'Fertility-sparing approaches for early cervical and uterine cancers using robotic precision.',
+    title:
+      'Fertility-Sparing Robotic Surgery for Early-Stage Gynecologic Cancers',
+    involves:
+      'Selected procedures, such as radical trachelectomy and fertility-preserving surgical staging, for carefully selected patients with early-stage gynecologic cancers.',
+    helps:
+      'In appropriate candidates, these procedures aim to treat cancer while preserving reproductive potential whenever it is considered safe and oncologically appropriate.',
   },
 ];
 
 const recovery = [
-  { title: 'Hospital Stay', body: 'Same-day or overnight stay. Most patients are mobile within hours.' },
-  { title: 'Pain Management', body: 'Minimal discomfort managed with basic OTC medications.' },
-  { title: 'Daily Activities', body: 'Return to work and light activity within 1 to 2 weeks.' },
-  { title: 'Pregnancy Planning', body: 'Typically safe to start planning pregnancy in 3 to 6 months.' },
+  {
+    title: 'Hospital Stay',
+    body: 'Many patients are discharged on the same day or after a single overnight stay, depending on the procedure performed and their overall recovery.',
+  },
+  {
+    title: 'Pain Management',
+    body: 'Smaller incisions are typically associated with less post-operative pain, reduced need for pain medication, and improved comfort during recovery.',
+  },
+  {
+    title: 'Returning to Daily Activities',
+    body: 'Most patients can resume light daily activities within 1 to 2 weeks, although recovery time varies based on the type of surgery and individual healing.',
+  },
+  {
+    title: 'Planning for Pregnancy',
+    body: "If your surgery involved the uterus or other reproductive organs, your surgeon will recommend a personalized timeline before trying to conceive. In many cases, patients are advised to wait approximately 3 to 6 months after major uterine reconstruction to allow adequate healing, although the exact timing depends on your condition and your surgeon's assessment.",
+  },
 ];
 
 const whyNovo = [
   {
     icon: Award,
-    title: 'Specialised Surgical Expertise',
-    body: 'Our surgeons are fellowship-trained leaders in minimally invasive reproductive surgery.',
+    body: 'When facing complex gynecological conditions, choosing Novo Robotic Surgery Centre in Kaushambi, Ghaziabad means receiving advanced, patient-centered care from an experienced team of robotic surgeons. We specialize in minimally invasive, fertility-preserving surgical techniques whenever clinically appropriate, helping women receive effective treatment while preserving their reproductive health whenever possible.',
   },
   {
     icon: Cpu,
-    title: 'State-of-the-Art Technology',
-    body: 'We deploy the latest da Vinci robotic systems for maximum clinical outcome accuracy.',
+    body: 'Using state-of-the-art robotic technology, our surgeons perform highly precise procedures through small keyhole incisions, enabling enhanced surgical accuracy while minimizing trauma to surrounding healthy tissues. Compared with traditional open surgery, this approach is often associated with less postoperative pain, reduced blood loss, smaller scars, a lower risk of complications, shorter hospital stays, and faster recovery.',
   },
   {
     icon: HeartHandshake,
-    title: 'Personalised Care Path',
-    body: 'Every patient receives a unique surgical and recovery plan tailored to their fertility goals.',
+    body: 'At Novo Robotic Surgery Centre, every patient receives a personalized treatment plan tailored to her diagnosis, symptoms, overall health, and future family goals. Our multidisciplinary team combines advanced robotic surgical expertise with evidence-based care to deliver the highest standards of treatment for both benign and selected early-stage gynecological conditions.',
   },
 ];
 
@@ -90,19 +111,25 @@ export default function FertilityPreservingSurgery() {
             </span>
 
             <h1 className="mt-6 text-4xl lg:text-5xl font-extrabold leading-[1.1] tracking-[-0.02em] text-[#005a65]">
-              Protecting the Future: Robotic-Assisted Fertility-Preserving Surgery
+              Protecting the Future: Robotic-Assisted Fertility-Preserving
+              Surgery in Kaushambi, Ghaziabad
             </h1>
 
             <p className="mt-6 text-[#3e484a] leading-relaxed max-w-lg">
-              Advanced surgical precision designed to treat complex conditions while safeguarding
-              your dream of future motherhood.
+              For women facing complex gynecological conditions—such as severe
+              endometriosis, large fibroids, or early-stage gynecological
+              cancers—the path to healing once felt like a difficult compromise.
+              Traditional open surgery often carried the risk of significant
+              scarring, damage to reproductive organs, or even the need for a
+              hysterectomy.
             </p>
 
             <NavLink
               to="/contact"
               className="mt-10 inline-flex items-center gap-2 rounded-lg bg-[#0d7481] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#005a65] transition-colors"
             >
-              Request a consultation <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              Request a consultation{' '}
+              <ArrowRight className="w-4 h-4" strokeWidth={2} />
             </NavLink>
           </div>
 
@@ -116,9 +143,11 @@ export default function FertilityPreservingSurgery() {
             <div className="absolute -bottom-6 left-6 flex items-center gap-3 rounded-lg bg-white/85 backdrop-blur-[20px] px-5 py-3 shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
               <Crosshair className="w-5 h-5 text-[#0d7481]" strokeWidth={2} />
               <div>
-                <p className="text-lg font-bold text-[#005a65] leading-none">0.1mm</p>
+                <p className="text-lg font-bold text-[#005a65] leading-none">
+                  10x
+                </p>
                 <p className="font-[IBM_Plex_Sans] text-[10px] font-bold uppercase tracking-[0.1em] text-[#3e484a] mt-1">
-                  Precision Scale
+                  Magnified 3D View
                 </p>
               </div>
             </div>
@@ -126,7 +155,7 @@ export default function FertilityPreservingSurgery() {
         </div>
       </section>
 
-      {/* ============ UNDERSTANDING THE NEED ============ */}
+      {/* ============ WHY ROBOTIC SURGERY ============ */}
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <img
@@ -137,40 +166,24 @@ export default function FertilityPreservingSurgery() {
 
           <div>
             <h2 className="text-3xl lg:text-[32px] font-bold leading-tight text-[#005a65]">
-              Understanding the Need
+              Why Choose Robotic Surgery for Fertility Preservation?
             </h2>
 
             <p className="mt-5 text-[#3e484a] leading-relaxed">
-              For many women, complex gynaecological conditions like endometriosis or large fibroids
-              present a daunting choice between health and future fertility.
+              But today, advanced robotic-assisted surgery has transformed that
+              approach. It enables highly specialized surgeons to treat complex
+              pelvic conditions with exceptional precision while preserving
+              healthy reproductive organs whenever medically possible, helping
+              protect your fertility and future family plans.
             </p>
             <p className="mt-4 text-[#3e484a] leading-relaxed">
-              At Novo Robotic Surgery Centre, we believe you shouldn&apos;t have to choose. Our
-              robotic platform provides a compassionate alternative, allowing for the meticulous
-              removal of diseased tissue while preserving the integrity of reproductive organs.
+              When the goal is to preserve fertility, precision is essential.
+              Whether protecting healthy ovarian tissue, carefully removing
+              disease while preserving the uterus, or reconstructing the uterine
+              wall to support a future pregnancy, robotic-assisted surgery
+              enables surgeons to perform complex procedures with exceptional
+              accuracy while minimizing damage to surrounding healthy tissues.
             </p>
-
-            <div className="mt-10 space-y-6">
-              <div className="flex gap-4">
-                <Check className="w-5 h-5 shrink-0 text-[#0d7481] mt-0.5" strokeWidth={2.5} />
-                <div>
-                  <h3 className="font-bold text-sm">Endometriosis Management</h3>
-                  <p className="mt-1 text-sm text-[#3e484a] leading-relaxed">
-                    Precise excision of deep infiltrating lesions without damaging surrounding
-                    organs.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <Check className="w-5 h-5 shrink-0 text-[#0d7481] mt-0.5" strokeWidth={2.5} />
-                <div>
-                  <h3 className="font-bold text-sm">Fibroid Specialist Care</h3>
-                  <p className="mt-1 text-sm text-[#3e484a] leading-relaxed">
-                    Organ-sparing removal even for complex, multiple or deeply embedded fibroids.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -178,13 +191,14 @@ export default function FertilityPreservingSurgery() {
       {/* ============ QUOTE BAND ============ */}
       <section className="py-20 lg:py-24 bg-[#005a65]">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl lg:text-[40px] font-extrabold leading-[1.15] tracking-[-0.02em] text-white">
-            An Extension of the Surgeon&apos;s Hands
-          </h2>
+          <p className="text-xl lg:text-2xl font-bold leading-[1.4] tracking-[-0.01em] text-white">
+            Robotic surgery is not performed by a computer—it is an advanced
+            surgical technology that is entirely controlled by your surgeon.
+          </p>
           <p className="mt-6 text-sm lg:text-base text-white/75 leading-relaxed">
-            Robotic surgery isn&apos;t about the machine replacing the doctor. It&apos;s about
-            empowering our world-class surgeons with unparalleled vision and dexterity. In fertility
-            preservation, every millimetre matters.
+            The robotic system acts as an extension of the surgeon&apos;s hands,
+            translating their movements into highly precise, controlled actions
+            within the pelvis.
           </p>
           <span className="mt-8 mx-auto block h-1 w-16 rounded-full bg-[#fdd350]" />
         </div>
@@ -197,9 +211,6 @@ export default function FertilityPreservingSurgery() {
             <h2 className="text-3xl lg:text-[32px] font-bold text-[#005a65]">
               Key Advantages for Future Pregnancy
             </h2>
-            <p className="mt-4 text-sm text-[#3e484a]">
-              Technology that works in harmony with your body.
-            </p>
           </div>
 
           <div className="mt-14 grid md:grid-cols-3 gap-6">
@@ -210,7 +221,9 @@ export default function FertilityPreservingSurgery() {
               >
                 <a.icon className="w-6 h-6 text-[#0d7481]" strokeWidth={2} />
                 <h3 className="mt-5 font-bold">{a.title}</h3>
-                <p className="mt-2 text-sm text-[#3e484a] leading-relaxed">{a.body}</p>
+                <p className="mt-2 text-sm text-[#3e484a] leading-relaxed">
+                  {a.body}
+                </p>
               </div>
             ))}
           </div>
@@ -218,53 +231,86 @@ export default function FertilityPreservingSurgery() {
       </section>
 
       {/* ============ PROCEDURES ============ */}
-      <section className="py-20 lg:py-28 bg-[#f3f3f6]">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4">
-            <h2 className="text-3xl lg:text-[32px] font-bold leading-tight text-[#005a65]">
-              Common Fertility-Sparing Procedures
-            </h2>
-            <p className="mt-4 text-sm text-[#3e484a]">
-              Our expertise spans the most complex gynaecological surgeries, all focused on a single
-              goal: preservation.
-            </p>
+    <section className="py-20 lg:py-28 bg-[#f3f3f6]">
+  <div className="max-w-7xl mx-auto px-6">
+    {/* heading */}
+    <div className="max-w-3xl">
+      <h2 className="text-3xl lg:text-[32px] font-bold leading-tight text-[#005a65]">
+        Common Fertility-Sparing Procedures Performed with Robotic Surgery
+      </h2>
+      <p className="mt-4 text-[#3e484a] leading-relaxed">
+        Depending on your diagnosis, several complex fertility-preserving
+        procedures can be performed using advanced robotic-assisted surgical
+        technology.
+      </p>
+    </div>
 
-            <img
-              src={FertilityImage3}
-              alt="Illustration of the female reproductive anatomy"
-              className="mt-8 w-full h-56 rounded-xl object-contain lg:object-cover bg-[#e8f6f8]"
-            />
-          </div>
-
-          <div className="lg:col-span-8 grid sm:grid-cols-2 gap-6">
-            {procedures.map((p) => (
-              <div
-                key={p.title}
-                className="rounded-xl bg-white p-7 shadow-[0px_10px_40px_rgba(0,0,0,0.04)] flex flex-col"
-              >
-                <h3 className="font-bold">{p.title}</h3>
-                <p className="mt-2 text-sm text-[#3e484a] leading-relaxed flex-1">{p.body}</p>
-                <NavLink
-                  to="/contact"
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-[#0d7481] hover:text-[#005a65] transition-colors"
-                >
-                  Learn more <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />
-                </NavLink>
-              </div>
-            ))}
-          </div>
+    <div className="mt-14 grid lg:grid-cols-12 gap-8 items-start">
+      {/* image — sticky, uncropped */}
+      <div className="lg:col-span-5 lg:sticky lg:top-28">
+        <div className="rounded-xl bg-[#e8f6f8] p-6 aspect-[4/3] flex items-center justify-center overflow-hidden">
+          <img
+            src={FertilityImage3}
+            alt="Illustration of the female reproductive anatomy"
+            className="max-h-full max-w-full object-contain"
+          />
         </div>
-      </section>
+      </div>
+
+      {/* procedures — stacked rows */}
+      <div className="lg:col-span-7 space-y-4">
+        {procedures.map((p, i) => (
+          <article
+            key={p.title}
+            className="group rounded-xl bg-white p-7 shadow-[0px_10px_40px_rgba(0,0,0,0.04)] border-l-4 border-[#0d7481] hover:border-[#fdd350] transition-colors"
+          >
+            <div className="flex items-start gap-4">
+              <span className="shrink-0 h-8 w-8 rounded-full bg-[#005a65] flex items-center justify-center font-[IBM_Plex_Sans] text-[11px] font-bold text-white">
+                {i + 1}
+              </span>
+              <h3 className="font-bold text-[#1a1c1e] leading-snug pt-1">
+                {p.title}
+              </h3>
+            </div>
+
+            <div className="mt-5 grid sm:grid-cols-2 gap-5 sm:pl-12">
+              <div>
+                <p className="font-[IBM_Plex_Sans] text-[10px] font-bold uppercase tracking-[0.1em] text-[#6e797b]">
+                  What It Involves
+                </p>
+                <p className="mt-1.5 text-sm text-[#3e484a] leading-relaxed">
+                  {p.involves}
+                </p>
+              </div>
+              <div>
+                <p className="font-[IBM_Plex_Sans] text-[10px] font-bold uppercase tracking-[0.1em] text-[#6e797b]">
+                  How It Helps Preserve Fertility
+                </p>
+                <p className="mt-1.5 text-sm text-[#3e484a] leading-relaxed">
+                  {p.helps}
+                </p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ============ RECOVERY TIMELINE ============ */}
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl lg:text-[32px] font-bold text-[#005a65]">
-              Recovery &amp; Next Steps
+              What to Expect: Recovery and Next Steps
             </h2>
-            <p className="mt-4 text-sm text-[#3e484a]">
-              A clear path back to your normal life and your future goals.
+            <p className="mt-4 text-sm text-[#3e484a] leading-relaxed">
+              Because robotic-assisted surgery is performed through small
+              keyhole incisions (typically less than 1 cm), it generally causes
+              less tissue trauma than traditional open surgery. This often
+              results in a smoother recovery and an earlier return to daily
+              activities.
             </p>
           </div>
 
@@ -276,13 +322,17 @@ export default function FertilityPreservingSurgery() {
                 <div key={r.title}>
                   <span
                     className={`mx-auto h-8 w-8 rounded-full flex items-center justify-center font-[IBM_Plex_Sans] text-[11px] font-bold text-white ${
-                      i === recovery.length - 1 ? 'bg-[#fdd350] text-[#241a00]' : 'bg-[#0d7481]'
+                      i === recovery.length - 1
+                        ? 'bg-[#fdd350] text-[#241a00]'
+                        : 'bg-[#0d7481]'
                     }`}
                   >
                     {i + 1}
                   </span>
                   <h3 className="mt-5 font-bold text-sm">{r.title}</h3>
-                  <p className="mt-2 text-sm text-[#3e484a] leading-relaxed">{r.body}</p>
+                  <p className="mt-2 text-sm text-[#3e484a] leading-relaxed">
+                    {r.body}
+                  </p>
                 </div>
               ))}
             </div>
@@ -295,19 +345,19 @@ export default function FertilityPreservingSurgery() {
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <h2 className="text-3xl lg:text-[32px] font-bold leading-tight text-white">
-              Why Choose Novo Robotic Surgery Centre?
+              Why Choose Novo Robotic Surgery Centre for Fertility-Preserving
+              Surgery?
             </h2>
 
             <div className="mt-10 space-y-7">
-              {whyNovo.map((w) => (
-                <div key={w.title} className="flex gap-4">
+              {whyNovo.map((w, i) => (
+                <div key={i} className="flex gap-4">
                   <span className="h-9 w-9 shrink-0 rounded-full bg-white/15 flex items-center justify-center">
                     <w.icon className="w-4 h-4 text-[#fdd350]" strokeWidth={2} />
                   </span>
-                  <div>
-                    <h3 className="font-bold text-white text-sm">{w.title}</h3>
-                    <p className="mt-1 text-sm text-white/70 leading-relaxed">{w.body}</p>
-                  </div>
+                  <p className="text-sm text-white/80 leading-relaxed">
+                    {w.body}
+                  </p>
                 </div>
               ))}
             </div>
@@ -315,7 +365,8 @@ export default function FertilityPreservingSurgery() {
 
           <div className="rounded-xl bg-white/10 border border-white/15 p-6">
             <p className="font-[IBM_Plex_Sans] text-[10px] font-bold uppercase tracking-[0.1em] text-white/60">
-              Robotic-Assisted Fertility-Preserving Surgery · Novo Robotic Hospital
+              Robotic-Assisted Fertility-Preserving Surgery · Novo Robotic
+              Hospital
             </p>
             <img
               src="https://images.pexels.com/photos/3844581/pexels-photo-3844581.jpeg?auto=compress&cs=tinysrgb&w=1200"
@@ -332,11 +383,12 @@ export default function FertilityPreservingSurgery() {
           <div className="grid lg:grid-cols-12 rounded-xl overflow-hidden shadow-[0px_10px_40px_rgba(0,0,0,0.04)]">
             <div className="lg:col-span-5 bg-[#005a65] p-8 lg:p-12">
               <h2 className="text-3xl font-extrabold leading-[1.15] tracking-[-0.02em] text-white">
-                Start Your Journey Toward Healing
+                Request a consultation
               </h2>
               <p className="mt-5 text-sm text-white/70 leading-relaxed">
-                Have questions about fertility preservation? Our specialists are here to provide the
-                clarity and confidence you need to take the next step.
+                Every patient receives a personalized treatment plan tailored to
+                her diagnosis, symptoms, overall health, and future family
+                goals.
               </p>
 
               <div className="mt-10 space-y-4 text-sm">
@@ -347,7 +399,8 @@ export default function FertilityPreservingSurgery() {
                   <Phone className="w-4 h-4" strokeWidth={2} /> +91 8081 888 777
                 </a>
                 <p className="flex items-center gap-3 text-white/80">
-                  <MapPin className="w-4 h-4" strokeWidth={2} /> Novo Centre, Kaushambi, Ghaziabad
+                  <MapPin className="w-4 h-4" strokeWidth={2} /> Novo Robotic
+                  Surgery Centre, Kaushambi, Ghaziabad
                 </p>
               </div>
             </div>
@@ -397,10 +450,17 @@ export default function FertilityPreservingSurgery() {
                     className="mt-2 w-full rounded-lg bg-[#f3f3f6] border border-transparent px-4 py-3 text-sm outline-none focus:border-2 focus:border-[#0d7481] focus:bg-white transition-colors"
                   >
                     <option value="general">General consultation</option>
-                    <option value="myomectomy">Robotic myomectomy (fibroids)</option>
-                    <option value="endometriosis">Endometriosis management</option>
-                    <option value="cystectomy">Ovarian cystectomy</option>
-                    <option value="onco">Gynae oncology — fertility sparing</option>
+                    <option value="myomectomy">Robotic Myomectomy</option>
+                    <option value="endometriosis">
+                      Robotic Resection of Deep Endometriosis
+                    </option>
+                    <option value="cystectomy">
+                      Robotic Ovarian Cystectomy
+                    </option>
+                    <option value="onco">
+                      Fertility-Sparing Robotic Surgery for Early-Stage
+                      Gynecologic Cancers
+                    </option>
                   </select>
                 </div>
 
@@ -408,11 +468,13 @@ export default function FertilityPreservingSurgery() {
                   type="button"
                   className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#fdd350] px-6 py-4 text-sm font-bold text-[#241a00] hover:bg-[#ebc241] transition-colors"
                 >
-                  <CalendarCheck className="w-4 h-4" strokeWidth={2} /> Book initial consultation
+                  <CalendarCheck className="w-4 h-4" strokeWidth={2} /> Book
+                  initial consultation
                 </button>
 
                 <p className="text-center font-[IBM_Plex_Sans] text-[10px] text-[#6e797b]">
-                  By submitting, you agree to be contacted by our clinical coordination team.
+                  By submitting, you agree to be contacted by our clinical
+                  coordination team.
                 </p>
               </div>
             </div>

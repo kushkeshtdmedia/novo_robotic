@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import OesophagusSurgeryPic from '../../assets/images/FoodPipeSurgeryCancer.jpg';
 import FoodPipe from '../../assets/images/FoodPipe.png';
 import VikrantOnco from '../../assets/images/VikrantOnco.jpeg';
+import StomachSurgeryPic from '../../assets/images/StomachSurgeryPic.png'
 const symptoms = [
   'Difficulty swallowing (Dysphagia)',
   'Persistent heartburn',
@@ -120,9 +121,9 @@ export default function OesophagusSurgery() {
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </NavLink>
-              <button className="flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-teal-600 hover:text-teal-700 font-semibold px-7 py-3.5 rounded-full transition-all duration-200">
+              {/* <button className="flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-teal-600 hover:text-teal-700 font-semibold px-7 py-3.5 rounded-full transition-all duration-200">
                 Learn Process
-              </button>
+              </button> */}
             </div>
 
             {/* Quick trust strip */}
@@ -139,7 +140,7 @@ export default function OesophagusSurgery() {
               <div className="w-px h-10 bg-gray-200" />
               <div>
                 <p className="text-2xl font-black text-teal-700 leading-none">3D</p>
-                <p className="text-xs text-gray-500 mt-1">da Vinci Precision</p>
+                <p className="text-xs text-gray-500 mt-1">Precision</p>
               </div>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from './../assets/images/Logo.png';
 
@@ -16,41 +17,29 @@ const PHONES = [
 
 /* ── Link data (mirrors the router) ─────────────────── */
 const servicesCol1 = [
-  // { label: 'All Treatments', to: '/services' },
   { label: 'Appendix Surgery', to: '/services/appendix-surgery' },
   { label: 'Bariatric / Weight Loss Surgery', to: '/services/bariatric-weight-loss-surgery' },
   { label: 'Benign Uterine & Ovarian Disorders', to: '/services/benign-uterine-ovarian-disorders' },
   { label: 'Colorectal Cancer Surgery', to: '/services/colorectal-cancer-surgery' },
   { label: 'Fertility Preserving Surgery', to: '/services/fertility-preserving-surgery' },
-  // { label: 'Gallbladder Cancer Surgery', to: '/services/gallbladder-cancer-surgery' },
+   { label: 'Oesophagus Surgery', to: '/services/oesophagus-general-surgery' },
 ];
 
 const servicesCol2 = [
   { label: 'Hernia Surgery', to: '/services/hernia-surgery' },
   { label: 'Mini Gastric Bypass', to: '/services/mini-gastric-bypass' },
-  { label: 'Oesophagus Surgery', to: '/services/oesophagus-surgery' },
+  { label: 'Oesophagus Cancer Surgery', to: '/services/oesophagus-surgery' },
   { label: 'Robotic Sleeve Gastrectomy', to: '/services/robotic-sleeve-gastrectomy' },
   { label: 'Roux-en-Y Gastric Bypass', to: '/services/roux-en-gastric-bypass' },
   { label: 'Stomach Cancer Surgery', to: '/services/stomach-cancer-surgery' },
-    {label: 'Gynecologic Cancer Surgery', slug: 'gynecologic-cancer-surgery'},
+  { label: 'Gynecologic Cancer Surgery', to: '/services/gynecologic-cancer-surgery' },
 ];
 
-const doctors = [
-  // { label: 'All Doctors', to: '/doctors' },
-  { label: 'Dr. Vikrant Sharma', to: '/doctors/dr-vikrant-sharma' },
-];
+const doctors = [{ label: 'Dr. Vikrant Sharma', to: '/doctors/dr-vikrant-sharma' }];
 
 const quickLinks = [
   { label: 'Home', to: '/' },
   { label: 'Contact Us', to: '/contact' },
-];
-
-const resources = [
-  { label: 'Patient Resources', href: '#' },
-  { label: 'Robotic Surgery FAQs', href: '#' },
-  { label: 'New Patient Forms', href: '#' },
-  { label: 'Ethics Guidelines', href: '#' },
-  { label: 'Privacy Policy', href: '#' },
 ];
 
 const heading =
@@ -88,19 +77,28 @@ const LinkedIn = () => (
     <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z" />
   </svg>
 );
+const YouTube = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+    <path d="M23 12s0-3.5-.45-5.17a2.6 2.6 0 0 0-1.83-1.85C19.06 4.5 12 4.5 12 4.5s-7.06 0-8.72.48A2.6 2.6 0 0 0 1.45 6.83C1 8.5 1 12 1 12s0 3.5.45 5.17a2.6 2.6 0 0 0 1.83 1.85c1.66.48 8.72.48 8.72.48s7.06 0 8.72-.48a2.6 2.6 0 0 0 1.83-1.85C23 15.5 23 12 23 12zM9.75 15.25v-6.5L15.5 12z" />
+  </svg>
+);
+const Facebook = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+    <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12z" />
+  </svg>
+);
 
 const socials = [
-  { Icon: Instagram, label: 'Instagram', href: '#' },
-  { Icon: LinkedIn, label: 'LinkedIn', href: '#' },
+  { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/novorobotic_/' },
+  { Icon: YouTube, label: 'YouTube', href: 'https://www.youtube.com/@novoroboticsurgerycentre' },
+  { Icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/novorobotic/' },
+  { Icon: LinkedIn, label: 'LinkedIn', href: 'https://www.linkedin.com/company/102020935/' },
 ];
 
 /* Bulleted internal link */
 const Item = ({ label, to, href }: { label: string; to?: string; href?: string }) => (
   <li className="flex items-start gap-2">
-    <span
-      className="mt-[7px] w-1.5 h-1.5 rounded-full shrink-0"
-      style={{ backgroundColor: TEAL }}
-    />
+    <span className="mt-[7px] w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: TEAL }} />
     {to ? (
       <NavLink to={to} className={linkClass}>
         {label}
@@ -113,7 +111,220 @@ const Item = ({ label, to, href }: { label: string; to?: string; href?: string }
   </li>
 );
 
+/* ── Privacy Policy modal ───────────────────────────── */
+const PrivacyPolicyModal = ({ onClose }: { onClose: () => void }) => {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="privacy-title"
+    >
+      <div
+        className="relative w-full max-w-3xl max-h-[85vh] bg-white rounded-2xl shadow-2xl flex flex-col"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* header */}
+        <div className="flex items-start justify-between gap-4 px-6 sm:px-8 py-5 border-b border-gray-200">
+          <div>
+            <h2 id="privacy-title" className="text-xl font-bold text-gray-900">
+              Privacy Policy
+            </h2>
+            <p className="mt-1 text-xs text-gray-500">
+              Novo Robotic Surgery Centre · Kaushambi, Ghaziabad
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close privacy policy"
+            className="shrink-0 w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-100 transition-colors"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* body */}
+        <div className="overflow-y-auto px-6 sm:px-8 py-6 space-y-6 text-sm text-gray-600 leading-relaxed">
+          <p>
+            Novo Robotic Surgery Centre is committed to protecting the privacy and confidentiality
+            of every patient and website visitor. This policy explains what information we collect,
+            how it is used, and the choices available to you.
+          </p>
+
+          <section>
+            <h3 className="font-bold text-gray-900 mb-2">1. Information We Collect</h3>
+            <ul className="space-y-1.5 list-disc pl-5">
+              <li>
+                <span className="font-medium text-gray-800">Information you provide:</span> name,
+                phone number, email address, age, and any details you share through appointment or
+                enquiry forms.
+              </li>
+              <li>
+                <span className="font-medium text-gray-800">Health information:</span> symptoms,
+                medical history, reports, and scans shared with our clinical team for consultation
+                or treatment planning.
+              </li>
+              <li>
+                <span className="font-medium text-gray-800">Technical information:</span> browser
+                type, device, and pages visited, collected automatically to help improve the
+                website.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 className="font-bold text-gray-900 mb-2">2. How We Use Your Information</h3>
+            <ul className="space-y-1.5 list-disc pl-5">
+              <li>To schedule appointments and respond to your enquiries.</li>
+              <li>To provide medical consultation, treatment, and follow-up care.</li>
+              <li>To share appointment reminders, reports, and post-operative instructions.</li>
+              <li>To meet legal, regulatory, and medical record-keeping requirements.</li>
+              <li>To improve our services and the functioning of this website.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 className="font-bold text-gray-900 mb-2">3. Confidentiality of Medical Records</h3>
+            <p>
+              All patient health information is treated as strictly confidential. Access is limited
+              to the treating surgeon and authorised clinical staff directly involved in your care.
+              Medical records are retained in accordance with applicable Indian medical record
+              regulations.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="font-bold text-gray-900 mb-2">4. Sharing of Information</h3>
+            <p>
+              We do not sell, rent, or trade your personal or health information. Information may be
+              shared only with referring or treating doctors involved in your care, diagnostic
+              laboratories and imaging centres where required, insurance providers with your
+              consent, or where disclosure is required by law or court order.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="font-bold text-gray-900 mb-2">5. Photographs and Clinical Images</h3>
+            <p>
+              Surgical or clinical images are used for educational, academic, or promotional
+              purposes only with your explicit written consent. Identifying features are removed
+              wherever possible.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="font-bold text-gray-900 mb-2">6. Data Security</h3>
+            <p>
+              We apply reasonable administrative, technical, and physical safeguards to protect your
+              information against unauthorised access, alteration, or disclosure. However, no method
+              of transmission over the internet is completely secure, and we cannot guarantee
+              absolute security.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="font-bold text-gray-900 mb-2">7. Cookies</h3>
+            <p>
+              This website may use cookies and similar technologies to remember preferences and
+              understand how the site is used. You can disable cookies in your browser settings,
+              though some features may not work as intended.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="font-bold text-gray-900 mb-2">8. Third-Party Links</h3>
+            <p>
+              Our website may contain links to external sites, including social media platforms and
+              embedded maps. We are not responsible for the privacy practices or content of those
+              third-party sites.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="font-bold text-gray-900 mb-2">9. Your Rights</h3>
+            <p>
+              You may request access to the personal information we hold about you, ask for
+              corrections to inaccurate details, or withdraw consent for non-essential
+              communication. Requests can be made using the contact details below.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="font-bold text-gray-900 mb-2">10. Medical Disclaimer</h3>
+            <p>
+              Content on this website is provided for general information only and does not
+              constitute medical advice, diagnosis, or treatment. Always consult a qualified doctor
+              regarding your individual condition. Treatment outcomes vary from patient to patient.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="font-bold text-gray-900 mb-2">11. Changes to This Policy</h3>
+            <p>
+              We may update this policy from time to time. Any revisions will be posted on this page
+              with a revised effective date.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="font-bold text-gray-900 mb-2">12. Contact Us</h3>
+            <p>
+              For any questions about this policy or your information, contact Novo Robotic Surgery
+              Centre, B-12/13, near Dabur Lane, Anand Vihar, Kaushambi, Ghaziabad, Uttar Pradesh
+              201010.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+              <a
+                href={`tel:${PHONES[0].dial}`}
+                className="inline-flex items-center gap-2 font-medium text-gray-800 hover:text-[#22C8C8] transition-colors"
+              >
+                <span style={{ color: TEAL }}><Phone /></span>
+                {PHONES[0].display}
+              </a>
+              <a
+                href="mailto:enquiry@novorobotic.com"
+                className="inline-flex items-center gap-2 font-medium text-gray-800 hover:text-[#22C8C8] transition-colors"
+              >
+                <span style={{ color: TEAL }}><Mail /></span>
+                enquiry@novorobotic.com
+              </a>
+            </div>
+          </section>
+        </div>
+
+        {/* footer */}
+        <div className="px-6 sm:px-8 py-4 border-t border-gray-200 flex justify-end">
+          <button
+            type="button"
+            onClick={onClose}
+            className="px-6 py-2.5 rounded-full text-sm font-semibold text-white hover:brightness-95 transition"
+            style={{ backgroundColor: TEAL }}
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function Footer() {
+  const [showPrivacy, setShowPrivacy] = useState(false);
+
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-12">
@@ -180,9 +391,19 @@ export default function Footer() {
               <div>
                 <p className={heading}>Resources</p>
                 <ul className="space-y-2">
-                  {resources.map((r) => (
-                    <Item key={r.label} label={r.label} href={r.href} />
-                  ))}
+                  <li className="flex items-start gap-2">
+                    <span
+                      className="mt-[7px] w-1.5 h-1.5 rounded-full shrink-0"
+                      style={{ backgroundColor: TEAL }}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPrivacy(true)}
+                      className={`${linkClass} text-left`}
+                    >
+                      Privacy Policy
+                    </button>
+                  </li>
                 </ul>
 
                 <p className={`${heading} mt-6`}>Contact</p>
@@ -263,6 +484,8 @@ export default function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:text-white hover:border-transparent transition-colors"
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = TEAL)}
@@ -287,6 +510,13 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center gap-4 text-xs text-gray-500">
+            <button
+              type="button"
+              onClick={() => setShowPrivacy(true)}
+              className="hover:text-[#22C8C8] transition-colors font-medium"
+            >
+              Privacy Policy
+            </button>
             {PHONES.map((p) => (
               <a
                 key={p.dial}
@@ -312,6 +542,8 @@ export default function Footer() {
         </span>
         {PHONES[0].display}
       </a>
+
+      {showPrivacy && <PrivacyPolicyModal onClose={() => setShowPrivacy(false)} />}
     </footer>
   );
 }

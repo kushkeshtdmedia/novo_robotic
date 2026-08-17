@@ -1,9 +1,39 @@
-import { ArrowRight, CheckCircle, Eye, Cpu, Scissors, Layers, Activity, Utensils, Users, Monitor, TrendingDown, HeartPulse, Shield, Zap, Scale } from 'lucide-react';
+import { ArrowRight, CheckCircle, Eye, Cpu, Scissors, Layers, Activity, Utensils, Users, Monitor, TrendingDown, HeartPulse, Shield, Zap, Scale,ChevronDown } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import GastrectomyImage from '../../assets/images/Gastrectomy1.jpeg';
 import VikrantPic from '../../assets/images/VikrantOnco.jpeg';
 import GastrectomyImage2 from '../../assets/images/Gastrectomy2.jpeg';
 
+const faqs = [
+  {
+    q: 'Is robotic sleeve gastrectomy a safe procedure?',
+    a: 'Yes. When performed by an experienced bariatric surgeon, robotic sleeve gastrectomy is considered a safe and effective treatment for obesity. Like any surgery, it has risks, but careful patient selection and proper post-operative care help minimize complications.',
+  },
+  {
+    q: 'What is the minimum BMI required for sleeve gastrectomy?',
+    a: 'The surgery is commonly recommended for people with a BMI of 35 or higher, or a BMI of 30 or above if they have obesity-related health problems. Your surgeon will determine if you are eligible.',
+  },
+  {
+    q: 'Is robotic sleeve gastrectomy painful?',
+    a: 'Some discomfort is normal after surgery, but pain is generally manageable with medication and improves over the first few days.',
+  },
+  {
+    q: 'How much weight can I lose after sleeve gastrectomy?',
+    a: 'Most patients lose around 60–70% of their excess body weight within 12 to 18 months if they follow the recommended diet and exercise plan.',
+  },
+  {
+    q: 'What can I eat after robotic sleeve gastrectomy?',
+    a: 'Your diet progresses from clear liquids to protein-rich liquids, soft foods, and eventually healthy solid foods under the guidance of your healthcare team.',
+  },
+  {
+    q: 'Will I have loose skin after losing weight?',
+    a: 'Some patients may develop loose skin after significant weight loss. The amount depends on factors such as age, genetics, and the amount of weight lost.',
+  },
+  {
+    q: 'Can I become pregnant after sleeve gastrectomy?',
+    a: 'Yes. Pregnancy is possible after surgery, but doctors generally recommend waiting 12–18 months before trying to conceive.',
+  },
+];
 const candidateCriteria = [
   {
     icon: Scale,
@@ -29,7 +59,7 @@ const candidateCriteria = [
   },
   {
     icon: CheckCircle,
-    title: 'Commitment',
+    title: 'Commitment to Lifestyle Changes',
     color: 'default',
     items: [
       'Healthy eating habits',
@@ -40,7 +70,7 @@ const candidateCriteria = [
   },
   {
     icon: Activity,
-    title: 'Readiness',
+    title: 'General Health & Readiness',
     color: 'default',
     items: [
       'Be medically fit for surgery and anesthesia',
@@ -78,20 +108,20 @@ const steps = [
 ];
 
 const advantages = [
-  { icon: Activity, label: 'Minimally Invasive' },
-  { icon: Zap, label: 'Superior Precision' },
-  { icon: Scissors, label: 'Smaller Incisions' },
-  { icon: TrendingDown, label: 'Faster Recovery' },
-  { icon: Scale, label: 'Effective Weight Loss' },
-  { icon: HeartPulse, label: 'Health Improvement' },
+  { icon: Activity, label: 'Minimally invasive surgical procedure' },
+  { icon: Zap, label: 'Superior surgical precision and control' },
+  { icon: Scissors, label: 'Smaller incisions with minimal scarring' },
+  { icon: TrendingDown, label: 'Faster Recovery and Shorter Hospital Stay' },
+  { icon: Scale, label: 'Effective long-term weight loss management' },
+  { icon: HeartPulse, label: 'Improvement in obesity-related health conditions' },
 ];
 
 const recoverySteps = [
-  { icon: Monitor, label: 'Immediate Monitoring' },
-  { icon: Utensils, label: 'Gradual Diet Progression' },
-  { icon: Activity, label: 'Mild Movement' },
-  { icon: Users, label: 'Follow-up Consultations' },
-  { icon: HeartPulse, label: 'Lifestyle Changes' },
+  { icon: Monitor, label: 'Immediate post-surgery monitoring and medical care' },
+  { icon: Utensils, label: 'Gradual diet progression from liquids to solid foods' },
+  { icon: Activity, label: 'Mild discomfort during the initial recovery period' },
+  { icon: Users, label: 'Regular follow-up consultations with the surgical team' },
+  { icon: HeartPulse, label: 'Long-term lifestyle and dietary changes for successful weight management' },
 ];
 
 const whyUs = [
@@ -105,43 +135,53 @@ export default function RoboticSleeveGastrectomy() {
     <div className="pt-20">
       {/* ─── Hero ─── */}
       <section className="relative min-h-[480px] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg"
-            alt="Bariatric Surgery"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-900/85 via-teal-800/70 to-teal-700/40" />
-        </div>
+  <div className="absolute inset-0">
+    <img
+      src="https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg"
+      alt="Bariatric Surgery"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-teal-900/85 via-teal-800/70 to-teal-700/40" />
+  </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-14 pt-24 w-full">
-          <nav className="flex items-center gap-2 text-xs text-teal-200 mb-6">
-            <NavLink to="/" className="hover:text-white transition-colors">Home</NavLink>
-            <span>/</span>
-            <span className="text-teal-300">Bariatric &amp; Metabolic Surgery</span>
-            <span>/</span>
-            <span className="text-white font-semibold">Robotic Sleeve Gastrectomy</span>
-          </nav>
+  <div className="relative z-10 max-w-7xl mx-auto px-6 pb-14 pt-24 w-full">
+    <nav className="flex items-center gap-2 text-xs text-teal-200 mb-6">
+      <NavLink to="/" className="hover:text-white transition-colors">Home</NavLink>
+      <span>/</span>
+      <span className="text-teal-300">Bariatric &amp; Metabolic Surgery</span>
+      <span>/</span>
+      <span className="text-white font-semibold">Robotic Sleeve Gastrectomy</span>
+    </nav>
 
-          <p className="text-yellow-400 text-xs font-semibold uppercase tracking-widest mb-3">Bariatric Excellence</p>
-          <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-4 max-w-2xl">
-            Robotic Sleeve<br />Gastrectomy <span className="text-teal-300">(Gastric<br />Sleeve)</span>
-          </h1>
-          <p className="text-teal-100 text-lg max-w-lg mb-6 leading-relaxed">
-            Advanced precision for life-changing weight management.
-          </p>
-                                       <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-300 leading-snug mb-5 max-w-2xl">
-  Best Robotic Bariatric Surgerys in Kaushambi, Ghaziabad
-</p>
-          {/* Understanding box */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 max-w-xl border border-white/20">
-            <p className="font-bold text-white mb-2">Understanding Sleeve Gastrectomy</p>
-            <p className="text-teal-100 text-sm leading-relaxed">
-              Sleeve Gastrectomy, commonly known as the Gastric Sleeve or Vertical Sleeve Gastrectomy (VSG), is a permanent non-reversible Bariatric surgery performed laparoscopically. During the procedure, nearly 70–80% of the stomach is removed, leaving behind a small banana-shaped sleeve that can hold much less food.
-            </p>
-          </div>
-        </div>
-      </section>
+    <p className="text-yellow-400 text-xs font-semibold uppercase tracking-widest mb-3">Bariatric Excellence</p>
+    <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-4 max-w-2xl">
+      Robotic Sleeve<br />Gastrectomy <span className="text-teal-300">(Gastric<br />Sleeve)</span>
+    </h1>
+    <p className="text-teal-100 text-lg max-w-lg mb-6 leading-relaxed">
+      Advanced precision for life-changing weight management.
+    </p>
+    <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-teal-300 leading-snug mb-5 max-w-2xl">
+      Best Sleeve Gastrectomy (Gastric Sleeve) Surgery in Kaushambi, Ghaziabad
+    </p>
+
+    {/* Understanding boxes */}
+    <div className="grid gap-5 lg:grid-cols-2 max-w-4xl">
+      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+        <p className="font-bold text-white mb-2">Understanding Sleeve Gastrectomy</p>
+        <p className="text-teal-100 text-sm leading-relaxed">
+          Sleeve Gastrectomy, commonly known as the Gastric Sleeve or Vertical Sleeve Gastrectomy (VSG), is a permanent non-reversible Bariatric surgery performed laparoscopically. During the procedure, nearly 70–80% of the stomach is removed, leaving behind a small banana-shaped sleeve that can hold much less food.
+        </p>
+      </div>
+
+      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+        <p className="font-bold text-white mb-2">How It Curbs Hunger</p>
+        <p className="text-teal-100 text-sm leading-relaxed">
+          Unlike gastric bypass surgery, the intestines are not altered. The procedure also removes the part of the stomach that produces ghrelin, commonly known as the "hunger hormone." As a result, patients feel full sooner, experience reduced hunger, and find long-term weight management easier and more sustainable.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ─── What is Robotic Sleeve Gastrectomy ─── */}
       <section className="py-20 bg-white">
@@ -152,7 +192,7 @@ export default function RoboticSleeveGastrectomy() {
               What is Robotic Sleeve<br />Gastrectomy?
             </h2>
             <p className="text-gray-600 leading-relaxed mb-5">
-              Robotic Sleeve Gastrectomy is an advanced form of gastric sleeve surgery performed using robotic-assisted technology. The surgeon controls highly precise robotic instruments through a console, allowing better accuracy, enhanced visualisation, and improved surgical precision.
+             Robotic Sleeve Gastrectomy is an advanced form of gastric sleeve surgery performed using robotic-assisted technology. The surgeon controls highly precise robotic instruments through a console, allowing better accuracy, enhanced visualization, and improved surgical precision. The robotic approach helps achieve smaller incisions, less pain, reduced blood loss, and faster recovery compared to traditional surgery methods. 
             </p>
             <div className="flex items-center gap-3 bg-teal-50 rounded-xl px-5 py-3 w-fit">
               <Cpu size={16} className="text-teal-600" />
@@ -161,13 +201,13 @@ export default function RoboticSleeveGastrectomy() {
           </div>
 
           <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src={GastrectomyImage}
-                alt="Robotic surgical console"
-                className="w-full h-[380px] object-cover"
-              />
-            </div>
+          <div className="rounded-3xl overflow-hidden shadow-2xl">
+  <img
+    src={GastrectomyImage}
+    alt="Robotic surgical console"
+    className="block w-full h-auto"
+  />
+</div>
             <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2.5 shadow-lg">
               <p className="text-xs font-semibold text-teal-700">3D Surgical Precision</p>
             </div>
@@ -348,7 +388,7 @@ export default function RoboticSleeveGastrectomy() {
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Start Your Transformation</h2>
               <p className="text-teal-100 max-w-lg mx-auto mb-10 leading-relaxed text-sm">
-                Struggling with obesity or weight-related health issues? Consult our experts today for advanced Robotic Sleeve Gastrectomy.
+                Struggling with obesity or weight-related health issues? Consult our experts today for advanced Robotic Sleeve Gastrectomy (Gastric Sleeve) and take the first step toward healthier, long-term weight loss. 
               </p>
               <NavLink to="/contact">
                 <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-10 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-yellow-400/30">
@@ -356,6 +396,46 @@ export default function RoboticSleeveGastrectomy() {
                 </button>
               </NavLink>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* ─── FAQs ─── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-2">Need Clarity</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-500 max-w-lg mx-auto text-sm">
+              Answers to the questions patients ask us most about robotic sleeve gastrectomy.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <details
+                key={faq.q}
+                className="group bg-gray-50 rounded-3xl border border-gray-200 open:bg-white open:shadow-[0px_10px_40px_rgba(0,0,0,0.04)] open:border-teal-200 transition-all duration-300"
+              >
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-7 py-5">
+                  <span className="font-bold text-gray-900 text-sm md:text-base group-open:text-teal-700 transition-colors">
+                    {faq.q}
+                  </span>
+                  <span className="w-8 h-8 rounded-full bg-teal-100 group-open:bg-teal-700 flex items-center justify-center flex-shrink-0 transition-colors">
+                    <ChevronDown
+                      size={16}
+                      className="text-teal-600 group-open:text-white group-open:rotate-180 transition-transform duration-300"
+                    />
+                  </span>
+                </summary>
+                <div className="px-7 pb-6 -mt-1">
+                  <div className="border-l-4 border-teal-500 pl-5">
+                    <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>

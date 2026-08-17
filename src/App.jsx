@@ -20,7 +20,7 @@ import DrVikrantSharma from './pages/DrVikrant.tsx';
 import FertilityPreservingSurgery from './pages/services/FertilityPreservingSurgery';
 import BenignUterineOvarianDisorders from './pages/services/BenignUterineOvarianDisorders.tsx';
 import GynecologicCancerSurgery from './pages/services/GynecologicCancerSurgery.tsx';
-
+import OesophagusGeneralSurgery from './pages/services/OesophagusGeneralSurgery.tsx'
 export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
@@ -46,6 +46,7 @@ export default function App() {
           <Route path="/doctors/dr-vikrant-sharma" element={<DrVikrantSharma />} />
           <Route path="/services/benign-uterine-ovarian-disorders" element={<BenignUterineOvarianDisorders />} />
           <Route path="/services/gynecologic-cancer-surgery" element={<GynecologicCancerSurgery  />} />
+          <Route path="/services/oesophagus-general-surgery" element={<OesophagusGeneralSurgery />} />
         </Route>
       </Routes>
     </BrowserRouter>
