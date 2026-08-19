@@ -31,7 +31,7 @@ const servicesCol2 = [
   // { label: 'Oesophagus Cancer Surgery', to: '/services/oesophagus-surgery' },
   { label: 'Robotic Sleeve Gastrectomy', to: '/services/robotic-sleeve-gastrectomy' },
   { label: 'Roux-en-Y Gastric Bypass', to: '/services/roux-en-gastric-bypass' },
-  { label: 'Stomach Cancer Surgery', to: '/services/stomach-cancer-surgery' },
+  { label: 'Stomach Cancer Surgery', to: '/services/stomach-surgery' },
   { label: 'Gynecologic Cancer Surgery', to: '/services/gynecologic-cancer-surgery' },
 ];
 

@@ -19,14 +19,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
+
+      - name: Install Chrome dependencies for Puppeteer
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 libatk-bridge2.0-0 libatk1.0-0 libcups2 libdrm2 \
+            libgbm1 libasound2t64 libxkbcommon0 libxcomposite1 \
+            libxdamage1 libxfixes3 libxrandr2 libpango-1.0-0 libcairo2
+
       - run: npm ci
+
       - run: npm run build
-      - name: Verify SPA fallback
-        run: test -f dist/404.html && test -f dist/.nojekyll
+
+      - name: Verify build output
+        run: |
+          test -f dist/index.html
+          test -f dist/404.html
+          test -f dist/sitemap.xml
+          test -f dist/robots.txt
+          test -f dist/services/hernia-surgery/index.html
+          grep -q "Hernia" dist/services/hernia-surgery/index.html
+          echo "Build verified"
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist

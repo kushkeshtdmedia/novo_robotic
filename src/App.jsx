@@ -19,10 +19,12 @@ import DrVikrantSharma from './pages/DrVikrant.tsx';
 import FertilityPreservingSurgery from './pages/services/FertilityPreservingSurgery';
 import BenignUterineOvarianDisorders from './pages/services/BenignUterineOvarianDisorders.tsx';
 import GynecologicCancerSurgery from './pages/services/GynecologicCancerSurgery.tsx';
-import OesophagusGeneralSurgery from './pages/services/OesophagusGeneralSurgery.tsx'
+import OesophagusGeneralSurgery from './pages/services/OesophagusGeneralSurgery.tsx';
+import SeoManager from './components/SeoManager';
 export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+       <SeoManager />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
