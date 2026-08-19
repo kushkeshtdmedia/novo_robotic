@@ -1,7 +1,7 @@
 import { createServer } from 'node:http';
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
-import { join, extname, dirname } from 'node:path';
+import { join, extname } from 'node:path';
 import puppeteer from 'puppeteer';
 import { seoData } from '../src/data/seo.js';
 
@@ -23,6 +23,8 @@ const MIME = {
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
   '.ico': 'image/x-icon',
+  '.xml': 'application/xml',
+  '.txt': 'text/plain',
 };
 
 // dist/ ko serve karne wala chhota server
@@ -69,6 +71,37 @@ for (const route of routes) {
       () => document.getElementById('root')?.children.length > 0,
       { timeout: 30000 }
     );
+
+    // Helmet prerender ke waqt do baar render karta hai — duplicate head tags saaf karo.
+    // Title explicitly set hota hai; baaki tags ka aakhri instance sahi route ka hota hai.
+    await page.evaluate((expectedTitle) => {
+      const head = document.head;
+
+      head.querySelectorAll('title').forEach((t) => t.remove());
+      const titleEl = document.createElement('title');
+      titleEl.textContent = expectedTitle;
+      head.insertBefore(titleEl, head.firstChild);
+
+      const canonicals = [...head.querySelectorAll('link[rel="canonical"]')];
+      canonicals.slice(0, -1).forEach((c) => c.remove());
+
+      const seen = new Set();
+      [...head.querySelectorAll('meta[name], meta[property]')]
+        .reverse()
+        .forEach((m) => {
+          const key = m.getAttribute('name') || m.getAttribute('property');
+          if (seen.has(key)) m.remove();
+          else seen.add(key);
+        });
+
+      const ldScripts = [...head.querySelectorAll('script[type="application/ld+json"]')];
+      ldScripts.slice(0, -1).forEach((s) => s.remove());
+
+      // Runtime pe inject hue GTM script tags hatao — inline snippet khud inject karega
+      head
+        .querySelectorAll('script[src*="googletagmanager"]')
+        .forEach((s) => s.remove());
+    }, seoData[route].title);
 
     const html = await page.content();
 

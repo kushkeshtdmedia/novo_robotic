@@ -1,9 +1,9 @@
 export const SITE = 'https://www.novorobotic.com';
 
 export const seoData = {
-  '/': {
-    title: 'Novo Robotic Surgery Centre | Robotic Surgeon in Ghaziabad, Delhi NCR',
-    description: 'Advanced robotic surgery in Kaushambi, Ghaziabad. Dr. Vikrant Sharma — 10,000+ minimally invasive surgeries across bariatric, GI, cancer and gynae procedures.',
+   '/': {
+    title: 'Robotic Surgery Centre in Ghaziabad | Novo Robotic',
+    description: 'Novo Robotic Surgery Centre in Ghaziabad provides advanced robotic, bariatric, GI, cancer and gynaecological surgery with patient-focused, robot-assisted surgical care.',
   },
   '/services': {
     title: 'Robotic Surgery Procedures in Ghaziabad | Novo Robotic Surgery Centre',
