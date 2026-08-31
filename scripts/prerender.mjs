@@ -94,8 +94,15 @@ for (const route of routes) {
           else seen.add(key);
         });
 
-      const ldScripts = [...head.querySelectorAll('script[type="application/ld+json"]')];
-      ldScripts.slice(0, -1).forEach((s) => s.remove());
+      // JSON-LD ko content ke hisaab se dedupe karo, position ke hisaab se nahi.
+      // Har page par do alag blocks hote hain (organization + page schema),
+      // aur Helmet dono ki duplicate copies chhod jata hai.
+      const seenLd = new Set();
+      [...head.querySelectorAll('script[type="application/ld+json"]')].forEach((s) => {
+        const key = s.textContent.trim();
+        if (!key || seenLd.has(key)) s.remove();
+        else seenLd.add(key);
+      });
 
       // Runtime pe inject hue GTM script tags hatao — inline snippet khud inject karega
       head
@@ -109,8 +116,9 @@ for (const route of routes) {
     await mkdir(outDir, { recursive: true });
     await writeFile(join(outDir, 'index.html'), html, 'utf-8');
 
+    const ldCount = (html.match(/application\/ld\+json/g) || []).length;
     const size = (Buffer.byteLength(html) / 1024).toFixed(1);
-    console.log(`  ok    ${route.padEnd(45)} ${size} kB`);
+    console.log(`  ok    ${route.padEnd(45)} ${size} kB  ${ldCount} ld+json`);
   } catch (err) {
     failed++;
     console.error(`  FAIL  ${route.padEnd(45)} ${err.message}`);
@@ -119,7 +127,15 @@ for (const route of routes) {
   }
 }
 
-await browser.close();
+// Windows par Puppeteer ka temp Chrome profile kabhi-kabhi locked reh jata hai
+// aur close() EPERM throw karta hai. HTML pehle hi likha ja chuka hota hai,
+// isliye cleanup fail hone se build ko fail nahi karna chahiye.
+try {
+  await browser.close();
+} catch (err) {
+  console.warn(`  note  browser cleanup skipped (${err.code || err.message})`);
+}
+
 server.close();
 
 // SPA fallback — prerender ke baad banana zaroori hai
