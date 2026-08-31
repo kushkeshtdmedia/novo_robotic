@@ -7,6 +7,7 @@ import { seoData } from '../src/data/seo.js';
 
 const DIST = 'dist';
 const PORT = 4173;
+const MAX_ATTEMPTS = 3;
 
 const MIME = {
   '.html': 'text/html',
@@ -59,71 +60,89 @@ const browser = await puppeteer.launch({
 let failed = 0;
 
 for (const route of routes) {
-  const page = await browser.newPage();
-  try {
-    await page.goto(`http://localhost:${PORT}${route}`, {
-      waitUntil: 'networkidle0',
-      timeout: 60000,
-    });
+  let lastErr;
 
-    // React render hone ka wait
-    await page.waitForFunction(
-      () => document.getElementById('root')?.children.length > 0,
-      { timeout: 30000 }
-    );
-
-    // Helmet prerender ke waqt do baar render karta hai — duplicate head tags saaf karo.
-    // Title explicitly set hota hai; baaki tags ka aakhri instance sahi route ka hota hai.
-    await page.evaluate((expectedTitle) => {
-      const head = document.head;
-
-      head.querySelectorAll('title').forEach((t) => t.remove());
-      const titleEl = document.createElement('title');
-      titleEl.textContent = expectedTitle;
-      head.insertBefore(titleEl, head.firstChild);
-
-      const canonicals = [...head.querySelectorAll('link[rel="canonical"]')];
-      canonicals.slice(0, -1).forEach((c) => c.remove());
-
-      const seen = new Set();
-      [...head.querySelectorAll('meta[name], meta[property]')]
-        .reverse()
-        .forEach((m) => {
-          const key = m.getAttribute('name') || m.getAttribute('property');
-          if (seen.has(key)) m.remove();
-          else seen.add(key);
-        });
-
-      // JSON-LD ko content ke hisaab se dedupe karo, position ke hisaab se nahi.
-      // Har page par do alag blocks hote hain (organization + page schema),
-      // aur Helmet dono ki duplicate copies chhod jata hai.
-      const seenLd = new Set();
-      [...head.querySelectorAll('script[type="application/ld+json"]')].forEach((s) => {
-        const key = s.textContent.trim();
-        if (!key || seenLd.has(key)) s.remove();
-        else seenLd.add(key);
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const page = await browser.newPage();
+    try {
+      // 'domcontentloaded' — 'networkidle0' nahi. GTM/Fonts ki background requests
+      // CI par kabhi settle nahi hoti, jisse navigation timeout ho jata hai.
+      // React ready hai ya nahi, wo neeche waitForFunction confirm karta hai.
+      await page.goto(`http://localhost:${PORT}${route}`, {
+        waitUntil: 'domcontentloaded',
+        timeout: 60000,
       });
 
-      // Runtime pe inject hue GTM script tags hatao — inline snippet khud inject karega
-      head
-        .querySelectorAll('script[src*="googletagmanager"]')
-        .forEach((s) => s.remove());
-    }, seoData[route].title);
+      // React render hone ka wait
+      await page.waitForFunction(
+        () => document.getElementById('root')?.children.length > 0,
+        { timeout: 30000 }
+      );
 
-    const html = await page.content();
+      // Helmet prerender ke waqt do baar render karta hai — duplicate head tags saaf karo.
+      // Title explicitly set hota hai; baaki tags ka aakhri instance sahi route ka hota hai.
+      await page.evaluate((expectedTitle) => {
+        const head = document.head;
 
-    const outDir = route === '/' ? DIST : join(DIST, route);
-    await mkdir(outDir, { recursive: true });
-    await writeFile(join(outDir, 'index.html'), html, 'utf-8');
+        head.querySelectorAll('title').forEach((t) => t.remove());
+        const titleEl = document.createElement('title');
+        titleEl.textContent = expectedTitle;
+        head.insertBefore(titleEl, head.firstChild);
 
-    const ldCount = (html.match(/application\/ld\+json/g) || []).length;
-    const size = (Buffer.byteLength(html) / 1024).toFixed(1);
-    console.log(`  ok    ${route.padEnd(45)} ${size} kB  ${ldCount} ld+json`);
-  } catch (err) {
+        const canonicals = [...head.querySelectorAll('link[rel="canonical"]')];
+        canonicals.slice(0, -1).forEach((c) => c.remove());
+
+        const seen = new Set();
+        [...head.querySelectorAll('meta[name], meta[property]')]
+          .reverse()
+          .forEach((m) => {
+            const key = m.getAttribute('name') || m.getAttribute('property');
+            if (seen.has(key)) m.remove();
+            else seen.add(key);
+          });
+
+        // JSON-LD ko content ke hisaab se dedupe karo, position ke hisaab se nahi.
+        // Har page par do alag blocks hote hain (organization + page schema),
+        // aur Helmet dono ki duplicate copies chhod jata hai.
+        const seenLd = new Set();
+        [...head.querySelectorAll('script[type="application/ld+json"]')].forEach((s) => {
+          const key = s.textContent.trim();
+          if (!key || seenLd.has(key)) s.remove();
+          else seenLd.add(key);
+        });
+
+        // Runtime pe inject hue GTM script tags hatao — inline snippet khud inject karega
+        head
+          .querySelectorAll('script[src*="googletagmanager"]')
+          .forEach((s) => s.remove());
+      }, seoData[route].title);
+
+      const html = await page.content();
+
+      const outDir = route === '/' ? DIST : join(DIST, route);
+      await mkdir(outDir, { recursive: true });
+      await writeFile(join(outDir, 'index.html'), html, 'utf-8');
+
+      const ldCount = (html.match(/application\/ld\+json/g) || []).length;
+      const size = (Buffer.byteLength(html) / 1024).toFixed(1);
+      const note = attempt > 1 ? `  (attempt ${attempt})` : '';
+      console.log(`  ok    ${route.padEnd(45)} ${size} kB  ${ldCount} ld+json${note}`);
+
+      lastErr = null;
+      break;
+    } catch (err) {
+      lastErr = err;
+      if (attempt < MAX_ATTEMPTS) {
+        console.warn(`  retry ${route.padEnd(45)} attempt ${attempt}: ${err.message}`);
+      }
+    } finally {
+      await page.close();
+    }
+  }
+
+  if (lastErr) {
     failed++;
-    console.error(`  FAIL  ${route.padEnd(45)} ${err.message}`);
-  } finally {
-    await page.close();
+    console.error(`  FAIL  ${route.padEnd(45)} ${lastErr.message}`);
   }
 }
 
