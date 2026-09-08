@@ -3,14 +3,12 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { getSeo, SITE } from '../data/seo';
 import { getSchema } from '../data/schemas';
-import { organizationSchema } from '../data/schemas/organization';
 
 export default function SeoManager() {
   const { pathname } = useLocation();
   const { title, description } = getSeo(pathname);
   const url = `${SITE}${pathname === '/' ? '/' : pathname}`;
   const pageSchema = getSchema(pathname);
-  const isHome = pathname === '/';
 
   useEffect(() => {
     window.dataLayer = window.dataLayer || [];
@@ -34,14 +32,7 @@ export default function SeoManager() {
       <meta property="og:image" content={`${SITE}/og-image.jpg`} />
       <meta name="twitter:card" content="summary_large_image" />
 
-      {/* Full clinic details sirf home page par — inner pages apna Organization node khud rakhte hain */}
-      {isHome ? (
-        <script type="application/ld+json">
-          {JSON.stringify(organizationSchema)}
-        </script>
-      ) : null}
-
-      {/* Page-specific schema — Service, FAQ, Breadcrumb wagairah */}
+      {/* Har page ka apna schema — Organization node har graph ke andar hai */}
       {pageSchema ? (
         <script type="application/ld+json">{JSON.stringify(pageSchema)}</script>
       ) : null}
