@@ -33,5 +33,11 @@ export const stomachSurgerySchema = {
       alternateName: ['Robotic Gastrectomy', 'Gastrectomy', 'Robot-Assisted Gastrectomy'],
     },
     // TODO: FAQ page content se add karna hai
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
   ],
 };

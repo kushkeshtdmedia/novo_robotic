@@ -32,6 +32,12 @@ export const colorectalCancerSurgerySchema = {
       name: 'Robotic Colorectal Cancer Surgery',
       alternateName: ['Robotic Colectomy', 'Robotic Rectal Cancer Surgery', 'Low Anterior Resection', 'Robot-Assisted Colorectal Surgery'],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
     // TODO: FAQ page content se add karna hai
   ],
 };

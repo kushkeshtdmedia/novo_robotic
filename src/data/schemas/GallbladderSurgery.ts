@@ -47,5 +47,11 @@ export const gallbladderSurgerySchema = {
         { '@type': 'Question', name: 'Will my digestion be normal after gallbladder removal?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Most people digest food normally after surgery. Some patients may experience temporary digestive changes that usually improve within a few weeks.' } },
       ],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
   ],
 };

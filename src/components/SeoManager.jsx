@@ -10,6 +10,7 @@ export default function SeoManager() {
   const { title, description } = getSeo(pathname);
   const url = `${SITE}${pathname === '/' ? '/' : pathname}`;
   const pageSchema = getSchema(pathname);
+  const isHome = pathname === '/';
 
   useEffect(() => {
     window.dataLayer = window.dataLayer || [];
@@ -33,10 +34,12 @@ export default function SeoManager() {
       <meta property="og:image" content={`${SITE}/og-image.jpg`} />
       <meta name="twitter:card" content="summary_large_image" />
 
-      {/* Clinic-wide structured data — har page par jata hai */}
-      <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
-      </script>
+      {/* Full clinic details sirf home page par — inner pages apna Organization node khud rakhte hain */}
+      {isHome ? (
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+      ) : null}
 
       {/* Page-specific schema — Service, FAQ, Breadcrumb wagairah */}
       {pageSchema ? (

@@ -32,6 +32,12 @@ export const gallbladderCancerSurgerySchema = {
       name: 'Radical Cholecystectomy',
       alternateName: ['Robotic Radical Cholecystectomy', 'Extended Cholecystectomy', 'Gallbladder Cancer Surgery'],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
     // TODO: FAQ page content se add karna hai
   ],
 };

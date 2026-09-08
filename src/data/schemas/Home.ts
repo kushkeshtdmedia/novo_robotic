@@ -22,5 +22,11 @@ export const homeSchema = {
       isPartOf: { '@id': `${SITE}/#website` },
       about: { '@id': ORG_ID },
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
   ],
 };

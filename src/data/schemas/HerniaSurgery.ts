@@ -46,5 +46,11 @@ export const herniaSurgerySchema = {
         { '@type': 'Question', name: 'Can I walk after hernia surgery?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Walking is generally encouraged after surgery as advised by your surgeon.' } },
       ],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
   ],
 };

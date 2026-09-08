@@ -32,6 +32,12 @@ export const bariatricWeightLossSurgerySchema = {
       name: 'Bariatric Weight Loss Surgery',
       alternateName: ['Weight Loss Surgery', 'Metabolic Surgery', 'Robotic Bariatric Surgery', 'Obesity Surgery'],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
     // TODO: FAQ page content se add karna hai
   ],
 };

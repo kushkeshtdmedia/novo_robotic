@@ -43,5 +43,11 @@ export const rouxEnGastricBypassSchema = {
         { '@type': 'Question', name: 'Can I regain weight after gastric bypass surgery?', acceptedAnswer: { '@type': 'Answer', text: 'Weight regain can happen if healthy eating habits and regular physical activity are not maintained. Ongoing follow-up with your bariatric team helps support long-term success.' } },
       ],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
   ],
 };

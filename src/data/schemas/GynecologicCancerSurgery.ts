@@ -32,6 +32,12 @@ export const gynecologicCancerSurgerySchema = {
       name: 'Robotic Gynecologic Cancer Surgery',
       alternateName: ['Robotic Gynecologic Oncology Surgery', 'Robot-Assisted Gynecologic Cancer Surgery'],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
     // TODO: FAQ page content se add karna hai
   ],
 };

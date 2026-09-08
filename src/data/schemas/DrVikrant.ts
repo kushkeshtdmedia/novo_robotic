@@ -49,5 +49,11 @@ export const drVikrantSharmaSchema = {
         { '@type': 'ListItem', position: 2, name: 'Dr. Vikrant Sharma', item: PAGE_URL },
       ],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
   ],
 };

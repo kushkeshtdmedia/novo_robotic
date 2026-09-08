@@ -32,6 +32,12 @@ export const oesophagusGeneralSurgerySchema = {
       name: 'Oesophagus Surgery for Achalasia and Reflux',
       alternateName: ['Heller Myotomy', 'Nissen Fundoplication', 'Hiatus Hernia Repair', 'Anti-Reflux Surgery'],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
     // TODO: FAQ page content se add karna hai
   ],
 };

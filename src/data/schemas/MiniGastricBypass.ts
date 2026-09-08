@@ -46,5 +46,11 @@ export const miniGastricBypassSchema = {
         { '@type': 'Question', name: 'What is the success rate of Mini Gastric Bypass?', acceptedAnswer: { '@type': 'Answer', text: 'Mini Gastric Bypass has a high success rate when combined with healthy lifestyle changes. Most patients achieve significant and sustained weight loss while also experiencing improvement in obesity-related health conditions.' } },
       ],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
   ],
 };

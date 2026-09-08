@@ -45,5 +45,11 @@ export const roboticSleeveGastrectomySchema = {
         { '@type': 'Question', name: 'Can I become pregnant after sleeve gastrectomy?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Pregnancy is possible after surgery, but doctors generally recommend waiting 12–18 months before trying to conceive.' } },
       ],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
   ],
 };

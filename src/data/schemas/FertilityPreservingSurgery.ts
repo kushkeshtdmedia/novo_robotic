@@ -32,6 +32,12 @@ export const fertilityPreservingSurgerySchema = {
       name: 'Fertility Preserving Surgery',
       alternateName: ['Fertility-Sparing Surgery', 'Fertility Preservation Surgery', 'Robotic Fertility Preserving Surgery'],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
     // TODO: FAQ page content se add karna hai
   ],
 };

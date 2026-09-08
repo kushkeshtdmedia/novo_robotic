@@ -48,5 +48,11 @@ export const appendixSurgerySchema = {
         { '@type': 'Question', name: 'How soon can I walk after appendix surgery?', acceptedAnswer: { '@type': 'Answer', text: 'Most patients are encouraged to start walking within a few hours after surgery to promote healing and reduce the risk of blood clots.' } },
       ],
     },
+    {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
   ],
 };

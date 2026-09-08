@@ -32,6 +32,12 @@ export const benignUterineOvarianDisordersSchema = {
       name: 'Robotic Surgery for Benign Uterine and Ovarian Disorders',
       alternateName: ['Robotic Myomectomy', 'Ovarian Cystectomy', 'Endometriosis Surgery', 'Fibroid Surgery'],
     },
+     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Novo Robotic Surgery Centre',
+      url: HOME_URL,
+    },
     // TODO: FAQ page content se add karna hai
   ],
 };
