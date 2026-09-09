@@ -18,21 +18,20 @@ const PHONES = [
 /* ── Link data (mirrors the router) ─────────────────── */
 const servicesCol1 = [
   { label: 'Appendix Surgery', to: '/services/appendix-surgery' },
-  // { label: 'Bariatric / Weight Loss Surgery', to: '/services/bariatric-weight-loss-surgery' },
-  { label: 'Benign Uterine & Ovarian Disorders', to: '/services/benign-uterine-ovarian-disorders' },
+  { label: 'Benign Uterus & Ovary Disorders', to: '/services/benign-disorders-uterus-ovaries' },
   { label: 'Colorectal Cancer Surgery', to: '/services/colorectal-cancer-surgery' },
   { label: 'Fertility Preserving Surgery', to: '/services/fertility-preserving-surgery' },
-   { label: 'Oesophagus Surgery', to: '/services/oesophagus-general-surgery' },
+  { label: 'Gallbladder Surgery', to: '/services/gallbladder-surgery' },
+  { label: 'Gynecologic Cancer Surgery', to: '/services/gynecologic-cancer-surgery' },
 ];
 
 const servicesCol2 = [
   { label: 'Hernia Surgery', to: '/services/hernia-surgery' },
-  { label: 'Mini Gastric Bypass', to: '/services/mini-gastric-bypass' },
-  // { label: 'Oesophagus Cancer Surgery', to: '/services/oesophagus-surgery' },
+  { label: 'Oesophagus Surgery', to: '/services/oesophagus-surgery' },
+  { label: 'Robotic Mini Gastric Bypass', to: '/services/robotic-mini-gastric-bypass' },
+  { label: 'Robotic Roux-en-Y Gastric Bypass', to: '/services/robotic-roux-en-y-gastric-bypass' },
   { label: 'Robotic Sleeve Gastrectomy', to: '/services/robotic-sleeve-gastrectomy' },
-  { label: 'Roux-en-Y Gastric Bypass', to: '/services/roux-en-gastric-bypass' },
-  { label: 'Stomach Cancer Surgery', to: '/services/stomach-surgery' },
-  { label: 'Gynecologic Cancer Surgery', to: '/services/gynecologic-cancer-surgery' },
+  { label: 'Stomach Cancer Surgery', to: '/services/stomach-cancer-surgery' },
 ];
 
 const doctors = [{ label: 'Dr. Vikrant Sharma', to: '/doctors/dr-vikrant-sharma' }];
@@ -296,11 +295,11 @@ const PrivacyPolicyModal = ({ onClose }: { onClose: () => void }) => {
                 {PHONES[0].display}
               </a>
               <a
-                href="mailto:inquiry@novorobotic.com"
+                href="mailto:enquiry@novorobotic.com"
                 className="inline-flex items-center gap-2 font-medium text-gray-800 hover:text-[#22C8C8] transition-colors"
               >
                 <span style={{ color: TEAL }}><Mail /></span>
-                inquiry@novorobotic.com
+                enquiry@novorobotic.com
               </a>
             </div>
           </section>
