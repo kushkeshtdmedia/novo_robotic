@@ -29,7 +29,7 @@ export const seoData = {
     title: 'Robotic Oesophagus Cancer Surgery in Ghaziabad | Oesophagectomy',
     description: 'Robotic oesophagectomy for oesophageal cancer in Kaushambi, Ghaziabad. Advanced minimally invasive approach under Dr. Vikrant Sharma.',
   },
-  '/services/oesophagus-general-surgery': {
+  '/services/oesophagus-surgery': {
     title: 'Robotic Oesophagus Surgery in Ghaziabad | General & GI Surgery',
     description: 'Consult leading gastrointestinal surgeons at Novo Robotic for advanced esophageal procedures. Book a consultation.',
   },

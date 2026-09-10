@@ -14,7 +14,7 @@ const serviceMenu: ServiceCategory[] = [
       { label: 'Hernia Surgery', slug: 'hernia-surgery' },
       { label: 'Appendix Surgery', slug: 'appendix-surgery' },
       // { label: 'Stomach Surgery', slug: 'stomach-surgery' },
-    { label: 'Oesophagus Surgery', slug: 'oesophagus-general-surgery' },
+    { label: 'Oesophagus Surgery', slug: 'oesophagus-surgery' },
     ],
   },
 {

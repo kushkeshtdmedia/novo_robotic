@@ -27,7 +27,7 @@ export const schemaData: Record<string, object> = {
   '/services/appendix-surgery': appendixSurgerySchema,
   '/services/stomach-surgery': stomachSurgerySchema,
   '/services/oesophagus-surgery': oesophagusSurgerySchema,
-  '/services/oesophagus-general-surgery': oesophagusGeneralSurgerySchema,
+  '/services/oesophagussurgery': oesophagusGeneralSurgerySchema,
   '/services/gallbladder-cancer-surgery': gallbladderCancerSurgerySchema,
   '/services/colorectal-cancer-surgery': colorectalCancerSurgerySchema,
   '/services/bariatric-weight-loss-surgery': bariatricWeightLossSurgerySchema,
