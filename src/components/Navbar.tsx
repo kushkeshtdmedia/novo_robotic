@@ -8,6 +8,12 @@ type ServiceCategory = { label: string; sub: ServiceItem[] };
 
 const serviceMenu: ServiceCategory[] = [
   {
+    label: 'Tele Surgery',
+    sub: [
+      { label: 'Tele Robotic Surgery', slug: 'tele-robotic-surgery' },
+    ],
+  },
+  {
     label: 'General Surgery',
     sub: [
       { label: 'Gallbladder Surgery', slug: 'gallbladder-surgery' },

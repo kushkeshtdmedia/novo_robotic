@@ -15,6 +15,12 @@ const PHONES = [
   { display: '+91 85275 16622', dial: '+918527516622' },
 ];
 
+/* ── Featured service ───────────────────────────────── */
+const featuredService = {
+  label: 'Tele-Robotic Surgery',
+  to: '/services/tele-robotic-surgery',
+};
+
 /* ── Link data (mirrors the router) ─────────────────── */
 const servicesCol1 = [
   { label: 'Appendix Surgery', to: '/services/appendix-surgery' },
@@ -95,11 +101,25 @@ const socials = [
 ];
 
 /* Bulleted internal link */
-const Item = ({ label, to, href }: { label: string; to?: string; href?: string }) => (
+const Item = ({
+  label,
+  to,
+  href,
+  highlight = false,
+}: {
+  label: string;
+  to?: string;
+  href?: string;
+  highlight?: boolean;
+}) => (
   <li className="flex items-start gap-2">
-    <span className="mt-[7px] w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: TEAL }} />
+    <span
+      aria-hidden="true"
+      className="mt-[7px] w-1.5 h-1.5 rounded-full shrink-0"
+      style={{ backgroundColor: highlight ? YELLOW : TEAL }}
+    />
     {to ? (
-      <NavLink to={to} className={linkClass}>
+      <NavLink to={to} className={highlight ? `${linkClass} font-semibold text-gray-900` : linkClass}>
         {label}
       </NavLink>
     ) : (
@@ -340,10 +360,11 @@ export default function Footer() {
             </NavLink>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* Treatments — column 1 */}
+              {/* Treatments — column 1 (featured service first) */}
               <div>
                 <p className={heading}>Treatments</p>
                 <ul className="space-y-2">
+                  <Item label={featuredService.label} to={featuredService.to} highlight />
                   {servicesCol1.map((s) => (
                     <Item key={s.to} label={s.label} to={s.to} />
                   ))}
@@ -376,6 +397,7 @@ export default function Footer() {
                   ))}
                   <li className="flex items-start gap-2">
                     <span
+                      aria-hidden="true"
                       className="mt-[7px] w-1.5 h-1.5 rounded-full shrink-0"
                       style={{ backgroundColor: TEAL }}
                     />
@@ -392,6 +414,7 @@ export default function Footer() {
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span
+                      aria-hidden="true"
                       className="mt-[7px] w-1.5 h-1.5 rounded-full shrink-0"
                       style={{ backgroundColor: TEAL }}
                     />

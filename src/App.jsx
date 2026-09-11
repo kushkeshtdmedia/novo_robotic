@@ -21,6 +21,7 @@ import BenignUterineOvarianDisorders from './pages/services/BenignUterineOvarian
 import GynecologicCancerSurgery from './pages/services/GynecologicCancerSurgery.tsx';
 import OesophagusGeneralSurgery from './pages/services/OesophagusGeneralSurgery.tsx';
 import SeoManager from './components/SeoManager';
+import TeleRoboticSurgery from './pages/services/TeleRoboticSurgery.tsx';
 
 export default function App() {
   return (
@@ -30,7 +31,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-
+          <Route path="/services/tele-robotic-surgery" element={<TeleRoboticSurgery />} />
           {/* General / laparoscopic */}
           <Route path="/services/gallbladder-surgery" element={<GallbladderSurgery />} />
           <Route path="/services/hernia-surgery" element={<HerniaSurgery />} />

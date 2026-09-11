@@ -5,6 +5,19 @@ export const seoData = {
     title: 'Robotic Surgery Centre in Ghaziabad | Novo Robotic',
     description: 'Novo Robotic Surgery Centre in Ghaziabad provides advanced robotic, bariatric, GI, cancer and gynaecological surgery with patient-focused, robot-assisted surgical care.',
   },
+  '/tele-robotic-surgery': {
+  title: 'Tele-Robotic Surgery in Delhi NCR | Advanced Remote Robotic Surgery',
+  description:
+    'Tele-Robotic Surgery at Novo Robotic Surgery Centre, Kaushambi, Ghaziabad, connects advanced robotic technology with expert surgical care by Dr. Vikrant Sharma.',
+  canonical: 'https://www.novorobotic.com/services/tele-robotic-surgery',
+  og: {
+    title: 'Tele-Robotic Surgery in Delhi NCR | Novo Robotic Surgery Centre',
+    description:
+      'Remote robotic surgery with Dr. Vikrant Sharma — sub-millimetre precision, keyhole incisions, and a full surgical team with the patient throughout.',
+    image: 'https://www.novorobotic.com/images/og/tele-robotic-surgery.jpg',
+    type: 'article',
+  },
+},
   '/services': {
     title: 'Robotic Surgery Procedures in Ghaziabad | Novo Robotic Surgery Centre',
     description: 'Robotic and laparoscopic procedures in Kaushambi, Ghaziabad — hernia, gallbladder, bariatric, colorectal, gynaecologic and cancer surgery under Dr. Vikrant Sharma.',
