@@ -22,6 +22,7 @@ import GynecologicCancerSurgery from './pages/services/GynecologicCancerSurgery.
 import OesophagusGeneralSurgery from './pages/services/OesophagusGeneralSurgery.tsx';
 import SeoManager from './components/SeoManager';
 import TeleRoboticSurgery from './pages/services/TeleRoboticSurgery.tsx';
+import SleeveVsBypassBlog from './pages/blog/SleeveVsBypassBlog.tsx';
 
 export default function App() {
   return (
@@ -67,6 +68,10 @@ export default function App() {
           <Route path="/services/benign-uterine-ovarian-disorders" element={<Navigate to="/services/benign-disorders-uterus-ovaries" replace />} />
 
           <Route path="*" element={<NotFound />} />
+          <Route
+  path="/blog/sleeve-gastrectomy-vs-gastric-bypass"
+  element={<SleeveVsBypassBlog />}
+/>
         </Route>
       </Routes>
     </BrowserRouter>

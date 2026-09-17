@@ -55,6 +55,7 @@ const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Doctors', to: '/doctors/dr-vikrant-sharma' },
   { label: 'Contact', to: '/contact' },
+  { label: 'Blog', to: '/blog/sleeve-gastrectomy-vs-gastric-bypass' },
 ];
 
 export default function Navbar() {
