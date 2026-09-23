@@ -23,6 +23,8 @@ import OesophagusGeneralSurgery from './pages/services/OesophagusGeneralSurgery.
 import SeoManager from './components/SeoManager';
 import TeleRoboticSurgery from './pages/services/TeleRoboticSurgery.tsx';
 import SleeveVsBypassBlog from './pages/blog/SleeveVsBypassBlog.tsx';
+import LaparoscopicVsRoboticSurgery from './pages/blog/LaparoscopicVsRoboticSurgery.tsx';
+import HerniaSignsAndSymptoms from './pages/blog/HerniaSignsAndSymptoms.tsx';
 
 export default function App() {
   return (
@@ -72,6 +74,8 @@ export default function App() {
   path="/blog/sleeve-gastrectomy-vs-gastric-bypass"
   element={<SleeveVsBypassBlog />}
 />
+  <Route path="/blog/laparoscopic-vs-robotic-surgery" element={<LaparoscopicVsRoboticSurgery />} />
+  <Route path="/blog/hernia-signs-and-symptoms" element={<HerniaSignsAndSymptoms />} />
         </Route>
       </Routes>
     </BrowserRouter>

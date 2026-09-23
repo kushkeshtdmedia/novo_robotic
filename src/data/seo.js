@@ -90,6 +90,14 @@ export const seoData = {
     title: 'Contact Novo Robotic +91 8882844375 | Kaushambi, Ghaziabad',
     description: 'Contact Novo Robotic in Kaushambi, Ghaziabad for robotic, bariatric, GI, oncology and gynaecological surgery. Call 8882844375 to book a consultation.',
   },
+  "/blog/laparoscopic-vs-robotic-surgery": {
+  title: "Laparoscopic vs Robotic Surgery: Key Differences & Benefits",
+  description: "Confused between laparoscopic and robotic surgery? Compare precision, recovery time, cost, and risks to choose the right procedure with your surgeon.",
+},
+"/blog/hernia-signs-and-symptoms": {
+  title: "How to Spot a Hernia: Signs & Symptoms by Body Part",
+  description: "Learn the signs and symptoms of a hernia in the groin, belly button, thigh, upper abdomen or an old scar, plus the warning signs that need urgent care.",
+},
 };
 
 export const getSeo = (pathname) => seoData[pathname] ?? seoData['/'];
