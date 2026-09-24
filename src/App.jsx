@@ -26,10 +26,12 @@ import SleeveVsBypassBlog from './pages/blog/SleeveVsBypassBlog.tsx';
 import LaparoscopicVsRoboticSurgery from './pages/blog/LaparoscopicVsRoboticSurgery.tsx';
 import HerniaSignsAndSymptoms from './pages/blog/HerniaSignsAndSymptoms.tsx';
 import BlogIndex from "./pages/blog/BlogIndex";
+import ScrollToTop from './components/ScrollToTop.tsx';
 
 export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <ScrollToTop/>
       <SeoManager />
       <Routes>
         <Route element={<Layout />}>

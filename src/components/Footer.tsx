@@ -360,11 +360,11 @@ export default function Footer() {
             </NavLink>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* Treatments — column 1 (featured service first) */}
+              {/* Treatments — column 1 */}
               <div>
                 <p className={heading}>Treatments</p>
                 <ul className="space-y-2">
-                  <Item label={featuredService.label} to={featuredService.to} highlight />
+                  <Item label={featuredService.label} to={featuredService.to} />
                   {servicesCol1.map((s) => (
                     <Item key={s.to} label={s.label} to={s.to} />
                   ))}

@@ -2,6 +2,11 @@ import { Phone, Mail, Clock, ArrowRight, ChevronDown, MapPin, ExternalLink } fro
 import { useState } from "react";
 import ContactUsImage from "../assets/images/ContactUsImage.jpeg";
 
+const MAP_QUERY =
+  "Novo+Robotic+Surgery+Centre%2C+B-12%2F13%2C+near+Dabur+Lane%2C+Anand+Vihar%2C+Kaushambi%2C+Ghaziabad%2C+Uttar+Pradesh+201010";
+const MAP_EMBED = `https://www.google.com/maps?q=${MAP_QUERY}&output=embed`;
+const MAP_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${MAP_QUERY}`;
+
 const faqs = [
   { q: "Do you accept international insurance?", a: "Yes, we work with most major international insurance providers. Please contact our billing team with your policy details for verification." },
   { q: "How long is the wait time for an appointment?", a: "Standard appointments are typically available within 3-5 business days. Urgent cases are prioritized and seen sooner." },
@@ -58,8 +63,7 @@ export default function ContactPage() {
           <div>
             <h2 className="text-3xl font-bold text-teal-900 mb-8">Contact Information</h2>
             <div className="space-y-4">
-              <InfoCard icon={<Phone size={20} />} iconBg="bg-teal-50 text-teal-700" label="PHONE" value="8882844375, 
-8527516622" />
+              <InfoCard icon={<Phone size={20} />} iconBg="bg-teal-50 text-teal-700" label="PHONE" value="8882844375, 8527516622" />
               <InfoCard icon={<Mail size={20} />} iconBg="bg-gray-100 text-gray-700" label="EMAIL" value="enquiry@novorobotic.com" />
               <InfoCard icon={<Clock size={20} />} iconBg="bg-yellow-100 text-yellow-700" label="HOURS" value="Mon – Sun: 09:00 AM to 06:00 PM" />
             </div>
@@ -108,12 +112,24 @@ export default function ContactPage() {
             NOVO Robotic Surgery Centre B-12/13, Opposite Dabur India Corporation
             Limited, Anand Vihar, Kaushambi, Ghaziabad, Uttar Pradesh, India - 201010.
           </p>
-          <a href="#" className="flex items-center gap-1 text-teal-700 text-sm font-semibold whitespace-nowrap">
+          <a
+            href={MAP_DIRECTIONS}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-teal-700 text-sm font-semibold whitespace-nowrap hover:text-teal-900"
+          >
             OPEN IN GOOGLE MAPS <ExternalLink size={14} />
           </a>
         </div>
-        <div className="rounded-2xl overflow-hidden border border-gray-100 h-96 bg-gray-100 flex items-center justify-center text-gray-400 text-sm">
-          Map embed goes here
+        <div className="rounded-2xl overflow-hidden border border-gray-100 h-96">
+          <iframe
+            title="Novo Robotic Surgery Centre location"
+            src={MAP_EMBED}
+            className="w-full h-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
         </div>
       </section>
 
