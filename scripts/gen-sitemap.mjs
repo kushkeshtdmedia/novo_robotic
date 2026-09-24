@@ -3,7 +3,6 @@ import { seoData, SITE } from '../src/data/seo.js';
 
 const validRoutes = new Set([
   '/',
-  '/services',
   '/services/tele-robotic-surgery',
   '/services/hernia-surgery',
   '/services/gallbladder-surgery',

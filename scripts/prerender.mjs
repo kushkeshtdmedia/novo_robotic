@@ -51,7 +51,6 @@ await new Promise((resolve) => server.listen(PORT, resolve));
 
 const validRoutes = new Set([
   '/',
-  '/services',
   '/services/tele-robotic-surgery',
   '/services/hernia-surgery',
   '/services/gallbladder-surgery',
