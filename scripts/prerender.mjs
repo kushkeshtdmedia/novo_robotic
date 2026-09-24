@@ -49,7 +49,31 @@ const server = createServer(async (req, res) => {
 
 await new Promise((resolve) => server.listen(PORT, resolve));
 
-const routes = Object.keys(seoData);
+const validRoutes = new Set([
+  '/',
+  '/services',
+  '/services/tele-robotic-surgery',
+  '/services/hernia-surgery',
+  '/services/gallbladder-surgery',
+  '/services/appendix-surgery',
+  '/services/oesophagus-surgery',
+  '/services/robotic-sleeve-gastrectomy',
+  '/services/robotic-roux-en-y-gastric-bypass',
+  '/services/robotic-mini-gastric-bypass',
+  '/services/colorectal-cancer-surgery',
+  '/services/stomach-cancer-surgery',
+  '/services/gynecologic-cancer-surgery',
+  '/services/fertility-preserving-surgery',
+  '/services/benign-disorders-uterus-ovaries',
+  '/doctors/dr-vikrant-sharma',
+  '/contact',
+  '/blog',
+  '/blog/sleeve-gastrectomy-vs-gastric-bypass',
+  '/blog/laparoscopic-vs-robotic-surgery',
+  '/blog/hernia-signs-and-symptoms',
+]);
+
+const routes = Object.keys(seoData).filter((route) => validRoutes.has(route));
 console.log(`\nPrerendering ${routes.length} routes...\n`);
 
 const browser = await puppeteer.launch({
