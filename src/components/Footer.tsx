@@ -44,6 +44,7 @@ const doctors = [{ label: 'Dr. Vikrant Sharma', to: '/doctors/dr-vikrant-sharma'
 
 const quickLinks = [
   { label: 'Home', to: '/' },
+  { label: 'Blog', to: '/blog' },
   { label: 'Contact Us', to: '/contact' },
 ];
 
