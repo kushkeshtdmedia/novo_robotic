@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
 import Logo from '../../src/assets/images/Logo.png';
 
 type ServiceItem = { label: string; slug: string };
 type ServiceCategory = { label: string; sub: ServiceItem[] };
-type BlogItem = { label: string; slug: string };
 
 const serviceMenu: ServiceCategory[] = [
   {
@@ -52,34 +51,22 @@ const serviceMenu: ServiceCategory[] = [
   },
 ];
 
-// Add new blog posts here (newest first)
-const blogPosts: BlogItem[] = [
-  { label: 'How to Spot a Hernia: Signs & Symptoms', slug: 'hernia-signs-and-symptoms' },
-  { label: 'Laparoscopic vs Robotic Surgery', slug: 'laparoscopic-vs-robotic-surgery' },
-  { label: 'Sleeve Gastrectomy vs Gastric Bypass', slug: 'sleeve-gastrectomy-vs-gastric-bypass' },
-];
-
 const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Doctors', to: '/doctors/dr-vikrant-sharma' },
   { label: 'Contact', to: '/contact' },
+  { label: 'Blog', to: '/blog' },
 ];
 
 export default function Navbar() {
-  const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
-  const [blogOpen, setBlogOpen] = useState(false);
   const [activeSub, setActiveSub] = useState(0);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mobileBlogOpen, setMobileBlogOpen] = useState(false);
   const [mobileSubOpen, setMobileSubOpen] = useState<number | null>(null);
   const megaRef = useRef<HTMLDivElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const blogTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const isBlogActive = pathname.startsWith('/blog');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -96,21 +83,10 @@ export default function Navbar() {
     closeTimer.current = setTimeout(() => setMegaOpen(false), 120);
   };
 
-  const openBlog = () => {
-    if (blogTimer.current) clearTimeout(blogTimer.current);
-    setBlogOpen(true);
-  };
-
-  const closeBlog = () => {
-    blogTimer.current = setTimeout(() => setBlogOpen(false), 120);
-  };
-
   const closeAll = () => {
     setMegaOpen(false);
-    setBlogOpen(false);
     setMenuOpen(false);
     setMobileServicesOpen(false);
-    setMobileBlogOpen(false);
     setMobileSubOpen(null);
   };
 
@@ -191,45 +167,6 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          {/* Blog dropdown */}
-          <div className="relative" onMouseEnter={openBlog} onMouseLeave={closeBlog}>
-            <button
-              onClick={() => setBlogOpen((o) => !o)}
-              aria-expanded={blogOpen}
-              className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                blogOpen || isBlogActive ? 'text-teal-600' : 'text-gray-600 hover:text-teal-600'
-              } ${isBlogActive ? 'border-b-2 border-teal-600 pb-0.5' : ''}`}
-            >
-              Blog <ChevronDown size={14} className={`transition-transform duration-200 ${blogOpen ? 'rotate-180' : ''}`} />
-            </button>
-
-            {blogOpen && (
-              <div
-                className="absolute top-full right-0 mt-3 w-80 rounded-2xl shadow-2xl bg-white shadow-gray-300/40 border border-gray-100 py-3 px-3"
-                onMouseEnter={openBlog}
-                onMouseLeave={closeBlog}
-              >
-                <ul className="space-y-1">
-                  {blogPosts.map((post) => (
-                    <li key={post.slug}>
-                      <NavLink
-                        to={`/blog/${post.slug}`}
-                        onClick={closeAll}
-                        className={({ isActive }) =>
-                          `flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors group ${
-                            isActive ? 'bg-teal-50 text-teal-600' : 'text-gray-700 hover:bg-teal-50 hover:text-teal-600'
-                          }`
-                        }
-                      >
-                        <span className="w-1.5 h-1.5 bg-teal-400 rounded-full group-hover:bg-teal-600 flex-shrink-0" />
-                        {post.label}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
         </div>
 
         <div className="hidden md:flex items-center gap-3">
@@ -293,29 +230,6 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          <div>
-            <button
-              onClick={() => setMobileBlogOpen(!mobileBlogOpen)}
-              className={`w-full flex items-center justify-between py-2 font-medium text-sm ${isBlogActive ? 'text-teal-600' : 'text-gray-700'}`}
-            >
-              Blog
-              <ChevronDown size={14} className={`transition-transform ${mobileBlogOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {mobileBlogOpen && (
-              <div className="pl-3 border-l-2 border-teal-100 mt-1 space-y-1">
-                {blogPosts.map((post) => (
-                  <NavLink
-                    key={post.slug}
-                    to={`/blog/${post.slug}`}
-                    onClick={closeAll}
-                    className={({ isActive }) => `block py-2 text-sm ${isActive ? 'text-teal-600 font-medium' : 'text-gray-600 hover:text-teal-600'}`}
-                  >
-                    {post.label}
-                  </NavLink>
-                ))}
-              </div>
-            )}
-          </div>
 
           <NavLink to="/contact" onClick={closeAll}>
             <button className="mt-2 bg-yellow-400 text-gray-900 font-semibold px-5 py-2.5 rounded-full w-fit text-sm">

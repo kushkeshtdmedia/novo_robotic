@@ -25,6 +25,7 @@ import TeleRoboticSurgery from './pages/services/TeleRoboticSurgery.tsx';
 import SleeveVsBypassBlog from './pages/blog/SleeveVsBypassBlog.tsx';
 import LaparoscopicVsRoboticSurgery from './pages/blog/LaparoscopicVsRoboticSurgery.tsx';
 import HerniaSignsAndSymptoms from './pages/blog/HerniaSignsAndSymptoms.tsx';
+import BlogIndex from "./pages/blog/BlogIndex";
 
 export default function App() {
   return (
@@ -76,6 +77,7 @@ export default function App() {
 />
   <Route path="/blog/laparoscopic-vs-robotic-surgery" element={<LaparoscopicVsRoboticSurgery />} />
   <Route path="/blog/hernia-signs-and-symptoms" element={<HerniaSignsAndSymptoms />} />
+  <Route path="/blog" element={<BlogIndex />} />
         </Route>
       </Routes>
     </BrowserRouter>
