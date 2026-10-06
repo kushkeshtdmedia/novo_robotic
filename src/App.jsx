@@ -27,7 +27,7 @@ import LaparoscopicVsRoboticSurgery from './pages/blog/LaparoscopicVsRoboticSurg
 import HerniaSignsAndSymptoms from './pages/blog/HerniaSignsAndSymptoms.tsx';
 import BlogIndex from "./pages/blog/BlogIndex";
 import ScrollToTop from './components/ScrollToTop.tsx';
-
+import BariacticBlog from './pages/blog/BariatricBlog.tsx';
 export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
@@ -80,6 +80,7 @@ export default function App() {
   <Route path="/blog/laparoscopic-vs-robotic-surgery" element={<LaparoscopicVsRoboticSurgery />} />
   <Route path="/blog/hernia-signs-and-symptoms" element={<HerniaSignsAndSymptoms />} />
   <Route path="/blog" element={<BlogIndex />} />
+  <Route path="/blog/bariatric-surgery" element={<BariacticBlog />} />
         </Route>
       </Routes>
     </BrowserRouter>
