@@ -182,8 +182,7 @@ export default function BariatricBlog() {
             </p>
 
             <div className="flex items-center gap-3.5 pt-2">
-              {/* TODO: replace with doctor photo */}
-              <img src="/images/dr-vikrant-sharma.jpg" alt="Dr. Vikrant Sharma" className="w-14 h-14 rounded-full object-cover border-2 border-[#fdd350] bg-[#e2e2e5]" />
+              <span aria-hidden="true" className="w-14 h-14 rounded-full bg-[#005a65] border-2 border-[#fdd350] text-white font-extrabold text-lg flex items-center justify-center shrink-0">VS</span>
               <div className="flex flex-col gap-0.5">
                 <Link to={LINKS.doctor} rel="author" className="font-bold text-base text-[#1a1c1e] no-underline hover:text-[#005a65] hover:underline">Dr. Vikrant Sharma</Link>
                 <span className="text-sm text-[#3e484a]">MBBS, MS, FNB, FACS (USA) · Robotic, Bariatric &amp; GI Surgeon</span>
@@ -193,12 +192,30 @@ export default function BariatricBlog() {
           </div>
 
           <div className="flex-[1_1_380px] min-w-0 relative">
-            {/* TODO: replace with featured image */}
-            <img
-              src="/images/blog/robotic-bariatric-surgery.jpg"
-              alt="Dr. Vikrant Sharma performing robotic bariatric surgery at Novo Robotic Surgery Centre, Ghaziabad"
-              className="w-full aspect-[4/3] object-cover rounded-[1.5rem] bg-[#e8e8ea]"
-            />
+            {/* Featured panel (no photo): procedures at a glance on a precision grid */}
+            <div className="relative w-full min-h-[380px] md:min-h-[440px] rounded-[1.5rem] bg-[#005a65] overflow-hidden px-7 md:px-10 pt-20 pb-28 flex flex-col justify-center gap-5">
+              <svg className="absolute inset-0 w-full h-full" aria-hidden="true">
+                <defs>
+                  <pattern id="novo-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+                    <path d="M32 0H0V32" fill="none" stroke="#81d3e1" strokeOpacity="0.14" strokeWidth="1" />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#novo-grid)" />
+                <circle cx="88%" cy="78%" r="120" fill="none" stroke="#fdd350" strokeOpacity="0.35" strokeWidth="1" />
+                <circle cx="88%" cy="78%" r="70" fill="none" stroke="#fdd350" strokeOpacity="0.5" strokeWidth="1" />
+              </svg>
+              <span className={`relative ${eyebrow} text-[#fdd350]`}>THREE ROBOTIC OPTIONS</span>
+              <ul className="relative m-0 p-0 list-none flex flex-col gap-3">
+                {procedures.map((p) => (
+                  <li key={p.key}>
+                    <Link to={p.to} className="flex items-center gap-4 no-underline text-white group/proc">
+                      <span className={`${plex} text-[13px] font-bold w-9 h-9 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center shrink-0 group-hover/proc:bg-[#fdd350] group-hover/proc:text-[#241a00] transition-colors`}>{p.key}</span>
+                      <span className="text-lg md:text-xl font-bold leading-[1.3]">{p.title.replace("Robotic ", "")}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
             <div className="absolute -left-2 md:-left-4 bottom-7 bg-white/85 backdrop-blur-[20px] border border-white rounded-2xl px-4 py-3.5 shadow-[0_10px_40px_rgba(0,0,0,0.08)] flex items-center gap-3">
               <span className="w-10 h-10 rounded-[10px] bg-[#005a65] flex items-center justify-center">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
@@ -371,8 +388,10 @@ export default function BariatricBlog() {
 
           {/* Author */}
           <section aria-label="About the author" className={`${card} p-6 md:p-8 flex flex-wrap gap-7 items-start`}>
-            {/* TODO: replace with doctor photo */}
-            <img src="/images/dr-vikrant-sharma.jpg" alt="Dr. Vikrant Sharma" className="w-28 h-28 rounded-[1.5rem] object-cover bg-[#e2e2e5] shrink-0" />
+            <div aria-hidden="true" className="w-28 h-28 rounded-[1.5rem] bg-[#005a65] flex flex-col items-center justify-center gap-1 shrink-0">
+              <span className="text-white font-extrabold text-[32px] leading-none">VS</span>
+              <span className={`${plex} text-[10px] font-bold tracking-[0.1em] text-[#fdd350]`}>FACS (USA)</span>
+            </div>
             <div className="flex-[1_1_320px] min-w-0 flex flex-col gap-2.5">
               <span className={`${eyebrow} text-[#745c00]`}>ABOUT THE AUTHOR</span>
               <h2 className="m-0 text-2xl font-bold leading-[1.3]">Dr. Vikrant Sharma</h2>
@@ -469,7 +488,11 @@ export default function BariatricBlog() {
               { cat: "ROBOTIC SURGERY", title: "Robotic Surgery in Delhi NCR: Why the Region Is Leading India", to: "/blog/robotic-surgery-delhi-ncr" },
             ].map((post) => (
               <Link key={post.to} to={post.to} className={`${card} overflow-hidden no-underline text-[#1a1c1e] flex flex-col hover:-translate-y-1 transition-transform`}>
-                <div className="aspect-video bg-[#e2e2e5]" />
+                <div aria-hidden="true" className="aspect-video bg-[#e6f6f8] flex items-center justify-center">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0d7481" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="3" /><circle cx="12" cy="12" r="8" strokeOpacity="0.4" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+                  </svg>
+                </div>
                 <div className="p-6 flex flex-col gap-2">
                   <span className={`${plex} text-[11px] font-bold tracking-[0.1em] text-[#005a65]`}>{post.cat}</span>
                   <span className="text-xl font-bold leading-[1.35]">{post.title}</span>
