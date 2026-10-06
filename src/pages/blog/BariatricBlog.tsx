@@ -12,9 +12,9 @@ const LINKS = {
   sleeve: "/services/robotic-sleeve-gastrectomy",
   miniBypass: "/services/robotic-mini-gastric-bypass",
   rouxEnY: "/services/robotic-roux-en-y-gastric-bypass",
-  transformations: "/transformations", // TODO: confirm URL/anchor
-  testimonials: "/video-testimonials", // TODO: confirm URL/anchor
-  bariatricMain: "", // TODO: main bariatric service page slug; leave "" to show plain bold text
+  // transformations: "/transformations", // TODO: confirm URL/anchor
+  // testimonials: "/video-testimonials", // TODO: confirm URL/anchor÷
+  // bariatricMain: "", // TODO: main bariatric service page slug; leave "" to show plain bold text
 };
 
 const inlineLink = "text-[#005a65] font-semibold underline decoration-[#81d3e1] underline-offset-4 hover:decoration-[#005a65]";
