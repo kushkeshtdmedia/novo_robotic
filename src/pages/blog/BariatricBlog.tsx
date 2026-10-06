@@ -5,6 +5,20 @@ import { Helmet } from "react-helmet-async";
 // Content only — Navbar and Footer come from your layout.
 // Assumes Manrope + IBM Plex Sans are already loaded site-wide.
 
+// Internal links used on this page — change a route here and it updates everywhere.
+const LINKS = {
+  doctor: "/doctors/dr-vikrant-sharma",
+  contact: "/contact",
+  sleeve: "/services/robotic-sleeve-gastrectomy",
+  miniBypass: "/services/robotic-mini-gastric-bypass",
+  rouxEnY: "/services/robotic-roux-en-y-gastric-bypass",
+  transformations: "/transformations", // TODO: confirm URL/anchor
+  testimonials: "/video-testimonials", // TODO: confirm URL/anchor
+  bariatricMain: "", // TODO: main bariatric service page slug; leave "" to show plain bold text
+};
+
+const inlineLink = "text-[#005a65] font-semibold underline decoration-[#81d3e1] underline-offset-4 hover:decoration-[#005a65]";
+
 const plex = "font-['IBM_Plex_Sans',sans-serif]";
 const eyebrow = `${plex} text-xs font-bold tracking-[0.1em]`;
 const card = "bg-white rounded-[1.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)]";
@@ -27,22 +41,25 @@ const procedures = [
   {
     key: "A",
     title: "Robotic sleeve gastrectomy",
-    text: "About three-quarters of the stomach is removed, leaving a narrow “sleeve”. You eat less, feel full sooner and produce less ghrelin, the hunger hormone.",
-    to: "/services/robotic-sleeve-gastrectomy",
+    anchor: "robotic sleeve gastrectomy",
+    text: ", about three-quarters of the stomach is removed, leaving a narrow “sleeve”. You eat less, feel full sooner and produce less ghrelin, the hunger hormone.",
+    to: LINKS.sleeve,
     cta: "Explore sleeve gastrectomy",
   },
   {
     key: "B",
     title: "Robotic mini gastric bypass",
-    text: "A long, thin stomach pouch is connected to a lower part of the small intestine, so you eat less and absorb fewer calories. Often considered for patients with a higher BMI or diabetes.",
-    to: "/services/robotic-mini-gastric-bypass",
+    anchor: "robotic mini gastric bypass",
+    text: ", a long, thin stomach pouch is connected to a lower part of the small intestine, so you eat less and absorb fewer calories. It is often considered for patients with a higher BMI or diabetes.",
+    to: LINKS.miniBypass,
     cta: "Explore mini gastric bypass",
   },
   {
     key: "C",
     title: "Robotic Roux-en-Y gastric bypass",
-    text: "A small stomach pouch is joined to the small intestine in a Y shape. A long-established procedure, often preferred for patients with severe acid reflux or type 2 diabetes.",
-    to: "/services/robotic-roux-en-y-gastric-bypass",
+    anchor: "robotic Roux-en-Y gastric bypass",
+    text: ", a small stomach pouch is joined to the small intestine in a Y shape. It is a long-established procedure, often preferred for patients with severe acid reflux or type 2 diabetes.",
+    to: LINKS.rouxEnY,
     cta: "Explore Roux-en-Y bypass",
   },
 ];
@@ -110,6 +127,7 @@ const schema = {
       author: {
         "@type": "Person",
         name: "Dr. Vikrant Sharma",
+        url: `${SITE}${LINKS.doctor}`,
         honorificSuffix: "MBBS, MS, FNB, FACS (USA)",
         jobTitle: "Specialist Robotic, Bariatric & GI Surgeon",
       },
@@ -167,7 +185,7 @@ export default function BariatricBlog() {
               {/* TODO: replace with doctor photo */}
               <img src="/images/dr-vikrant-sharma.jpg" alt="Dr. Vikrant Sharma" className="w-14 h-14 rounded-full object-cover border-2 border-[#fdd350] bg-[#e2e2e5]" />
               <div className="flex flex-col gap-0.5">
-                <span className="font-bold text-base">Dr. Vikrant Sharma</span>
+                <Link to={LINKS.doctor} rel="author" className="font-bold text-base text-[#1a1c1e] no-underline hover:text-[#005a65] hover:underline">Dr. Vikrant Sharma</Link>
                 <span className="text-sm text-[#3e484a]">MBBS, MS, FNB, FACS (USA) · Robotic, Bariatric &amp; GI Surgeon</span>
                 <time dateTime="2026-10-06" className={`${plex} text-xs text-[#3e484a]`}>Published 6 Oct 2026</time>
               </div>
@@ -276,7 +294,9 @@ export default function BariatricBlog() {
                   <span className={`${plex} text-[13px] font-bold text-[#005a65] bg-[#e6f6f8] w-11 h-11 rounded-xl flex items-center justify-center shrink-0`}>{p.key}</span>
                   <div className="flex-1 min-w-0 flex flex-col gap-2">
                     <h3 className="m-0 text-[22px] md:text-2xl font-semibold leading-[1.4]">{p.title}</h3>
-                    <p className="m-0 text-base leading-[1.6] text-[#3e484a]">{p.text}</p>
+                    <p className="m-0 text-base leading-[1.6] text-[#3e484a]">
+                      In a <Link to={p.to} className={inlineLink}>{p.anchor}</Link>{p.text}
+                    </p>
                     <Link to={p.to} className="font-bold text-[15px] no-underline text-[#005a65] hover:text-[#004f58] inline-flex items-center gap-1.5 min-h-[44px]">
                       {p.cta} <Arrow />
                     </Link>
@@ -330,8 +350,13 @@ export default function BariatricBlog() {
             <span className={`${eyebrow} text-[#005a65]`}>07 · AT NOVO ROBOTIC</span>
             <h2 className={h2}>Robotic bariatric surgery in Ghaziabad</h2>
             <p className="m-0">
-              <strong>Robotic bariatric surgery in Ghaziabad</strong> at Novo Robotic Surgery Centre, Kaushambi, is led by Dr.
-              Vikrant Sharma. He has over 20 years of surgical experience and has performed more than 10,000 procedures. He
+              {LINKS.bariatricMain ? (
+                <Link to={LINKS.bariatricMain} className={inlineLink}>Robotic bariatric surgery in Ghaziabad</Link>
+              ) : (
+                <strong>Robotic bariatric surgery in Ghaziabad</strong>
+              )}{" "}
+              at Novo Robotic Surgery Centre, Kaushambi, is led by{" "}
+              <Link to={LINKS.doctor} className={inlineLink}>Dr. Vikrant Sharma</Link>. He has over 20 years of surgical experience and has performed more than 10,000 procedures. He
               trained in robotic surgery at Queen Alexandra Hospital, Portsmouth, UK, and received specialised training in
               robotic bariatric surgery in Belgium and the USA. As a Proctor for Robotic Surgery, he also guides other surgeons
               in adopting robotic techniques.
@@ -339,9 +364,8 @@ export default function BariatricBlog() {
             <p className="m-0">
               Every patient receives a thorough pre-surgery evaluation, dietitian support and structured follow-up. See real
               patient journeys on our{" "}
-              {/* TODO: confirm these routes */}
-              <Link to="/transformations" className="text-[#005a65] font-semibold">Transformations</Link> and{" "}
-              <Link to="/video-testimonials" className="text-[#005a65] font-semibold">Video Testimonials</Link> pages.
+              <Link to={LINKS.transformations} className={inlineLink}>Transformations</Link> and{" "}
+              <Link to={LINKS.testimonials} className={inlineLink}>Video Testimonials</Link> pages.
             </p>
           </section>
 
@@ -362,8 +386,7 @@ export default function BariatricBlog() {
                   <li key={c} className="flex gap-2"><span className="text-[#0d7481] font-extrabold">—</span>{c}</li>
                 ))}
               </ul>
-              {/* TODO: confirm doctor profile route */}
-              <Link to="/dr-vikrant-sharma" className="font-bold text-[15px] no-underline text-[#005a65] hover:text-[#004f58] inline-flex items-center gap-1.5 min-h-[44px]">
+              <Link to={LINKS.doctor} rel="author" className="font-bold text-[15px] no-underline text-[#005a65] hover:text-[#004f58] inline-flex items-center gap-1.5 min-h-[44px]">
                 View full profile <Arrow />
               </Link>
             </div>
@@ -407,7 +430,7 @@ export default function BariatricBlog() {
             <span className={`${eyebrow} text-[#fdd350]`}>FREE ASSESSMENT</span>
             <h3 className="m-0 text-2xl font-bold leading-[1.3]">Find out if you qualify</h3>
             <p className="m-0 text-[15px] leading-[1.6] text-[#e6f6f8]">Book a consultation with Dr. Vikrant Sharma at Kaushambi, Ghaziabad.</p>
-            <Link to="/contact" className="inline-flex items-center justify-center gap-2 min-h-12 rounded-lg bg-[#fdd350] text-[#241a00] font-bold text-[15px] no-underline hover:bg-[#ebc241]">
+            <Link to={LINKS.contact} className="inline-flex items-center justify-center gap-2 min-h-12 rounded-lg bg-[#fdd350] text-[#241a00] font-bold text-[15px] no-underline hover:bg-[#ebc241]">
               Book Appointment <Arrow />
             </Link>
             {/* TODO: real phone number */}
@@ -467,7 +490,7 @@ export default function BariatricBlog() {
               </h2>
               <p className="m-0 text-lg leading-[1.6] text-[#e6f6f8]">Novo Robotic Surgery Centre, Kaushambi, Ghaziabad (Delhi NCR)</p>
             </div>
-            <Link to="/contact" className="inline-flex items-center gap-2.5 min-h-14 px-7 rounded-lg bg-[#fdd350] text-[#241a00] font-bold text-[17px] no-underline hover:bg-[#ebc241]">
+            <Link to={LINKS.contact} className="inline-flex items-center gap-2.5 min-h-14 px-7 rounded-lg bg-[#fdd350] text-[#241a00] font-bold text-[17px] no-underline hover:bg-[#ebc241]">
               Book a Consultation <Arrow size={18} />
             </Link>
           </div>
