@@ -22,6 +22,7 @@ const validRoutes = new Set([
   '/blog/sleeve-gastrectomy-vs-gastric-bypass',
   '/blog/laparoscopic-vs-robotic-surgery',
   '/blog/hernia-signs-and-symptoms',
+  '/blog/robotic-bariatric-surgery',
 ]);
 
 const today = new Date().toISOString().split('T')[0];

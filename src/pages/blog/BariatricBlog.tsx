@@ -381,8 +381,8 @@ export default function BariatricBlog() {
             <p className="m-0">
               Every patient receives a thorough pre-surgery evaluation, dietitian support and structured follow-up. See real
               patient journeys on our{" "}
-              <Link to={LINKS.transformations} className={inlineLink}>Transformations</Link> and{" "}
-              <Link to={LINKS.testimonials} className={inlineLink}>Video Testimonials</Link> pages.
+              <span>Transformations</span> and{" "}
+              <span  >Video Testimonials</span> pages.
             </p>
           </section>
 

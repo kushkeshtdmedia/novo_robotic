@@ -94,6 +94,10 @@ export const seoData = {
     title: 'How to Spot a Hernia: Signs & Symptoms by Body Part',
     description: 'Learn the signs and symptoms of a hernia in the groin, belly button, thigh, upper abdomen or an old scar, plus the warning signs that need urgent care.',
   },
+  '/blog/robotic-bariatric-surgery': {
+    title: 'Robotic Bariatric Surgery in Ghaziabad | Novo Robotic',
+    description: 'Robotic bariatric surgery explained by Dr. Vikrant Sharma: sleeve gastrectomy, mini gastric bypass and Roux-en-Y bypass. Weight loss surgery in Ghaziabad, Delhi NCR'}
+    
 };
 
 export const getSeo = (pathname) => seoData[pathname] ?? seoData['/'];

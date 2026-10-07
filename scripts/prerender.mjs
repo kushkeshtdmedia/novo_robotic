@@ -70,6 +70,7 @@ const validRoutes = new Set([
   '/blog/sleeve-gastrectomy-vs-gastric-bypass',
   '/blog/laparoscopic-vs-robotic-surgery',
   '/blog/hernia-signs-and-symptoms',
+   '/blog/robotic-bariatric-surgery',
 ]);
 
 const routes = Object.keys(seoData).filter((route) => validRoutes.has(route));

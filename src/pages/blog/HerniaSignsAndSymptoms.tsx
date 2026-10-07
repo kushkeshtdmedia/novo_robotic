@@ -312,7 +312,7 @@ export default function HerniaSignsAndSymptoms() {
             </h2>
             <p className="mt-3 max-w-[56ch] text-[#e5eced]">
               Consult{" "}
-              <Link to="/dr-vikrant-sharma" className="font-semibold text-white underline underline-offset-4 decoration-[#fdd350]">
+              <Link to="/doctors/dr-vikrant-sharma" className="font-semibold text-white underline underline-offset-4 decoration-[#fdd350]">
                 Dr. Vikrant Sharma
               </Link>
               , Robotic &amp; Bariatric Surgeon with 20+ years of surgical experience, at Novo
