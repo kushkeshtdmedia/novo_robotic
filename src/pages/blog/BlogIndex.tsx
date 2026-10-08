@@ -8,6 +8,15 @@ import { Link } from "react-router-dom";
 
 // Add new posts here (newest first)
 const posts = [
+    {
+  slug: "robotic-bariatric-surgery",
+  category: "Bariatric Surgery",
+  readTime: "8 min read",
+  title: "Understanding Robotic Bariatric Surgery: Who Qualifies and Which Procedure Fits",
+  excerpt:
+    "Sleeve gastrectomy, mini gastric bypass and Roux-en-Y bypass explained by Dr. Vikrant Sharma, with the BMI cut-offs for Indian patients and what recovery looks like.",
+  date: "2026-10-06",
+},
   {
     slug: "hernia-signs-and-symptoms",
     category: "General Surgery",
@@ -32,15 +41,7 @@ const posts = [
       "Compare weight loss, diabetes, acid reflux, nutrition and recovery, and see who qualifies under the lower BMI cut-offs for Asians.",
     readTime: "6 min read",
   },
-  {
-  slug: "robotic-bariatric-surgery",
-  category: "Bariatric Surgery",
-  readTime: "8 min read",
-  title: "Understanding Robotic Bariatric Surgery: Who Qualifies and Which Procedure Fits",
-  excerpt:
-    "Sleeve gastrectomy, mini gastric bypass and Roux-en-Y bypass explained by Dr. Vikrant Sharma, with the BMI cut-offs for Indian patients and what recovery looks like.",
-  date: "2026-10-06",
-},
+
 ];
 
 export default function BlogIndex() {

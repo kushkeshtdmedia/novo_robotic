@@ -1,18 +1,13 @@
 import { useMemo, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
-import IMG_INFOGRAPHIC from "../../assets/images/BlogPagePic1.jpeg";
+import IMG_INFOGRAPHIC from "../../assets/images/IMG_INFOGRAPHIC.png";
 import IMG_TRANSFORMATION from "../../assets/images/BlogPagePic2.jpeg";
 import IMG_DOCTOR from "../../assets/images/VikrantBlogPage.jpeg";
 /**
  * Blog: Sleeve Gastrectomy vs Gastric Bypass
  * Route suggestion: /blog/sleeve-gastrectomy-vs-gastric-bypass
  * Header & Footer intentionally excluded (use shared Navbar / Footer).
- *
- * Replace image paths below with your actual assets.
  */
-// const IMG_INFOGRAPHIC = "src/assets/images/BlogPagePic1.jpeg";
-// const IMG_TRANSFORMATION = "src/assets/images/BlogPagePic2.jpeg";
-// const IMG_DOCTOR = "/images/doctors/dr-vikrant-sharma.webp";
 
 /* ---------- Small inline icons (2px stroke, no extra deps) ---------- */
 type IconProps = { className?: string };
@@ -186,8 +181,14 @@ export default function SleeveVsBypassBlog() {
 
           <figure>
             <div className="overflow-hidden rounded-[1.5rem] bg-white border border-[#bec8cb]/50 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
-              <img src={IMG_INFOGRAPHIC} loading="lazy" width={1200} height={900} className="w-full h-auto"
-                alt="Illustrated comparison of sleeve gastrectomy and Roux-en-Y gastric bypass showing how each changes the stomach" />
+              <img
+                src={IMG_INFOGRAPHIC}
+                loading="lazy"
+                width={1200}
+                height={675}
+                className="w-full h-auto"
+                alt="Infographic comparing sleeve gastrectomy, where the stomach is reshaped into a narrow sleeve with no intestinal rerouting, and gastric bypass, where a small stomach pouch is created and the intestine is rerouted"
+              />
             </div>
             <figcaption className="mt-3 flex gap-2 text-sm text-[#6e797b]">
               <InfoIcon className="w-4 h-4 mt-0.5 shrink-0" />

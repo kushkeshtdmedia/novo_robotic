@@ -192,7 +192,7 @@ export default function GallbladderSurgery() {
               Gallstones are small, hard pieces that form inside the gallbladder. They are made from substances in bile, such as cholesterol and other digestive materials.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              . Gallstones can be as small as a grain of sand or sometimes as large as a golf ball.
+              Gallstones can be as small as a grain of sand or sometimes as large as a golf ball.
 Some people with gallstones don't experience any symptoms. These are called "silent gallstones" and usually don't require any treatment. Symptoms appear when the stone blocks a duct.
 
             </p>

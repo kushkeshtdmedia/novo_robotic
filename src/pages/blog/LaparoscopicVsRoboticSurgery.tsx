@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import IMG_LAP_VS_ROBOTIC from "../../assets/images/IMG_LAP_VS_ROBOTIC.png";
 
 /**
  * Blog: Confused Between Laparoscopic and Robotic Surgery? Read This
  * Route: /blog/laparoscopic-vs-robotic-surgery
- * Text-only page (no images). Styled with the Precision Care design tokens.
+ * Styled with the Precision Care design tokens.
  */
 
 const sections = [
@@ -231,6 +232,25 @@ export default function LaparoscopicVsRoboticSurgery() {
           </p>
 
           <SectionHeading id="comparison">Laparoscopic vs robotic surgery: a quick comparison</SectionHeading>
+
+          {/* Infographic */}
+          <figure className="mb-8">
+            <div className="overflow-hidden rounded-[1.5rem] bg-white border border-[#bec8cb]/50 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
+              <img
+                src={IMG_LAP_VS_ROBOTIC}
+                loading="lazy"
+                width={1200}
+                height={675}
+                className="w-full h-auto"
+                alt="Side-by-side illustration of laparoscopic surgery, with hand-held rigid instruments and a 2D camera view on a monitor, and robotic-assisted surgery, with wristed robotic arms controlled from a console and a 3D HD view"
+              />
+            </div>
+            <figcaption className="mt-3 text-[14px] leading-[1.6] text-[#6e797b]">
+              Both use small incisions. The difference is in how the surgeon sees and moves the
+              instruments.
+            </figcaption>
+          </figure>
+
           <div className="overflow-x-auto rounded-[1.5rem] bg-white shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
             <table className="w-full min-w-[560px] text-left text-[15px]">
               <caption className="sr-only">Comparison of laparoscopic and robotic surgery</caption>

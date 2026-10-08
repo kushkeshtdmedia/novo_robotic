@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import IMG_HERNIA_MAP from "../../assets/images/HerniaBlogPage.png";
 
 /**
  * Blog: How to Spot a Hernia: Signs and Symptoms in Different Parts of the Body
  * Route: /blog/hernia-signs-and-symptoms
- * Text-only page (no images). Styled with the Precision Care design tokens.
+ * Styled with the Precision Care design tokens.
  */
 
 const sections = [
@@ -214,6 +215,24 @@ export default function HerniaSignsAndSymptoms() {
           <h2 className="mt-16 mb-6 text-[24px] md:text-[32px] font-bold leading-[1.3] text-[#005a65]">
             Signs and symptoms by body part
           </h2>
+
+          {/* Infographic */}
+          <figure className="mb-8">
+            <div className="overflow-hidden rounded-[1.5rem] bg-white border border-[#bec8cb]/50 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
+              <img
+                src={IMG_HERNIA_MAP}
+                loading="lazy"
+                width={1200}
+                height={675}
+                className="w-full h-auto"
+                alt="Body diagram showing where five common hernias appear: hiatal hernia in the upper stomach, umbilical hernia at the belly button, incisional hernia along an old surgical scar, inguinal hernia in the groin, and femoral hernia in the upper thigh"
+              />
+            </div>
+            <figcaption className="mt-3 text-[14px] leading-[1.6] text-[#6e797b]">
+              Common hernia locations and the signs to look for in each area.
+            </figcaption>
+          </figure>
+
           <div className="space-y-6">
             {herniaTypes.map((t) => (
               <HerniaCard key={t.id} type={t} />
