@@ -81,6 +81,7 @@ export default function App() {
   <Route path="/blog/hernia-signs-and-symptoms" element={<HerniaSignsAndSymptoms />} />
   <Route path="/blog" element={<BlogIndex />} />
   <Route path="/blog/robotic-bariatric-surgery" element={<BariacticBlog />} />
+     <Route path="/blog/bariatric-surgery" element={<Navigate to="/blog/robotic-bariatric-surgery" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>

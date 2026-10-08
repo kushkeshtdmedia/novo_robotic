@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
-// Route: /blog/understanding-robotic-bariatric-surgery
+// Route: /blog/robotic-bariatric-surgery
 // Content only — Navbar and Footer come from your layout.
 // Assumes Manrope + IBM Plex Sans are already loaded site-wide.
 
@@ -111,7 +111,7 @@ const toc = [
 ];
 
 const SITE = "https://www.novorobotic.com";
-const URL = `${SITE}/blog/understanding-robotic-bariatric-surgery`;
+const URL = `${SITE}/blog/robotic-bariatric-surgery`;
 
 const schema = {
   "@context": "https://schema.org",

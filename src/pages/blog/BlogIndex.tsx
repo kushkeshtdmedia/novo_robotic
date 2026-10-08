@@ -33,7 +33,7 @@ const posts = [
     readTime: "6 min read",
   },
   {
-  slug: "bariatric-surgery",
+  slug: "robotic-bariatric-surgery",
   category: "Bariatric Surgery",
   readTime: "8 min read",
   title: "Understanding Robotic Bariatric Surgery: Who Qualifies and Which Procedure Fits",
