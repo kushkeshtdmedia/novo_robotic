@@ -71,6 +71,9 @@ const validRoutes = new Set([
   '/blog/laparoscopic-vs-robotic-surgery',
   '/blog/hernia-signs-and-symptoms',
    '/blog/robotic-bariatric-surgery',
+     '/blog/robotic-bariatric-surgery',
+  '/blog/robotic-surgery-delhi-ncr',
+
 ]);
 
 const routes = Object.keys(seoData).filter((route) => validRoutes.has(route));

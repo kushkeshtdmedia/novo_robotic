@@ -9,6 +9,15 @@ import { Link } from "react-router-dom";
 // Add new posts here (newest first)
 const posts = [
     {
+    slug: "robotic-surgery-delhi-ncr",
+    category: "Robotic Surgery",
+    readTime: "6 min read",
+    title: "Robotic Surgery in Delhi NCR: Why the Region Is Leading India, and What It Means for You",
+    excerpt:
+      "How robotic surgery works, who it helps, which conditions it treats, and why patients choose Novo Robotic Surgery Centre in Kaushambi, Ghaziabad.",
+    date: "2026-10-21",
+  },
+    {
   slug: "robotic-bariatric-surgery",
   category: "Bariatric Surgery",
   readTime: "8 min read",

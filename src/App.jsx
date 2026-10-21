@@ -28,6 +28,7 @@ import HerniaSignsAndSymptoms from './pages/blog/HerniaSignsAndSymptoms.tsx';
 import BlogIndex from "./pages/blog/BlogIndex";
 import ScrollToTop from './components/ScrollToTop.tsx';
 import BariacticBlog from './pages/blog/BariatricBlog.tsx';
+import RoboticSurgeryDelhiNCR from './pages/blog/RoboticSurgeryDelhiNCR.tsx';
 export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
@@ -71,6 +72,7 @@ export default function App() {
           <Route path="/services/mini-gastric-bypass" element={<Navigate to="/services/robotic-mini-gastric-bypass" replace />} />
           <Route path="/services/roux-en-gastric-bypass" element={<Navigate to="/services/robotic-roux-en-y-gastric-bypass" replace />} />
           <Route path="/services/benign-uterine-ovarian-disorders" element={<Navigate to="/services/benign-disorders-uterus-ovaries" replace />} />
+          <Route path="/blog/robotic-surgery-delhi-ncr" element={<RoboticSurgeryDelhiNCR />} />
 
           <Route path="*" element={<NotFound />} />
           <Route

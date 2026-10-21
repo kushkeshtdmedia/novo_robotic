@@ -23,6 +23,7 @@ const validRoutes = new Set([
   '/blog/laparoscopic-vs-robotic-surgery',
   '/blog/hernia-signs-and-symptoms',
   '/blog/robotic-bariatric-surgery',
+  '/blog/robotic-surgery-delhi-ncr',
 ]);
 
 const today = new Date().toISOString().split('T')[0];

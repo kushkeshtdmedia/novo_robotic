@@ -96,8 +96,18 @@ export const seoData = {
   },
   '/blog/robotic-bariatric-surgery': {
     title: 'Robotic Bariatric Surgery in Ghaziabad | Novo Robotic',
-    description: 'Robotic bariatric surgery explained by Dr. Vikrant Sharma: sleeve gastrectomy, mini gastric bypass and Roux-en-Y bypass. Weight loss surgery in Ghaziabad, Delhi NCR'}
-    
+    description: 'Robotic bariatric surgery explained by Dr. Vikrant Sharma: sleeve gastrectomy, mini gastric bypass and Roux-en-Y bypass. Weight loss surgery in Ghaziabad, Delhi NCR'},
+    "/blog/robotic-surgery-delhi-ncr": {
+  title: "Robotic Surgery in Delhi NCR: Benefits, Cost & Recovery",
+  description:
+    "Delhi NCR now leads India in robotic surgery. Learn how it works, who it helps and why patients choose Novo Robotic Surgery Centre, Kaushambi, Ghaziabad.",
+  keywords:
+    "robotic surgery Delhi NCR, robotic surgery Ghaziabad, robotic surgeon Kaushambi, robotic bariatric surgery, robotic cancer surgery, Dr. Vikrant Sharma",
+  canonical: "https://novorobotic.com/blog/robotic-surgery-delhi-ncr",
+  ogType: "article",
+  ogImage: "https://novorobotic.com/blog/robotic-surgery-system-delhi-ncr.jpg",
+},
+
 };
 
 export const getSeo = (pathname) => seoData[pathname] ?? seoData['/'];
