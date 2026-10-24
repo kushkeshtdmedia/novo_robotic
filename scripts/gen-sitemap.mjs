@@ -24,6 +24,7 @@ const validRoutes = new Set([
   '/blog/hernia-signs-and-symptoms',
   '/blog/robotic-bariatric-surgery',
   '/blog/robotic-surgery-delhi-ncr',
+  '/blog/robotic-bariatric-surgery-ghaziabad',
 ]);
 
 const today = new Date().toISOString().split('T')[0];
@@ -40,4 +41,3 @@ ${routes.map(r => `  <url>
 </urlset>`;
 
 writeFileSync('public/sitemap.xml', xml);
-console.log(`sitemap.xml — ${routes.length} URLs`);

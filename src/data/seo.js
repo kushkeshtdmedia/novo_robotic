@@ -94,8 +94,14 @@ export const seoData = {
     title: 'How to Spot a Hernia: Signs & Symptoms by Body Part',
     description: 'Learn the signs and symptoms of a hernia in the groin, belly button, thigh, upper abdomen or an old scar, plus the warning signs that need urgent care.',
   },
-  '/blog/robotic-bariatric-surgery': {
+  '/blog/robotic-bariatric-surgery-ghaziabad': {
     title: 'Robotic Bariatric Surgery in Ghaziabad | Novo Robotic',
+    description:
+      'Tried every diet and still can\'t lose weight? Learn how robotic bariatric surgery works, who qualifies and what recovery involves at Novo Robotic, Ghaziabad.',
+    ogType: 'article',
+  },
+  '/blog/robotic-bariatric-surgery': {
+    title: 'Robotic Bariatric Surgery: Who Qualifies & Which Procedure',
     description: 'Robotic bariatric surgery explained by Dr. Vikrant Sharma: sleeve gastrectomy, mini gastric bypass and Roux-en-Y bypass. Weight loss surgery in Ghaziabad, Delhi NCR'},
     "/blog/robotic-surgery-delhi-ncr": {
   title: "Robotic Surgery in Delhi NCR: Benefits, Cost & Recovery",

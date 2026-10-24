@@ -70,9 +70,9 @@ const validRoutes = new Set([
   '/blog/sleeve-gastrectomy-vs-gastric-bypass',
   '/blog/laparoscopic-vs-robotic-surgery',
   '/blog/hernia-signs-and-symptoms',
-   '/blog/robotic-bariatric-surgery',
-     '/blog/robotic-bariatric-surgery',
+  '/blog/robotic-bariatric-surgery',
   '/blog/robotic-surgery-delhi-ncr',
+  '/blog/robotic-bariatric-surgery-ghaziabad',
 
 ]);
 

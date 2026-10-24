@@ -8,6 +8,15 @@ import { Link } from "react-router-dom";
 
 // Add new posts here (newest first)
 const posts = [
+  {
+    slug: "robotic-bariatric-surgery-ghaziabad",
+    category: "Bariatric Surgery",
+    readTime: "7 min read",
+    title: "Robotic Bariatric Surgery in Ghaziabad: When Diets and Exercise Haven't Delivered Lasting Results",
+    excerpt:
+      "Why weight loss can be so hard, how robotic sleeve and bypass procedures work, who may qualify, and what life after surgery involves.",
+    date: "2026-10-24",
+  },
     {
     slug: "robotic-surgery-delhi-ncr",
     category: "Robotic Surgery",
