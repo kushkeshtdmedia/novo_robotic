@@ -73,7 +73,7 @@ const validRoutes = new Set([
   '/blog/robotic-bariatric-surgery',
   '/blog/robotic-surgery-delhi-ncr',
   '/blog/robotic-bariatric-surgery-ghaziabad',
-
+  '/blog/gastrointestinal-surgery-ghaziabad-delhi-ncr',
 ]);
 
 const routes = Object.keys(seoData).filter((route) => validRoutes.has(route));

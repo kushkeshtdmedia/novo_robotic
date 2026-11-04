@@ -30,6 +30,7 @@ import ScrollToTop from './components/ScrollToTop.tsx';
 import BariacticBlog from './pages/blog/BariatricBlog.tsx';
 import RoboticSurgeryDelhiNCR from './pages/blog/RoboticSurgeryDelhiNCR.tsx';
 import RoboticBariatricSurgeryGhaziabad from './pages/blog/RoboticBariatricSurgeryGhaziabad.tsx';
+import GastrointestinalSurgeryGhaziabad from './pages/blog/GastrointestinalSurgeryGhaziabad.tsx';
 export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
@@ -74,6 +75,8 @@ export default function App() {
           <Route path="/services/roux-en-gastric-bypass" element={<Navigate to="/services/robotic-roux-en-y-gastric-bypass" replace />} />
           <Route path="/services/benign-uterine-ovarian-disorders" element={<Navigate to="/services/benign-disorders-uterus-ovaries" replace />} />
           <Route path="/blog/robotic-surgery-delhi-ncr" element={<RoboticSurgeryDelhiNCR />} />
+          <Route path="/blog/robotic-bariatric-surgery-ghaziabad" element={<RoboticBariatricSurgeryGhaziabad />} />
+          <Route path="/blog/gastrointestinal-surgery-ghaziabad-delhi-ncr" element={<GastrointestinalSurgeryGhaziabad />} />
 
           <Route path="*" element={<NotFound />} />
           <Route
@@ -86,7 +89,6 @@ export default function App() {
   <Route path="/blog/robotic-bariatric-surgery" element={<BariacticBlog />} />
      <Route path="/blog/bariatric-surgery" element={<Navigate to="/blog/robotic-bariatric-surgery" replace />} />
         </Route>
-        <Route path="/blog/robotic-bariatric-surgery-ghaziabad" element={<RoboticBariatricSurgeryGhaziabad />} />
       </Routes>
     </BrowserRouter>
   );

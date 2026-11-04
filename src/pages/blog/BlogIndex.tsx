@@ -9,6 +9,15 @@ import { Link } from "react-router-dom";
 // Add new posts here (newest first)
 const posts = [
   {
+    slug: "gastrointestinal-surgery-ghaziabad-delhi-ncr",
+    category: "GI Surgery",
+    readTime: "9 min read",
+    title: "Gut Feeling Something's Wrong? Your Guide to Robotic & Laparoscopic GI Surgery in Ghaziabad",
+    excerpt:
+      "Gallbladder, appendix, hernia, reflux, bowel, stomach and food pipe surgery explained, with robotic vs laparoscopic vs open and what recovery looks like.",
+    date: "2026-11-04",
+  },
+  {
     slug: "robotic-bariatric-surgery-ghaziabad",
     category: "Bariatric Surgery",
     readTime: "7 min read",
@@ -17,7 +26,7 @@ const posts = [
       "Why weight loss can be so hard, how robotic sleeve and bypass procedures work, who may qualify, and what life after surgery involves.",
     date: "2026-10-24",
   },
-    {
+  {
     slug: "robotic-surgery-delhi-ncr",
     category: "Robotic Surgery",
     readTime: "6 min read",
@@ -26,15 +35,15 @@ const posts = [
       "How robotic surgery works, who it helps, which conditions it treats, and why patients choose Novo Robotic Surgery Centre in Kaushambi, Ghaziabad.",
     date: "2026-10-21",
   },
-    {
-  slug: "robotic-bariatric-surgery",
-  category: "Bariatric Surgery",
-  readTime: "8 min read",
-  title: "Understanding Robotic Bariatric Surgery: Who Qualifies and Which Procedure Fits",
-  excerpt:
-    "Sleeve gastrectomy, mini gastric bypass and Roux-en-Y bypass explained by Dr. Vikrant Sharma, with the BMI cut-offs for Indian patients and what recovery looks like.",
-  date: "2026-10-06",
-},
+  {
+    slug: "robotic-bariatric-surgery",
+    category: "Bariatric Surgery",
+    readTime: "8 min read",
+    title: "Understanding Robotic Bariatric Surgery: Who Qualifies and Which Procedure Fits",
+    excerpt:
+      "Sleeve gastrectomy, mini gastric bypass and Roux-en-Y bypass explained by Dr. Vikrant Sharma, with the BMI cut-offs for Indian patients and what recovery looks like.",
+    date: "2026-10-06",
+  },
   {
     slug: "hernia-signs-and-symptoms",
     category: "General Surgery",
@@ -59,7 +68,6 @@ const posts = [
       "Compare weight loss, diabetes, acid reflux, nutrition and recovery, and see who qualifies under the lower BMI cut-offs for Asians.",
     readTime: "6 min read",
   },
-
 ];
 
 export default function BlogIndex() {

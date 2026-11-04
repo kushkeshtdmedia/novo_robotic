@@ -94,6 +94,12 @@ export const seoData = {
     title: 'How to Spot a Hernia: Signs & Symptoms by Body Part',
     description: 'Learn the signs and symptoms of a hernia in the groin, belly button, thigh, upper abdomen or an old scar, plus the warning signs that need urgent care.',
   },
+  '/blog/gastrointestinal-surgery-ghaziabad-delhi-ncr': {
+    title: 'Robotic GI Surgery in Ghaziabad & Delhi NCR | Novo Robotic',
+    description:
+      'Explore gastrointestinal surgery options in Ghaziabad, including gallbladder, hernia, appendix, stomach and colorectal procedures at Novo Robotic Surgery Centre.',
+    ogType: 'article',
+  },
   '/blog/robotic-bariatric-surgery-ghaziabad': {
     title: 'Robotic Bariatric Surgery in Ghaziabad | Novo Robotic',
     description:
