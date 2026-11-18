@@ -119,6 +119,11 @@ export const seoData = {
   ogType: "article",
   ogImage: "https://novorobotic.com/blog/robotic-surgery-system-delhi-ncr.jpg",
 },
+"/blog/gallbladder-stones-treatment-ghaziabad": {
+  title: "Best Treatment for Gallbladder Stones in Ghaziabad: When Is Surgery Needed? | Novo Robotic Surgery Centre",
+  description:
+    "Gallbladder stones in Ghaziabad? Learn the symptoms, causes, tests and best treatment, and when laparoscopic or robotic gallbladder surgery is needed. Simple patient guide.",
+},
 
 };
 

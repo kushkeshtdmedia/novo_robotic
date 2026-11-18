@@ -9,6 +9,14 @@ import { Link } from "react-router-dom";
 // Add new posts here (newest first)
 const posts = [
   {
+  slug: "/blog/gallbladder-stones-treatment-ghaziabad",
+  title: "Best Treatment for Gallbladder Stones in Ghaziabad: When Is Surgery Needed?",
+  excerpt:
+    "Not every gallstone needs an operation. Learn the symptoms, warning signs and when keyhole or robotic gallbladder surgery is the right choice.",
+  category: "Gallbladder",
+  date: "2026-11-18",
+},
+  {
     slug: "gastrointestinal-surgery-ghaziabad-delhi-ncr",
     category: "GI Surgery",
     readTime: "9 min read",

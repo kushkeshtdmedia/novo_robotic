@@ -31,6 +31,7 @@ import BariacticBlog from './pages/blog/BariatricBlog.tsx';
 import RoboticSurgeryDelhiNCR from './pages/blog/RoboticSurgeryDelhiNCR.tsx';
 import RoboticBariatricSurgeryGhaziabad from './pages/blog/RoboticBariatricSurgeryGhaziabad.tsx';
 import GastrointestinalSurgeryGhaziabad from './pages/blog/GastrointestinalSurgeryGhaziabad.tsx';
+import GallbladderStonesTreatmentGhaziabad from './pages/blog/GallbladderStonesTreatmentGhaziabad.tsx';
 export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
@@ -88,6 +89,7 @@ export default function App() {
   <Route path="/blog" element={<BlogIndex />} />
   <Route path="/blog/robotic-bariatric-surgery" element={<BariacticBlog />} />
      <Route path="/blog/bariatric-surgery" element={<Navigate to="/blog/robotic-bariatric-surgery" replace />} />
+     <Route path="/blog/gallbladder-stones-treatment-ghaziabad" element={<GallbladderStonesTreatmentGhaziabad />} />
         </Route>
       </Routes>
     </BrowserRouter>

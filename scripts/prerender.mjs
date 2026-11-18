@@ -28,6 +28,11 @@ const MIME = {
   '.txt': 'text/plain',
 };
 
+if (!existsSync(join(DIST, 'index.html'))) {
+  console.error('\n  dist/index.html nahi mila — pehle `vite build` chalao.\n');
+  process.exit(1);
+}
+
 // dist/ ko serve karne wala chhota server
 const server = createServer(async (req, res) => {
   const urlPath = decodeURIComponent(req.url.split('?')[0]);
@@ -47,7 +52,16 @@ const server = createServer(async (req, res) => {
   }
 });
 
-await new Promise((resolve) => server.listen(PORT, resolve));
+// Port pehle se busy ho (purana vite preview / prerender) to saaf error do
+await new Promise((resolve, reject) => {
+  server.once('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`\n  Port ${PORT} already in use — vite preview ya purana prerender band karo.\n`);
+    }
+    reject(err);
+  });
+  server.listen(PORT, '127.0.0.1', resolve);
+});
 
 const validRoutes = new Set([
   '/',
@@ -74,6 +88,7 @@ const validRoutes = new Set([
   '/blog/robotic-surgery-delhi-ncr',
   '/blog/robotic-bariatric-surgery-ghaziabad',
   '/blog/gastrointestinal-surgery-ghaziabad-delhi-ncr',
+  '/blog/gallbladder-stones-treatment-ghaziabad',
 ]);
 
 const routes = Object.keys(seoData).filter((route) => validRoutes.has(route));
@@ -85,17 +100,36 @@ const browser = await puppeteer.launch({
 });
 
 let failed = 0;
+let succeeded = 0;
 
 for (const route of routes) {
   let lastErr;
+  let pageErrors = [];
 
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     const page = await browser.newPage();
+    pageErrors = [];
+
+    // Browser ke andar ke errors capture karo — warna sirf "timeout" dikhta hai
+    page.on('pageerror', (err) => pageErrors.push(`pageerror: ${err.message}`));
+    page.on('console', (msg) => {
+      if (msg.type() === 'error') pageErrors.push(`console: ${msg.text()}`);
+    });
+    page.on('requestfailed', (req) =>
+      pageErrors.push(`requestfailed: ${req.url()} (${req.failure()?.errorText})`)
+    );
+    page.on('response', (res) => {
+      const u = res.url();
+      if (res.status() >= 400 && u.startsWith(`http://127.0.0.1:${PORT}`)) {
+        pageErrors.push(`HTTP ${res.status()}: ${u}`);
+      }
+    });
+
     try {
       // 'domcontentloaded' — 'networkidle0' nahi. GTM/Fonts ki background requests
       // CI par kabhi settle nahi hoti, jisse navigation timeout ho jata hai.
       // React ready hai ya nahi, wo neeche waitForFunction confirm karta hai.
-      await page.goto(`http://localhost:${PORT}${route}`, {
+      await page.goto(`http://127.0.0.1:${PORT}${route}`, {
         waitUntil: 'domcontentloaded',
         timeout: 60000,
       });
@@ -129,8 +163,6 @@ for (const route of routes) {
           });
 
         // JSON-LD ko content ke hisaab se dedupe karo, position ke hisaab se nahi.
-        // Har page par do alag blocks hote hain (organization + page schema),
-        // aur Helmet dono ki duplicate copies chhod jata hai.
         const seenLd = new Set();
         [...head.querySelectorAll('script[type="application/ld+json"]')].forEach((s) => {
           const key = s.textContent.trim();
@@ -156,6 +188,7 @@ for (const route of routes) {
       console.log(`  ok    ${route.padEnd(45)} ${size} kB  ${ldCount} ld+json${note}`);
 
       lastErr = null;
+      succeeded++;
       break;
     } catch (err) {
       lastErr = err;
@@ -170,6 +203,14 @@ for (const route of routes) {
   if (lastErr) {
     failed++;
     console.error(`  FAIL  ${route.padEnd(45)} ${lastErr.message}`);
+    // Asli wajah yahan dikhegi
+    [...new Set(pageErrors)].slice(0, 10).forEach((e) => console.error(`        ↳ ${e}`));
+
+    // Pehla route hi render nahi hua → app poori crash hai, baaki routes try karna bekaar
+    if (succeeded === 0) {
+      console.error('\n  App kisi bhi route par render nahi hui — upar ke errors fix karo. Aborting.\n');
+      break;
+    }
   }
 }
 
@@ -184,8 +225,10 @@ try {
 
 server.close();
 
-// SPA fallback — prerender ke baad banana zaroori hai
-await writeFile(join(DIST, '404.html'), await readFile(join(DIST, 'index.html')));
+if (succeeded > 0) {
+  // SPA fallback — prerender ke baad banana zaroori hai
+  await writeFile(join(DIST, '404.html'), await readFile(join(DIST, 'index.html')));
+}
 
-console.log(`\nDone. ${routes.length - failed} ok, ${failed} failed.\n`);
+console.log(`\nDone. ${succeeded} ok, ${failed} failed.\n`);
 process.exit(failed > 0 ? 1 : 0);

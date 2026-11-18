@@ -26,6 +26,7 @@ const validRoutes = new Set([
   '/blog/robotic-surgery-delhi-ncr',
   '/blog/robotic-bariatric-surgery-ghaziabad',
   '/blog/gastrointestinal-surgery-ghaziabad-delhi-ncr',
+  '/blog/gallbladder-stones-treatment-ghaziabad',
 ]);
 
 const today = new Date().toISOString().split('T')[0];
